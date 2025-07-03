@@ -20,7 +20,7 @@ const config = {
   REJECT_CALL: process.env.REJECT_CALL !== undefined ? process.env.REJECT_CALL === "true" : false,
   NOT_ALLOW: process.env.NOT_ALLOW !== undefined ? process.env.NOT_ALLOW === "true" : false,
   MODE: process.env.MODE || "public",
-  BOT_NAME: process.env.BOT_NAME || "Toxic-MD",
+  BOT_NAME: process.env.BOT_NAME || "Njabulo-md",
   MENU_IMAGE: process.env.MENU_IMAGE || "https://files.catbox.moe/7l1tt5.jpg",
   DESCRIPTION: process.env.DESCRIPTION || "Savage WhatsApp Bot by Toxic-Master",
   OWNER_NAME: process.env.OWNER_NAME || "Toxic-Master",
