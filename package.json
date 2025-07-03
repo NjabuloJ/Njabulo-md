@@ -5,12 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name TOXIC-MD",
-    "stop": "pm2 stop TOXIC-MD",
+    "start": "pm2 start index.js --deep-monitoring --attach --name Njabulo-md",
+    "stop": "pm2 stop Njabulo-md",
     "restart": "pm2 restart Njabulo-md"
   },
-  "keywords": ["Toxic-MD", "whatsapp-bot", "whatsapp md bot"],
-  "author": "xhclinton",
+  "keywords": ["Njabulo-md", "whatsapp-bot", "whatsapp md bot"],
+  "author": "NjabuloJ",
   "license": "ISC",
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
