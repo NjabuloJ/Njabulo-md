@@ -1,13 +1,13 @@
 {
-  "name": "Toxic-MD",
+  "name": "Njabulo-md",
   "version": "10.8.1",
-  "description": "Toxic-MD multi device whatsapp bot",
+  "description": "Njabulo-md multi device whatsapp bot",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "pm2 start index.js --deep-monitoring --attach --name TOXIC-MD",
     "stop": "pm2 stop TOXIC-MD",
-    "restart": "pm2 restart TOXIC-MD"
+    "restart": "pm2 restart Njabulo-md"
   },
   "keywords": ["Toxic-MD", "whatsapp-bot", "whatsapp md bot"],
   "author": "xhclinton",
