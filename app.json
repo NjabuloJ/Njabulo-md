@@ -1,8 +1,8 @@
 {
-  "name": "Toxic-MD ☣️",
+  "name": "Njabulo-md",
   "description": "⚡ A savage WhatsApp bot built to dominate chats with toxic style! Powered by Node.js for max chaos.",
-  "keywords": ["Toxic-MD", "WhatsApp Bot", "Multi-Device", "Savage"],
-  "repository": "https://github.com/Toxic-Master/Toxic-MD",
+  "keywords": ["Njabulo-md", "WhatsApp Bot", "Multi-Device", "Savage"],
+  "repository": "https://github.com/NjabuloJ/Njabulo-md",
   "stack": "container",
   "env": {
     "SESSION_ID": {
