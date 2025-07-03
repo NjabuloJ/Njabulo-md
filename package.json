@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name Njabulo-md",
+    "start": "pm2 start /path/to/index.js --deep-monitoring --attach --name Njabulo-md",
     "stop": "pm2 stop Njabulo-md",
     "restart": "pm2 restart Njabulo-md"
   },
