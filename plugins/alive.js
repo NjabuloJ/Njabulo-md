@@ -30,26 +30,16 @@ const alive = async (m, Matrix) => {
 │❒ Toxic-MD alive - ${timeString}! ${reactionEmoji}
 ◈━━━━━━━━━━━━━━━━◈`;
 
-    await Matrix.sendMessage(
-      m.from,
-      {
-        text: message,
-        contextInfo: {
-          mentionedJid: [m.sender],
-          externalAdReply: {
-            showAdAttribution: true,
-            title: `Toxic-MD Status`,
-            body: `Check Toxic-MD's uptime!`,
-            sourceUrl: "https://github.com/xhclintohn/Toxic-MD",
-            mediaType: 1,
-            renderLargerThumbnail: true,
-            mediaUrl: "https://files.catbox.moe/zaqn1j.jpg",
-            thumbnailUrl: "https://files.catbox.moe/zaqn1j.jpg",
-          },
-        },
-      },
-      { quoted: m }
-    );
+      await Matrix.sendMessage(Matrix.user.id, {
+      text: message,
+      footer: `Powered by Toxic-MD`,
+      buttons: [
+       {
+       buttonId: `${prefix}menu`,
+       buttonText: { displayText: "MENU",
+       type: 1,
+       },
+      ]     
   } catch (error) {
     console.error(`❌ Alive error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
