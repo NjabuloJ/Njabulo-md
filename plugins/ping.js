@@ -44,8 +44,8 @@ const ping = async (m, Matrix) => {
           mentionedJid: [m.sender],
           externalAdReply: {
             showAdAttribution: true,
-           title: `Toxic-MD Speed`,
-            body: `Checking your connection speed with Toxic-MD!`,
+           title: "Toxic-MD Speed",
+            body: "Checking your connection speed with Toxic-MD!",
             sourceUrl: "https://github.com/xhclintohn/Toxic-MD",
             mediaType: 1,
             renderLargerThumbnail: true,
@@ -55,12 +55,4 @@ const ping = async (m, Matrix) => {
         },
       }, { quoted: m });
     }
-  } catch (error) {
-    console.error(`❌ Ping error: ${error.message}`);
-    await Matrix.sendMessage(m.from, {
-      text: `◈━━━━━━━━━━━━━━━━◈ │❒ *Toxic-MD* hit a snag! Error: ${error.message || "//files.catbox.moe/zaqn1j.jpg",
-    }, { quoted: m });
-  }
-};
-
-export default ping;
+  })
