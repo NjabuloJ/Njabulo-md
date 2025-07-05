@@ -1,6 +1,6 @@
-name: toxic-md
+name: Njabulo-md
 services:
-  - name: toxic-md-service
+  - name: Njabulo-md-service
     type: web
     ports:
       - 5000
