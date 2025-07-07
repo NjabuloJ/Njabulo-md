@@ -90,6 +90,9 @@ function toFancyFont(text, isUpperCase = false) {
 
     const message = `◈━━━━━━━━━━━━━━━━◈\n│❒\nToxic-MD alive - ${timeString}! ${reactionEmoji} \n◈━━━━━━━━━━━━━━━━◈`;
 
+    Matrix.sendMessage(
+      m.from,
+  {
      buttons: [
               {
                 buttonId: `${prefix}menu`,
