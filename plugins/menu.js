@@ -337,6 +337,20 @@ ${menuResponse}
 
 > Pσɯҽɾҽԃ Ⴆყ Tσxιƈ-ɱԃȥ
 `;
+      const messageOptions = {
+        viewOnce: true,
+        buttons: [
+          {
+            buttonId: `${prefix}download-menu`,
+            buttonText: { displayText: `📥 ${toFancyFont("Download")}` },
+            type: 1,
+          },
+          {
+          buttonId: `${prefix}ping`,
+            buttonText: { displayText: `📥 ${toFancyFont("Njabulo Jb")}` },
+            type: 1,
+          },
+        ],
 
       // Send sub-menu with or without image
       if (menuImage) {
