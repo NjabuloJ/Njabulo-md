@@ -158,9 +158,10 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
             type: 1,
           },
           {
-            buttonId: `${prefix}stalk-menu`,
-            buttonText: { displayText: `🕵 ${toFancyFont("Stalk")}` },
-            type: 1,
+          name: "cta_url",
+           buttonParamsJson: JSON.stringify({
+           display_text: "Join Our Community",
+           url: `https://whatsapp.com/channel/0029VaAkETLLY6d8qhLmZt2v`
           },
         ],
         contextInfo: {
