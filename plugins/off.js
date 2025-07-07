@@ -1,5 +1,5 @@
 import config from '../../config.cjs';
-import pkg, { prepareWAMessageMedia } from 'baileys-pro';
+import pkg, { prepareWAMessageMedia } from '@whiskeysockets/baileys';
 const { generateWAMessageFromContent, proto } = pkg;
 
 const alwaysonlineCommand = async (m, Matrix) => {
@@ -13,23 +13,6 @@ const alwaysonlineCommand = async (m, Matrix) => {
   if (cmd === 'alwaysonline') {
     if (!isCreator) return m.reply("* THIS IS AN OWNER COMMAND*");
 
-    const buttons = [
-      {
-        "name": "quick_reply",
-        "buttonParamsJson": JSON.stringify({
-          display_text: "Enable",
-          id: `${prefix}alwaysonline on`
-        })
-      },
-      {
-        "name": "quick_reply",
-        "buttonParamsJson": JSON.stringify({
-          display_text: "Disable",
-          id: `${prefix}alwaysonline off`
-        })
-      }
-    ];
-
     let responseMessage;
     if (text === 'on') {
       config.ALWAYS_ONLINE = true;
@@ -40,6 +23,16 @@ const alwaysonlineCommand = async (m, Matrix) => {
     } else {
       responseMessage = "Usage:\n- `alwaysonline on`: Enable Always Online\n- `alwaysonline off`: Disable Always Online";
     }
+
+    const buttons = [
+      {
+        buttonId: `${prefix}menu`,
+        buttonText: {
+          displayText: `📖 MENU`
+        },
+        type: 1,
+      },
+    ];
 
     const msg = generateWAMessageFromContent(m.from, {
       viewOnceMessage: {
