@@ -1,4 +1,4 @@
-import pkg, { prepareWAMessageMedia } from '@whiskeysockets/baileys';
+import pkg, { prepareWAMessageMedia } from 'baileys-pro';
 const { generateWAMessageFromContent, proto } = pkg;
 import axios from 'axios'; // Import axios for HTTP requests
 
