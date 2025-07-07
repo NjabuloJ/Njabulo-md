@@ -91,7 +91,7 @@ function toFancyFont(text, isUpperCase = false) {
 
 // Image fetch utility
 async function fetchMenuImage() {
-  const imageUrl = "https://files.catbox.moe/y2utve.jpg";
+  const imageUrl = "https://files.catbox.moe/omgszj.jpg";
   for (let i = 0; i < 3; i++) {
     try {
       const response = await axios.get(imageUrl, { responseType: "arraybuffer" });
@@ -346,15 +346,13 @@ ${menuResponse}
             image: menuImage,
             caption: fullResponse,
             contextInfo: {
-              mentionedJid: [m.sender],
-              externalAdReply: {
-                showAdAttribution: true, // Marks as an ad
-                title: `${toFancyFont("Toxic-MD")} ${toFancyFont(menuTitle)}`,
-                body: `Explore Toxic-MD's ${menuTitle.toLowerCase()} commands!`,
-                sourceUrl: "https://github.com/xhclintohn/Toxic-MD",
-                mediaType: 1,
-                renderLargerThumbnail: true,
-                mediaUrl: "https://files.catbox.moe/zaqn1j.jpg",
+            mentionedJid: [m.sender],
+            forwardingScore: 999,
+            isForwarded: true,
+             forwardedNewsletterMessageInfo: {
+             newsletterJid: "120363398040175935@newsletter",
+             newsletterName: "Toxic-MD",
+             serverMessageId: 143,
               },
             },
           },
@@ -365,13 +363,12 @@ ${menuResponse}
           text: fullResponse,
           contextInfo: {
             mentionedJid: [m.sender],
-            externalAdReply: {
-              showAdAttribution: true, // Marks as an ad
-              title: `${toFancyFont("Toxic-MD")} ${toFancyFont(menuTitle)}`,
-              body: `Explore Toxic-MD's ${menuTitle.toLowerCase()} commands!`,
-              sourceUrl: "https://github.com/xhclintohn/Toxic-MD",
-              mediaType: 1,
-              renderLargerThumbnail: true,
+            forwardingScore: 999,
+            isForwarded: true,
+             forwardedNewsletterMessageInfo: {
+             newsletterJid: "120363398040175935@newsletter",
+             newsletterName: "Toxic-MD",
+             serverMessageId: 143,
             },
           },
         }, { quoted: m });
