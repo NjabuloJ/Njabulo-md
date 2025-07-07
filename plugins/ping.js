@@ -1,5 +1,6 @@
 import config from "../config.cjs";
 import pkg from "baileys-pro";
+const { generateWAMessageFromContent, proto } = pkg;
 
 const ping = async (m, Matrix) => {
   try {
