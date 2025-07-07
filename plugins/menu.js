@@ -223,12 +223,6 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
 │ ✘ *${toFancyFont("ytmp4doc")}*
 │ ✘ *${toFancyFont("tiktok")}*
 ◈━━━━━━━━━━━━━━━━◈
-`;
-          break;
-
-        case "converter-menu":
-          menuTitle = "Converter";
-          menuResponse = `
 ◈━━━━━━━━━━━━━━━━◈
 │❒ ${toFancyFont("Converter")} 🔄
 │ ✘ *${toFancyFont("attp")}*
@@ -255,12 +249,6 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
 │ ✘ *${toFancyFont("remini")}*
 │ ✘ *${toFancyFont("gemini")}*
 ◈━━━━━━━━━━━━━━━━◈
-`;
-          break;
-
-        case "tools-menu":
-          menuTitle = "Tools";
-          menuResponse = `
 ◈━━━━━━━━━━━━━━━━◈
 │❒ ${toFancyFont("Tools")} 🛠
 │ ✘ *${toFancyFont("calculator")}*
@@ -269,12 +257,6 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
 │ ✘ *${toFancyFont("trt")}*
 │ ✘ *${toFancyFont("tts")}*
 ◈━━━━━━━━━━━━━━━━◈
-`;
-          break;
-
-        case "group-menu":
-          menuTitle = "Group";
-          menuResponse = `
 ◈━━━━━━━━━━━━━━━━◈
 │❒ ${toFancyFont("Group")} 👥
 │ ✘ *${toFancyFont("linkgroup")}*
@@ -294,12 +276,6 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
 │ ✘ *${toFancyFont("demote")}*
 │ ✘ *${toFancyFont("getbio")}*
 ◈━━━━━━━━━━━━━━━━◈
-`;
-          break;
-
-        case "search-menu":
-          menuTitle = "Search";
-          menuResponse = `
 ◈━━━━━━━━━━━━━━━━◈
 │❒ ${toFancyFont("Search")} 🔍
 │ ✘ *${toFancyFont("play")}*
@@ -314,12 +290,6 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
 │ ✘ *${toFancyFont("ringtone")}*
 │ ✘ *${toFancyFont("lyrics")}*
 ◈━━━━━━━━━━━━━━━━◈
-`;
-          break;
-
-        case "main-menu":
-          menuTitle = "Main";
-          menuResponse = `
 ◈━━━━━━━━━━━━━━━━◈
 │❒ ${toFancyFont("Main")} ⚙
 │ ✘ *${toFancyFont("ping")}*
@@ -328,12 +298,6 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
 │ ✘ *${toFancyFont("menu")}*
 │ ✘ *${toFancyFont("infobot")}*
 ◈━━━━━━━━━━━━━━━━◈
-`;
-          break;
-
-        case "owner-menu":
-          menuTitle = "Owner";
-          menuResponse = `
 ◈━━━━━━━━━━━━━━━━◈
 │❒ ${toFancyFont("Owner")} 🔒
 │ ✘ *${toFancyFont("join")}*
@@ -351,12 +315,6 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
 │ ✘ *${toFancyFont("autoread")}*
 │ ✘ *${toFancyFont("autosview")}*
 ◈━━━━━━━━━━━━━━━━◈
-`;
-          break;
-
-        case "stalk-menu":
-          menuTitle = "Stalk";
-          menuResponse = `
 ◈━━━━━━━━━━━━━━━━◈
 │❒ ${toFancyFont("Stalk")} 🕵
 │ ✘ *${toFancyFont("truecaller")}*
