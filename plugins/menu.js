@@ -7,8 +7,8 @@ import config from "../config.cjs";
 import axios from "axios";
 
 // Time logic
-const xtime = moment.tz("Africa/Nairobi").format("HH:mm:ss");
-const xdate = moment.tz("Africa/Nairobi").format("DD/MM/YYYY");
+const time = moment.tz("Africa/Nairobi").format("HH:mm:ss");
+const date = moment.tz("Africa/Nairobi").format("DD/MM/YYYY");
 const time2 = moment().tz("Africa/Nairobi").format("HH:mm:ss");
 let pushwish = "";
 
@@ -38,9 +38,9 @@ function toFancyFont(text, isUpperCase = false) {
     G: "G",
     H: "H",
     I: "l",
-    J: "j",
+    J: "J",
     K: "K",
-    L: "l",
+    L: "L",
     M: "M",
     N: "N",
     O: "o",
@@ -68,7 +68,7 @@ function toFancyFont(text, isUpperCase = false) {
     k: "k",
     l: "l",
     m: "m",
-    n: "N",
+    n: "n",
     o: "o",
     p: "p",
     q: "q",
