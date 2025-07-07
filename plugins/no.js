@@ -23,16 +23,39 @@ const alwaysonlineCommand = async (m, Matrix) => {
     } else {
       responseMessage = "Usage:\n- `alwaysonline on`: Enable Always Online\n- `alwaysonline off`: Disable Always Online";
     }
-
-    const buttons = [
-      {
-        "name": "cta_url",
-        "buttonParamsJson": JSON.stringify({
-          display_text: "Join Our Community",
-          url: `https://whatsapp.com/channel/0029VaAkETLLY6d8qhLmZt2v`
-        })
-      }
-    ];
+        buttons: [
+                {
+                  name: "quick_reply",
+                  buttonParamsJson: JSON.stringify({
+                    display_text: "Contact Owner",
+                    id: ".owner"
+                  })
+                },
+                {
+                  name: "cta_url",
+                  buttonParamsJson: JSON.stringify({
+                    display_text: "Click Here To Fork",
+                    url: `https://github.com/SilvaTechB/Ethix-MD/fork`
+                  })
+                },
+                {
+                  name: "cta_url",
+                  buttonParamsJson: JSON.stringify({
+                    display_text: "Join Our Community",
+                    url: `https://whatsapp.com/channel/0029VaAkETLLY6d8qhLmZt2v`
+                  })
+                }
+              ],
+            }),
+            contextInfo: {
+              mentionedJid: [m.sender],
+              forwardingScore: 9999,
+              isForwarded: true,
+            }
+          }),
+        },
+      },
+    }, {});
 
     const msg = generateWAMessageFromContent(m.from, {
       viewOnceMessage: {
