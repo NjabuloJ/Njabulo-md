@@ -27,7 +27,7 @@ _______powered by silva tech____________
           "name": "quick_reply",
           "buttonParamsJson": JSON.stringify({
             display_text: "MENU",
-            id: `.menu`
+            id: `${prefix}menu`
           })
         },
         {
