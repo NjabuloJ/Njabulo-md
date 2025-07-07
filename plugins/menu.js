@@ -158,41 +158,6 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
             type: 1,
           },
           {
-            buttonId: `${prefix}converter-menu`,
-            buttonText: { displayText: `🔄 ${toFancyFont("Converter")}` },
-            type: 1,
-          },
-          {
-            buttonId: `${prefix}ai-menu`,
-            buttonText: { displayText: `🤖 ${toFancyFont("AI")}` },
-            type: 1,
-          },
-          {
-            buttonId: `${prefix}tools-menu`,
-            buttonText: { displayText: `🛠 ${toFancyFont("Tools")}` },
-            type: 1,
-          },
-          {
-            buttonId: `${prefix}group-menu`,
-            buttonText: { displayText: `👥 ${toFancyFont("Group")}` },
-            type: 1,
-          },
-          {
-            buttonId: `${prefix}search-menu`,
-            buttonText: { displayText: `🔍 ${toFancyFont("Search")}` },
-            type: 1,
-          },
-          {
-            buttonId: `${prefix}main-menu`,
-            buttonText: { displayText: `⚙ ${toFancyFont("Main")}` },
-            type: 1,
-          },
-          {
-            buttonId: `${prefix}owner-menu`,
-            buttonText: { displayText: `🔒 ${toFancyFont("Owner")}` },
-            type: 1,
-          },
-          {
             buttonId: `${prefix}stalk-menu`,
             buttonText: { displayText: `🕵 ${toFancyFont("Stalk")}` },
             type: 1,
