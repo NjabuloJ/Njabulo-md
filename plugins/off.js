@@ -27,7 +27,7 @@ const alwaysonlineCommand = async (m, Matrix) => {
     const buttons = [
       {
         buttonId: `${prefix}menu`,
-        buttonText: {displayText: `📖 ${toFancyFont("MENU")},
+        buttonText: {displayText: "MENU",
         type: 1,
       },
     ];
