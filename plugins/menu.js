@@ -154,7 +154,7 @@ const menu = async (m, Matrix) => {
           },
           {
           buttonId: `${prefix}ping`,
-            buttonText: { displayText: "Njabulo Jb",
+            buttonText: { displayText: `Njabulo Jb`,
             type: 1,
           },
         ],
