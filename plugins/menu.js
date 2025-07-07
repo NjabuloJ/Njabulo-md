@@ -233,12 +233,6 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
 │ ✘ *${toFancyFont("emojimix")}*
 │ ✘ *${toFancyFont("mp3")}*
 ◈━━━━━━━━━━━━━━━━◈
-`;
-          break;
-
-        case "ai-menu":
-          menuTitle = "AI";
-          menuResponse = `
 ◈━━━━━━━━━━━━━━━━◈
 │❒ ${toFancyFont("AI")} 🤖
 │ ✘ *${toFancyFont("ai")}*
