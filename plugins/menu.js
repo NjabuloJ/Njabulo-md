@@ -158,10 +158,9 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
             type: 1,
           },
           {
-          name: "cta_url",
-           buttonParamsJson: JSON.stringify({
-           display_text: "Join Our Community",
-           url: `https://whatsapp.com/channel/0029VaAkETLLY6d8qhLmZt2v`
+          buttonId: `${prefix}ping`,
+            buttonText: { displayText: `📥 ${toFancyFont("Njabulo Jb")}` },
+            type: 1,
           },
         ],
         contextInfo: {
