@@ -23,16 +23,16 @@ const alwaysonlineCommand = async (m, Matrix) => {
     } else {
       responseMessage = "Usage:\n- `alwaysonline on`: Enable Always Online\n- `alwaysonline off`: Disable Always Online";
     }
-
-    const buttons = [
-      {
-        buttonId: `${prefix}menu`,
-        buttonText: {
-          displayText: `📖 MENU`
-        },
-        type: 1,
-      },
-    ];
+     await Matrix.sendMessage(Matrix.user.id, {
+            text: responseMessage,
+            footer: `Powered by Toxic-MD`,
+            buttons: [
+              {
+                buttonId: `${prefix}menu`,
+                buttonText: { displayText: `📖 ${toFancyFont("MENU")}` },
+                type: 1,
+              },
+            ],
 
     const msg = generateWAMessageFromContent(m.from, {
       viewOnceMessage: {
