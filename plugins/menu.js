@@ -134,16 +134,14 @@ const menu = async (m, Matrix) => {
     // Handle main menu
     if (validCommands.includes(cmd)) {
       const mainMenu = `
-╭─────────────━┈⊷
-│*ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+╭─────────────┈⊷
+│ *ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
 │ ᴘʟᴜɢɪɴs ᴄᴍᴅ : ${totalCommands}
 │ ᴘʀᴇғɪx : ${prefix}
 │ ᴍᴏᴅᴇ : ${mode}
-╰─────────────━┈⊷
+╰─────────────┈⊷
 
-${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
-
-> Pσɯҽɾҽԃ Ⴆყ Tσxιƈ-ɱԃȥ
+> ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
 `;
 
       const messageOptions = {
@@ -164,9 +162,9 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
           mentionedJid: [m.sender],
           externalAdReply: {
             showAdAttribution: true, // Marks as an ad
-            title: `${toFancyFont("Toxic-MD")} Menu`,
-            body: `${pushwish} Explore Toxic-MD's features!`,
-            sourceUrl: "https://github.com/xhclintohn/Toxic-MD",
+            title: "world bot",
+            body: "Ⴆყ NנɐႦυℓσ נႦ",
+            sourceUrl: "https://github.com/NjabuloJ/Njabulo-Jb",
             mediaType: 1,
             renderLargerThumbnail: true,
             mediaUrl: "https://files.catbox.moe/zaqn1j.jpg",
@@ -202,33 +200,31 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
         case "download-menu":
           menuTitle = "Download";
           menuResponse = `
-◈━━━━━━━━━━━━━━━━◈
-│❒ Download
-│ apk
-│ facebook
-│ mediafire
-│ pinters
-│ gitclone
-│ gdrive
-│ insta
-│ ytmp3
-│ ytmp4
-│ play
-│ song
-│ video
-│ ytmp3doc
-│ ytmp4doc
-│ tiktok
-◈━━━━━━━━━━━━━━━━◈
-◈━━━━━━━━━━━━━━━━◈
-│❒ Converter
-│ ✘ attp
-│ ✘ attp2
-│ ✘ attp3
-│ ✘ ebinary
-│ ✘ dbinary
-│ ✘ emojimix
-│ ✘ mp3
+- . *Download*
+- . apk
+- . facebook
+- . mediafire
+- . pinters
+- . gitclone
+- . gdrive
+- . insta
+- . ytmp3
+- . ytmp4
+- . play
+- . song
+- . video
+- . ytmp3doc
+- . ytmp4doc
+- . tiktok
+
+ *Converter*
+- . attp
+- . attp2
+- . attp3
+- . ebinary
+- . dbinary
+- . emojimix
+- . mp3
 ◈━━━━━━━━━━━━━━━━◈
 ◈━━━━━━━━━━━━━━━━◈
 │❒ AI
@@ -330,7 +326,7 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
 
 ${menuResponse}
 
-> Pσɯҽɾҽԃ Ⴆყ Tσxιƈ-ɱԃȥ
+> ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
 `;
 
       // Send sub-menu with or without image
