@@ -337,20 +337,16 @@ ${menuResponse}
 
 > Pσɯҽɾҽԃ Ⴆყ Tσxιƈ-ɱԃȥ
 `;
-      const messageOptions = {
-        viewOnce: true,
-        buttons: [
-          {
-            buttonId: `${prefix}download-menu`,
-            buttonText: { displayText: `📥 ${toFancyFont("Download")}` },
-            type: 1,
-          },
-          {
-          buttonId: `${prefix}ping`,
-            buttonText: { displayText: `📥 ${toFancyFont("Njabulo Jb")}` },
-            type: 1,
-          },
-        ],
+       await Matrix.sendMessage(Matrix.user.id, {
+            text: secondMessage,
+            footer: `Powered by Toxic-MD`,
+            buttons: [
+              {
+                buttonId: `${prefix}menu`,
+                buttonText: { displayText: `📖 ${toFancyFont("MENU")}` },
+                type: 1,
+              },
+            ],
 
       // Send sub-menu with or without image
       if (menuImage) {
