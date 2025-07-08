@@ -5,7 +5,8 @@ import { pipeline } from 'stream';
 import { promisify } from 'util';
 import osCallbacks from 'os';
 import config from "../config.cjs";
-import { generateWAMessageFromContent, proto } from 'baileys-pro';
+import pkg, { prepareWAMessageMedia } from 'baileys-pro';
+const { generateWAMessageFromContent, proto } = pkg;
 
 const streamPipeline = promisify(pipeline);
 const tmpDir = osCallbacks.tmpdir();
