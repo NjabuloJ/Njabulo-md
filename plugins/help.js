@@ -1,7 +1,7 @@
 import moment from 'moment-timezone';
 import fs from 'fs';
 import os from 'os';
-
+import config from "../config.cjs";
 import pkg, { prepareWAMessageMedia } from 'baileys-pro';
 const { generateWAMessageFromContent, proto } = pkg;
 
