@@ -12,17 +12,9 @@ const ping = async (m, sock) => {
     const text = `*NנɐႦυℓσ נႦ​ ѕρєє∂: ${responseTime.toFixed(2)} s_*`;
     const buttons = [
       {
-        "name": "quick_reply",
-        "buttonParamsJson": JSON.stringify({
-          display_text: "ALIVE",
-          id: `${prefix}alive`
-        })
-      },
-      {
-        "name": "quick_reply",
-        "buttonParamsJson": JSON.stringify({
-          display_text: "MENU",
-          id: `${prefix}menu`
+        buttonId: `${prefix}menu`,
+        buttonText: { displayText: `📖 ${toFancyFont("MENU")}` },
+        type: 1,
         })
       }
     ];
