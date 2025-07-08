@@ -76,14 +76,11 @@ function toFancyFont(text, isUpperCase = false) {
         buttonId: `${prefix}alive`,
         buttonText: {
           displayText: `💻 ${toFancyFont("Alive")}`
-        },
         type: 1
       },
       {
         buttonId: `${prefix}menu`,
-        buttonText: {
-          displayText: `📚 ${toFancyFont("Menu")}`
-        },
+        buttonText: {displayText: `📚 ${toFancyFont("Menu")}`
         type: 1
       }
     ];
