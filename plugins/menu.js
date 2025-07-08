@@ -148,8 +148,8 @@ const menu = async (m, Matrix) => {
         viewOnce: true,
         buttons: [
           {
-            buttonId: `${prefix}commands`,
-            buttonText: { displayText: `${toFancyFont("plugins")}` },
+            buttonId: `${prefix}plugin`,
+            buttonText: { displayText: `${toFancyFont("Plugins")}` },
             type: 1,
           },
           {
@@ -171,14 +171,6 @@ const menu = async (m, Matrix) => {
           },
         },
       };
-
-      // Send menu with or without image
-      if (menuImage) {
-        await Matrix.sendMessage(
-          m.from,
-          { image: menuImage, caption: mainMenu, ...messageOptions },
-          { quoted: m }
-        );
       } else {
         await Matrix.sendMessage(m.from, { text: mainMenu, ...messageOptions }, { quoted: m });
       }
@@ -197,8 +189,8 @@ const menu = async (m, Matrix) => {
       let menuResponse;
 
       switch (cmd) {
-        case "commands":
-          menuTitle = "plugins";
+        case "plugin":
+          menuTitle = "Plugins";
           menuResponse = `
 - . *Download*
 - . apk
