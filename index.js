@@ -1,9 +1,4 @@
-import {
-  makeWASocket,
-  fetchLatestBaileysVersion,
-  DisconnectReason,
-  useMultiFileAuthState,
-} from "@whiskeysockets/baileys";
+import baileys from "@whiskeysockets/baileys";
 import { Handler, Callupdate, GroupUpdate } from "./data/index.js";
 import express from "express";
 import pino from "pino";
@@ -13,10 +8,19 @@ import path from "path";
 import chalk from "chalk";
 import moment from "moment-timezone";
 import luxon from "luxon";
-const { DateTime } = luxon;
 import config from "./config.cjs";
 import pkg from "./lib/autoreact.cjs";
+
+const {
+  makeWASocket,
+  fetchLatestBaileysVersion,
+  DisconnectReason,
+  useMultiFileAuthState,
+} = baileys;
+
+const { DateTime } = luxon;
 const { emojis, doReact } = pkg;
+
 const prefix = config.PREFIX || "!";
 const app = express();
 const PORT = config.PORT || 3000;
@@ -38,6 +42,7 @@ const credsPath = path.join(sessionDir, "creds.json");
 if (!fs.existsSync(sessionDir)) {
   fs.mkdirSync(sessionDir, { recursive: true });
 }
+
 
 
 // Load session from environment
