@@ -171,12 +171,13 @@ const menu = async (m, Matrix) => {
         ],
         contextInfo: {
           mentionedJid: [m.sender],
-           forwardingScore: 999,
-           isForwarded: true,
-           forwardedNewsletterMessageInfo: {
-             newsletterJid: '120363399999197102@newsletter',
-             newsletterName: "Njabulo",
-             serverMessageId: 143
+          externalAdReply: {
+          title: "Njabulo Jb",
+          body: "Message via ad !",
+          thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+           sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+           mediaType: 1,
+           showAdAttribution: true
           },
         },
       };
