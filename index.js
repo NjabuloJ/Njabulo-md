@@ -12,7 +12,8 @@ import NodeCache from "node-cache";
 import path from "path";
 import chalk from "chalk";
 import moment from "moment-timezone";
-import { DateTime } from "luxon";
+import luxon from "luxon";
+const { DateTime } = luxon;
 import config from "./config.cjs";
 import pkg from "./lib/autoreact.cjs";
 const { emojis, doReact } = pkg;
@@ -37,6 +38,7 @@ const credsPath = path.join(sessionDir, "creds.json");
 if (!fs.existsSync(sessionDir)) {
   fs.mkdirSync(sessionDir, { recursive: true });
 }
+
 
 // Load session from environment
 async function loadBase64Session() {
