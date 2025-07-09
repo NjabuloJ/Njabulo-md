@@ -7,8 +7,8 @@ import config from "../config.cjs";
 import axios from "axios";
 
 // Time logic
-const time = moment.tz("Africa/Nairobi").format("HH:mm:ss");
-const date = moment.tz("Africa/Nairobi").format("DD/MM/YYYY");
+const xtime = moment.tz("Africa/Nairobi").format("HH:mm:ss");
+const xdate = moment.tz("Africa/Nairobi").format("DD/MM/YYYY");
 const time2 = moment().tz("Africa/Nairobi").format("HH:mm:ss");
 let pushwish = "";
 
@@ -29,58 +29,58 @@ if (time2 < "05:00:00") {
 // Fancy font utility
 function toFancyFont(text, isUpperCase = false) {
   const fonts = {
-    A: "A",
-    B: "b",
-    C: "C",
-    D: "D",
-    E: "E",
-    F: "F",
-    G: "G",
-    H: "H",
-    I: "l",
-    J: "J",
-    K: "K",
-    L: "L",
-    M: "M",
-    N: "N",
-    O: "o",
-    P: "P",
-    Q: "Q",
-    R: "R",
-    S: "S",
-    T: "T",
-    U: "u",
-    V: "v",
-    W: "W",
-    X: "X",
-    Y: "Y",
-    Z: "z",
-    a: "a",
-    b: "b",
-    c: "c",
-    d: "d",
-    e: "e",
-    f: "f",
-    g: "g",
-    h: "h",
-    i: "i",
-    j: "j",
-    k: "k",
-    l: "l",
-    m: "m",
-    n: "n",
-    o: "o",
-    p: "p",
-    q: "q",
-    r: "r",
-    s: "s",
-    t: "t",
-    u: "u",
-    v: "v",
-    w: "w",
-    x: "x",
-    y: "y",
-    z: "z",
+    A: "𝘼",
+    B: "𝘽",
+    C: "𝘾",
+    D: "𝘿",
+    E: "𝙀",
+    F: "𝙁",
+    G: "𝙂",
+    H: "𝙃",
+    I: "𝙄",
+    J: "𝙅",
+    K: "𝙆",
+    L: "𝙇",
+    M: "𝙈",
+    N: "𝙉",
+    O: "𝙊",
+    P: "𝙋",
+    Q: "𝙌",
+    R: "𝙍",
+    S: "𝙎",
+    T: "𝙏",
+    U: "𝙐",
+    V: "𝙑",
+    W: "𝙒",
+    X: "𝙓",
+    Y: "𝙔",
+    Z: "𝙕",
+    a: "𝙖",
+    b: "𝙗",
+    c: "𝙘",
+    d: "𝙙",
+    e: "𝙚",
+    f: "𝙛",
+    g: "𝙜",
+    h: "𝙝",
+    i: "𝙞",
+    j: "𝙟",
+    k: "𝙠",
+    l: "𝙡",
+    m: "𝙢",
+    n: "𝙣",
+    o: "𝙤",
+    p: "𝙥",
+    q: "𝙦",
+    r: "𝙧",
+    s: "𝙨",
+    t: "𝙩",
+    u: "𝙪",
+    v: "𝙫",
+    w: "𝙬",
+    x: "𝙭",
+    y: "𝙮",
+    z: "𝙯",
   };
   const formattedText = isUpperCase ? text.toUpperCase() : text.toLowerCase();
   return formattedText
@@ -134,27 +134,29 @@ const menu = async (m, Matrix) => {
     // Handle main menu
     if (validCommands.includes(cmd)) {
       const mainMenu = `
-╭─────────────┈⊷
-│ *ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+╭─────────────━┈⊷
+│*ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
 │ ᴘʟᴜɢɪɴs ᴄᴍᴅ : ${totalCommands}
 │ ᴘʀᴇғɪx : ${prefix}
 │ ᴍᴏᴅᴇ : ${mode}
-╰─────────────┈⊷
+╰─────────────━┈⊷
 
-> ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
+${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
+
+> Pσɯҽɾҽԃ Ⴆყ Tσxιƈ-ɱԃȥ
 `;
 
       const messageOptions = {
         viewOnce: true,
         buttons: [
           {
-            buttonId: `${prefix}plugin`,
-            buttonText: { displayText: `${toFancyFont("Plugins")}` },
+            buttonId: `${prefix}download-menu`,
+            buttonText: { displayText: `📥 ${toFancyFont("Download")}` },
             type: 1,
           },
           {
           buttonId: `${prefix}ping`,
-            buttonText: { displayText: `${toFancyFont("Njabulo Jb")}` },
+            buttonText: { displayText: `📥 ${toFancyFont("Njabulo Jb")}` },
             type: 1,
           },
         ],
@@ -162,15 +164,23 @@ const menu = async (m, Matrix) => {
           mentionedJid: [m.sender],
           externalAdReply: {
             showAdAttribution: true, // Marks as an ad
-            title: "world bot",
-            body: "Ⴆყ NנɐႦυℓσ נႦ",
-            sourceUrl: "https://github.com/NjabuloJ/Njabulo-Jb",
+            title: `${toFancyFont("Toxic-MD")} Menu`,
+            body: `${pushwish} Explore Toxic-MD's features!`,
+            sourceUrl: "https://github.com/xhclintohn/Toxic-MD",
             mediaType: 1,
             renderLargerThumbnail: true,
             mediaUrl: "https://files.catbox.moe/zaqn1j.jpg",
           },
         },
       };
+
+      // Send menu with or without image
+      if (menuImage) {
+        await Matrix.sendMessage(
+          m.from,
+          { image: menuImage, caption: mainMenu, ...messageOptions },
+          { quoted: m }
+        );
       } else {
         await Matrix.sendMessage(m.from, { text: mainMenu, ...messageOptions }, { quoted: m });
       }
@@ -189,34 +199,36 @@ const menu = async (m, Matrix) => {
       let menuResponse;
 
       switch (cmd) {
-        case "plugin":
-          menuTitle = "Plugins";
+        case "download-menu":
+          menuTitle = "Download";
           menuResponse = `
-- . *Download*
-- . apk
-- . facebook
-- . mediafire
-- . pinters
-- . gitclone
-- . gdrive
-- . insta
-- . ytmp3
-- . ytmp4
-- . play
-- . song
-- . video
-- . ytmp3doc
-- . ytmp4doc
-- . tiktok
-
- *Converter*
-- . attp
-- . attp2
-- . attp3
-- . ebinary
-- . dbinary
-- . emojimix
-- . mp3
+◈━━━━━━━━━━━━━━━━◈
+│❒ Download
+│ apk
+│ facebook
+│ mediafire
+│ pinters
+│ gitclone
+│ gdrive
+│ insta
+│ ytmp3
+│ ytmp4
+│ play
+│ song
+│ video
+│ ytmp3doc
+│ ytmp4doc
+│ tiktok
+◈━━━━━━━━━━━━━━━━◈
+◈━━━━━━━━━━━━━━━━◈
+│❒ Converter
+│ ✘ attp
+│ ✘ attp2
+│ ✘ attp3
+│ ✘ ebinary
+│ ✘ dbinary
+│ ✘ emojimix
+│ ✘ mp3
 ◈━━━━━━━━━━━━━━━━◈
 ◈━━━━━━━━━━━━━━━━◈
 │❒ AI
@@ -318,7 +330,7 @@ const menu = async (m, Matrix) => {
 
 ${menuResponse}
 
-> ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
+> Pσɯҽɾҽԃ Ⴆყ Tσxιƈ-ɱԃȥ
 `;
 
       // Send sub-menu with or without image
