@@ -4,6 +4,7 @@ import fs from 'fs';
 import { pipeline } from 'stream';
 import { promisify } from 'util';
 import osCallbacks from 'os';
+import config from "../config.cjs";
 import pkg, { prepareWAMessageMedia } from 'baileys-pro';
 const { generateWAMessageFromContent, proto } = pkg;
 
