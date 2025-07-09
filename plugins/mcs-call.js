@@ -24,14 +24,14 @@ const anticallCommand = async (m, Matrix) => {
         "name": "quick_reply",
         "buttonParamsJson": JSON.stringify({
           display_text: "Enable",
-          id: `anticall on`
+          id: `.anticall on`
         })
       },
       {
         "name": "quick_reply",
         "buttonParamsJson": JSON.stringify({
           display_text: "Disable",
-          id: `anticall off`
+          id: `.anticall off`
         })
       }
     ];
