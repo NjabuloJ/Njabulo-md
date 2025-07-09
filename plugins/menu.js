@@ -149,7 +149,7 @@ const menu = async (m, Matrix) => {
         viewOnce: true,
         buttons: [
           {
-            buttonId: `${prefix}AI-menu`,
+            buttonId: `${prefix}download-menu`,
             buttonText: { displayText: `📃 ${toFancyFont("AI cmd")}` },
             type: 1,
           },
@@ -207,7 +207,7 @@ const menu = async (m, Matrix) => {
       let menuResponse;
 
       switch (cmd) {
-        case "AI-menu":
+        case "download-menu":
           menuTitle = "AI cmd";
           menuResponse = `   *【 AI】*
 - . ai
