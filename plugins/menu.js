@@ -218,6 +218,7 @@ const menu = async (m, Matrix) => {
 - . remini
 - . gemini 
 `;
+          
           break;
 
         default:
@@ -243,6 +244,7 @@ ${menuResponse}
           {
             image: menuImage,
             caption: fullResponse,
+            buttons: messageOptions,
             contextInfo: {
             mentionedJid: [m.sender],
             forwardingScore: 999,
@@ -259,6 +261,7 @@ ${menuResponse}
       } else {
         await Matrix.sendMessage(m.from, {
           text: fullResponse,
+          buttons: messageOptions,
           contextInfo: {
             mentionedJid: [m.sender],
             forwardingScore: 999,
