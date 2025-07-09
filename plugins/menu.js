@@ -133,7 +133,7 @@ const menu = async (m, Matrix) => {
 
     // Handle main menu
     if (validCommands.includes(cmd)) {
-      const mainMenu = `*╭─❖*                    𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+      const mainMenu = `*╭─❖*                               𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
 *┋ ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
 *┋ ᴘʟᴜɢɪɴs ᴄᴍᴅ : ${totalCommands}*
 *┋ ᴘʀᴇғɪx : ${prefix}*
@@ -199,43 +199,40 @@ const menu = async (m, Matrix) => {
         case "download-menu":
           menuTitle = "Commands";
           menuResponse = `
-◈━━━━━━━━━━━━━━━━◈
-│❒ Download
-│ apk
-│ facebook
-│ mediafire
-│ pinters
-│ gitclone
-│ gdrive
-│ insta
-│ ytmp3
-│ ytmp4
-│ play
-│ song
-│ video
-│ ytmp3doc
-│ ytmp4doc
-│ tiktok
-◈━━━━━━━━━━━━━━━━◈
-◈━━━━━━━━━━━━━━━━◈
-│❒ Converter
-│ ✘ attp
-│ ✘ attp2
-│ ✘ attp3
-│ ✘ ebinary
-│ ✘ dbinary
-│ ✘ emojimix
-│ ✘ mp3
-◈━━━━━━━━━━━━━━━━◈
-◈━━━━━━━━━━━━━━━━◈
-│❒ AI
-│ ✘ ai
-│ ✘ bug
-│ ✘ report
-│ ✘ gpt
-│ ✘ dall
-│ ✘ remini
-│ ✘ gemini
+   *【Download】*
+- . apk
+- . facebook
+- . mediafire
+- . pinters
+- . gitclone
+- . gdrive
+- . insta
+- . ytmp3
+- . ytmp4
+- . play
+- . song
+- . video
+- . ytmp3doc
+- . ytmp4doc
+- . tiktok
+
+   *【 Converter】*
+- . attp
+- . attp2
+- . attp3
+- . ebinary
+- . dbinary
+- . emojimix
+- . mp3
+
+   *【 AI】*
+- . ai
+- . bug
+- . report
+- . gpt
+- . dall
+- . remini
+- . gemini
 ◈━━━━━━━━━━━━━━━━◈
 ◈━━━━━━━━━━━━━━━━◈
 │❒ Tools
@@ -318,16 +315,14 @@ const menu = async (m, Matrix) => {
 
       // Format the full response
       const fullResponse = `
-╭─────────────━┈⊷
-│*ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
-│ ᴘʟᴜɢɪɴs ᴄᴍᴅ : ${totalCommands}
-│ ᴘʀᴇғɪx : [ ${prefix} ]
-│ ᴍᴏᴅᴇ : ${mode}
-╰─────────────━┈⊷
+┏──────────────⊷
+*┊ ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+*┊ ᴘʟᴜɢɪɴs ᴄᴍᴅ : ${totalCommands}*
+┗──────────────⊷
 
 ${menuResponse}
 
-> Pσɯҽɾҽԃ Ⴆყ Tσxιƈ-ɱԃȥ
+> Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
 `;
 
       // Send sub-menu with or without image
@@ -343,7 +338,7 @@ ${menuResponse}
             isForwarded: true,
              forwardedNewsletterMessageInfo: {
              newsletterJid: "120363398040175935@newsletter",
-             newsletterName: "Toxic-MD",
+             newsletterName: "Njabulo Jb",
              serverMessageId: 143,
               },
             },
