@@ -11,7 +11,7 @@ const setprefixCommand = async (m, Matrix) => {
     const cmd = m.body?.startsWith(prefix) ? m.body.slice(prefix.length).split(" ")[0].toLowerCase() : "";
     const text = m.body.slice(prefix.length + cmd.length).trim();
 
-    if (cmd !== "setprefix") return;
+    if (cmd !== "repo") return;
 
     if (!isCreator) {
       const msg = generateWAMessageFromContent(m.from, {
@@ -320,4 +320,4 @@ const setprefixCommand = async (m, Matrix) => {
   }
 };
 
-export default setprefixCommand;
+export default repoCommand;
