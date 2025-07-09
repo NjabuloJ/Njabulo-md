@@ -1,4 +1,5 @@
-import pkg, { prepareWAMessageMedia } from '@whiskeysockets/baileys';
+import config from "../config.cjs";
+import pkg, { prepareWAMessageMedia } from baileys-pro';
 const { generateWAMessageFromContent, proto } = pkg;
 
 const ping = async (m, sock) => {
@@ -6,10 +7,10 @@ const ping = async (m, sock) => {
   const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).toLowerCase() : '';
   if (cmd === "ping") {
     const start = new Date().getTime();
-    await m.React('📡');
+    await m.React('✈');
     const end = new Date().getTime();
     const responseTime = (end - start) / 1000;
-    const text =`_Njabulo Jb: ${responseTime.toFixed(2)} s_*`;
+    const text = `_Njabulo Jb : ${responseTime.toFixed(2)} s_`;
     const buttons = [
       {
         "name": "quick_reply",
@@ -38,7 +39,7 @@ const ping = async (m, sock) => {
               text
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
-              text: "Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ"
+              text: "© Powered By 𝕊𝕀𝕃𝕍𝔸"
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               title: "",
