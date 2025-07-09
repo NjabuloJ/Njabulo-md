@@ -141,9 +141,9 @@ const menu = async (m, Matrix) => {
 │ ᴍᴏᴅᴇ : ${mode}
 ╰─────────────━┈⊷
 
-${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
+*${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
 
-> Pσɯҽɾҽԃ Ⴆყ Tσxιƈ-ɱԃȥ
+> Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
 `;
 
       const messageOptions = {
@@ -336,6 +336,7 @@ ${menuResponse}
         await Matrix.sendMessage(
           m.from,
           {
+            image: menuImage,
             caption: fullResponse,
             contextInfo: {
             mentionedJid: [m.sender],
@@ -369,9 +370,9 @@ ${menuResponse}
   } catch (error) {
     console.error(`❌ Menu error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
-      text: `◈━━━━━━━━━━━━━━━━◈
-│❒ *Toxic-MD* hit a snag! Error: ${error.message || "Failed to load menu"} 😡
-◈━━━━━━━━━━━━━━━━◈`,
+      text: `•
+• *Njabulo Jb* hit a snag! Error: ${error.message || "Failed to load menu"} 😡
+•`,
     }, { quoted: m });
   }
 };
