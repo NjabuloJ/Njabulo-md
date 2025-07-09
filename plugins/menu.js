@@ -133,7 +133,7 @@ const menu = async (m, Matrix) => {
 
     // Handle main menu
     if (validCommands.includes(cmd)) {
-      const mainMenu = `*╭─❖*                               𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+      const mainMenu = `*╭─❖*
 *┋ ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
 *┋ ᴘʟᴜɢɪɴs ᴄᴍᴅ : ${totalCommands}*
 *┋ ᴘʀᴇғɪx : ${prefix}*
@@ -150,12 +150,27 @@ const menu = async (m, Matrix) => {
         buttons: [
           {
             buttonId: `${prefix}download-menu`,
-            buttonText: { displayText: `📃 ${toFancyFont("Commands")}` },
+            buttonText: { displayText: `📃 ${toFancyFont("AI")}` },
+            type: 1,
+       },
+          {
+            buttonId: `${prefix}converter-menu`,
+            buttonText: { displayText: `🔄 ${toFancyFont("owner")}` },
             type: 1,
           },
           {
-          buttonId: `${prefix}ping`,
-            buttonText: { displayText: `📃 ${toFancyFont("Njabulo Jb")}` },
+            buttonId: `${prefix}ai-menu`,
+            buttonText: { displayText: `🤖 ${toFancyFont("download")}` },
+            type: 1,
+          },
+          {
+            buttonId: `${prefix}tools-menu`,
+            buttonText: { displayText: `🛠 ${toFancyFont("seach")}` },
+            type: 1,
+          },
+          {
+            buttonId: `${prefix}group-menu`,
+            buttonText: { displayText: `👥 ${toFancyFont("Group")}` },
             type: 1,
           },
         ],
