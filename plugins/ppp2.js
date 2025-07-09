@@ -4,8 +4,8 @@ import fs from 'fs';
 import { pipeline } from 'stream';
 import { promisify } from 'util';
 import osCallbacks from 'os';
-import config from "../config.cjs";
-import { proto } from 'baileys-pro';
+import pkg, { prepareWAMessageMedia } from 'baileys-pro';
+const { generateWAMessageFromContent, proto } = pkg;
 
 const streamPipeline = promisify(pipeline);
 const tmpDir = osCallbacks.tmpdir();
@@ -16,7 +16,7 @@ const play = async (m, gss) => {
     const cmd = m.body?.startsWith(prefix) ? m.body.slice(prefix.length).split(" ")[0].toLowerCase() : "";
     const args = m.body.slice(prefix.length + cmd.length).trim().split(" ");
 
-    if (cmd === "pla") {
+    if (cmd === "play") {
       if (args.length === 0 || !args.join(" ")) {
         const buttons = [
           {
