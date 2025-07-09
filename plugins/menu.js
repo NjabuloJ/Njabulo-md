@@ -29,58 +29,58 @@ if (time2 < "05:00:00") {
 // Fancy font utility
 function toFancyFont(text, isUpperCase = false) {
   const fonts = {
-    A: "𝘼",
-    B: "𝘽",
-    C: "𝘾",
-    D: "𝘿",
-    E: "𝙀",
-    F: "𝙁",
-    G: "𝙂",
-    H: "𝙃",
-    I: "𝙄",
-    J: "𝙅",
-    K: "𝙆",
-    L: "𝙇",
-    M: "𝙈",
-    N: "𝙉",
-    O: "𝙊",
-    P: "𝙋",
-    Q: "𝙌",
-    R: "𝙍",
-    S: "𝙎",
-    T: "𝙏",
-    U: "𝙐",
-    V: "𝙑",
-    W: "𝙒",
-    X: "𝙓",
-    Y: "𝙔",
-    Z: "𝙕",
-    a: "𝙖",
-    b: "𝙗",
-    c: "𝙘",
-    d: "𝙙",
-    e: "𝙚",
-    f: "𝙛",
-    g: "𝙜",
-    h: "𝙝",
-    i: "𝙞",
-    j: "𝙟",
-    k: "𝙠",
-    l: "𝙡",
-    m: "𝙢",
-    n: "𝙣",
-    o: "𝙤",
-    p: "𝙥",
-    q: "𝙦",
-    r: "𝙧",
-    s: "𝙨",
-    t: "𝙩",
-    u: "𝙪",
-    v: "𝙫",
-    w: "𝙬",
-    x: "𝙭",
-    y: "𝙮",
-    z: "𝙯",
+    A: "A",
+    B: "B",
+    C: "C",
+    D: "D",
+    E: "E",
+    F: "F",
+    G: "G",
+    H: "H",
+    I: "I",
+    J: "J",
+    K: "K",
+    L: "L",
+    M: "M",
+    N: "N",
+    O: "O",
+    P: "P",
+    Q: "Q",
+    R: "R",
+    S: "S",
+    T: "T",
+    U: "U",
+    V: "V",
+    W: "W",
+    X: "X",
+    Y: "Y",
+    Z: "Z",
+    a: "a",
+    b: "b",
+    c: "c",
+    d: "d",
+    e: "e",
+    f: "f",
+    g: "g",
+    h: "h",
+    i: "i",
+    j: "j",
+    k: "k",
+    l: "l",
+    m: "m",
+    n: "n",
+    o: "o",
+    p: "p",
+    q: "q",
+    r: "r",
+    s: "s",
+    t: "t",
+    u: "u",
+    v: "v",
+    w: "w",
+    x: "x",
+    y: "y",
+    z: "z",
   };
   const formattedText = isUpperCase ? text.toUpperCase() : text.toLowerCase();
   return formattedText
@@ -141,7 +141,8 @@ const menu = async (m, Matrix) => {
 │ ᴍᴏᴅᴇ : ${mode}
 ╰─────────────━┈⊷
 
-*${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
+*${pushwish} @*${m.pushName}*! 
+Tap a button to select a menu category:
 
 > Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
 `;
@@ -150,8 +151,8 @@ const menu = async (m, Matrix) => {
         viewOnce: true,
         buttons: [
           {
-            buttonId: `${prefix}download-menu`,
-            buttonText: { displayText: `📥 ${toFancyFont("Download")}` },
+            buttonId: `${prefix}commands-cmd`,
+            buttonText: { displayText: `📥 ${toFancyFont("commands")}` },
             type: 1,
           },
           {
@@ -197,8 +198,8 @@ const menu = async (m, Matrix) => {
       let menuResponse;
 
       switch (cmd) {
-        case "download-menu":
-          menuTitle = "Download";
+        case "commands-cmd":
+          menuTitle = "commands";
           menuResponse = `
 ◈━━━━━━━━━━━━━━━━◈
 │❒ Download
