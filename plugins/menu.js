@@ -236,7 +236,7 @@ ${menuResponse}
 
 > Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
 `;
-      const messagenjabulo = {
+  const messageOptiones = {
         viewOnce: true,
         buttons: [
           {
@@ -245,17 +245,29 @@ ${menuResponse}
             type: 1,
           },
         ],
+        contextInfo: {
+          mentionedJid: [m.sender],
+          externalAdReply: {
+          title: "NנɐႦυℓσ נႦ",
+          body: "Message via ad !",
+          thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+           sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+           mediaType: 1,
+           showAdAttribution: true
+          },
+        },
+      };
 
-      // Send sub-menu with or without image
+      // Send menu with or without image
       if (menuImage) {
         await Matrix.sendMessage(
           m.from,
-          { image: menuImage, caption: fullResponse, ...messagenjabulo },
+          { image: menuImage, caption: mainMenu, ...messageOptiones },
           { quoted: m }
         );
       } else {
-        await Matrix.sendMessage(m.from, { text: fullResponse, ...messagenjabulo }, { quoted: m });
-      }
+        await Matrix.sendMessage(m.from, { text: mainMenu, ...messageOptiones }, { quoted: m });
+      }    
     }
   } catch (error) {
     console.error(`❌ Menu error: ${error.message}`);
