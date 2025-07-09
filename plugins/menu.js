@@ -57,7 +57,7 @@ function toFancyFont(text, isUpperCase = false) {
     Z: "Z",
     a: "a",
     b: "b",
-    c: "c",
+    c: "C",
     d: "d",
     e: "e",
     f: "f",
@@ -68,7 +68,7 @@ function toFancyFont(text, isUpperCase = false) {
     k: "k",
     l: "l",
     m: "m",
-    n: "n",
+    n: "N",
     o: "o",
     p: "p",
     q: "q",
@@ -117,7 +117,7 @@ const menu = async (m, Matrix) => {
 
     const validCommands = ["list", "help", "menu"];
     const subMenuCommands = [
-      "plugins",
+      "download-menu",
       "converter-menu",
       "ai-menu",
       "tools-menu",
@@ -134,24 +134,24 @@ const menu = async (m, Matrix) => {
     // Handle main menu
     if (validCommands.includes(cmd)) {
       const mainMenu = `
-╭─────────────━┈⊷
-│*ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
-│ ᴘʟᴜɢɪɴs ᴄᴍᴅ : ${totalCommands}
-│ ᴘʀᴇғɪx : ${prefix}
-│ ᴍᴏᴅᴇ : ${mode}
-╰─────────────━┈⊷
+┏━━━━━━⊷
+*│ ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+*│ ᴘʟᴜɢɪɴs ᴄᴍᴅ : ${totalCommands}*
+*│ ᴘʀᴇғɪx : ${prefix}*
+*│ ᴍᴏᴅᴇ : ${mode}*
+┗━━━━━━
 
 *${pushwish} @*${m.pushName}*! 
 Tap a button to select a menu category:
 
-> Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
+Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
 `;
 
       const messageOptions = {
         viewOnce: true,
         buttons: [
           {
-            buttonId: `${prefix}plugins`,
+            buttonId: `${prefix}download-menu`,
             buttonText: { displayText: `📥 ${toFancyFont("Commands")}` },
             type: 1,
           },
@@ -198,7 +198,7 @@ Tap a button to select a menu category:
       let menuResponse;
 
       switch (cmd) {
-        case "plugins":
+        case "download-menu":
           menuTitle = "Commands";
           menuResponse = `
 ◈━━━━━━━━━━━━━━━━◈
