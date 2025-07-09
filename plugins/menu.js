@@ -149,7 +149,7 @@ const menu = async (m, Matrix) => {
         viewOnce: true,
         buttons: [
           {
-            buttonId: `${prefix}download-menu`,
+            buttonId: `${prefix}AI-menu`,
             buttonText: { displayText: `📃 ${toFancyFont("AI cmd")}` },
             type: 1,
           },
@@ -172,7 +172,7 @@ const menu = async (m, Matrix) => {
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-          title: "Njabulo Jb",
+          title: "NנɐႦυℓσ נႦ",
           body: "Message via ad !",
           thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
            sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
