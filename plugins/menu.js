@@ -162,14 +162,12 @@ ${pushwish} @*${m.pushName}*! Tap a button to select a menu category:
         ],
         contextInfo: {
           mentionedJid: [m.sender],
-          externalAdReply: {
-            showAdAttribution: true, // Marks as an ad
-            title: `${toFancyFont("Toxic-MD")} Menu`,
-            body: `${pushwish} Explore Toxic-MD's features!`,
-            sourceUrl: "https://github.com/xhclintohn/Toxic-MD",
-            mediaType: 1,
-            renderLargerThumbnail: true,
-            mediaUrl: "https://files.catbox.moe/zaqn1j.jpg",
+           forwardingScore: 999,
+           isForwarded: true,
+           forwardedNewsletterMessageInfo: {
+             newsletterJid: '120363399999197102@newsletter',
+             newsletterName: "Njabulo",
+             serverMessageId: 143
           },
         },
       };
@@ -338,7 +336,6 @@ ${menuResponse}
         await Matrix.sendMessage(
           m.from,
           {
-            image: menuImage,
             caption: fullResponse,
             contextInfo: {
             mentionedJid: [m.sender],
