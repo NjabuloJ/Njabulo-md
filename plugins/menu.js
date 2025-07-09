@@ -57,7 +57,7 @@ function toFancyFont(text, isUpperCase = false) {
     Z: "Z",
     a: "a",
     b: "b",
-    c: "C",
+    c: "c",
     d: "d",
     e: "e",
     f: "f",
@@ -68,7 +68,7 @@ function toFancyFont(text, isUpperCase = false) {
     k: "k",
     l: "l",
     m: "m",
-    n: "N",
+    n: "n",
     o: "o",
     p: "p",
     q: "q",
@@ -150,27 +150,22 @@ const menu = async (m, Matrix) => {
         buttons: [
           {
             buttonId: `${prefix}download-menu`,
-            buttonText: { displayText: `📃 ${toFancyFont("AI")}` },
-            type: 1,
-       },
-          {
-            buttonId: `${prefix}converter-menu`,
-            buttonText: { displayText: `🔄 ${toFancyFont("owner")}` },
+            buttonText: { displayText: `📃 ${toFancyFont("AI cmd")}` },
             type: 1,
           },
           {
-            buttonId: `${prefix}ai-menu`,
-            buttonText: { displayText: `🤖 ${toFancyFont("download")}` },
+            buttonId: `${prefix}converter-menu`,
+            buttonText: { displayText: `📃 ${toFancyFont("owner cmd")}` },
             type: 1,
           },
           {
             buttonId: `${prefix}tools-menu`,
-            buttonText: { displayText: `🛠 ${toFancyFont("seach")}` },
+            buttonText: { displayText: `📃 ${toFancyFont("seach cmd")}` },
             type: 1,
           },
           {
             buttonId: `${prefix}group-menu`,
-            buttonText: { displayText: `👥 ${toFancyFont("Group")}` },
+            buttonText: { displayText: `📃 ${toFancyFont("Group cmd")}` },
             type: 1,
           },
         ],
@@ -211,116 +206,16 @@ const menu = async (m, Matrix) => {
       let menuResponse;
 
       switch (cmd) {
-        case "download-menu":
-          menuTitle = "Commands";
-          menuResponse = `
-   *【Download】*
-- . apk
-- . facebook
-- . mediafire
-- . pinters
-- . gitclone
-- . gdrive
-- . insta
-- . ytmp3
-- . ytmp4
-- . play
-- . song
-- . video
-- . ytmp3doc
-- . ytmp4doc
-- . tiktok
-
-   *【 Converter】*
-- . attp
-- . attp2
-- . attp3
-- . ebinary
-- . dbinary
-- . emojimix
-- . mp3
-
-   *【 AI】*
+        case "AI-menu":
+          menuTitle = "AI cmd";
+          menuResponse = `   *【 AI】*
 - . ai
 - . bug
 - . report
 - . gpt
 - . dall
 - . remini
-- . gemini
-◈━━━━━━━━━━━━━━━━◈
-◈━━━━━━━━━━━━━━━━◈
-│❒ Tools
-│ ✘ calculator
-│ ✘ tempmail
-│ ✘ checkmail
-│ ✘ trt
-│ ✘ tts
-◈━━━━━━━━━━━━━━━━◈
-◈━━━━━━━━━━━━━━━━◈
-│❒ Group
-│ ✘ linkgroup
-│ ✘ setppgc
-│ ✘ setname
-│ ✘ setdesc
-│ ✘ group
-│ ✘ gcsetting
-│ ✘ welcome
-│ ✘ add
-│ ✘ kick
-│ ✘ hidetag
-│ ✘ tagall
-│ ✘ antilink
-│ ✘ antitoxic
-│ ✘ promote
-│ ✘ demote
-│ ✘ getbio
-◈━━━━━━━━━━━━━━━━◈
-◈━━━━━━━━━━━━━━━━◈
-│❒ Search
-│ ✘ play
-│ ✘ yts
-│ ✘ imdb
-│ ✘ google
-│ ✘ gimage
-│ ✘ pinterest
-│ ✘ wallpaper
-│ ✘ wikimedia
-│ ✘ ytsearch
-│ ✘ ringtone
-│ ✘ lyrics
-◈━━━━━━━━━━━━━━━━◈
-◈━━━━━━━━━━━━━━━━◈
-│❒ Main
-│ ✘ ping
-│ ✘ alive
-│ ✘ owner
-│ ✘ menu
-│ ✘ infobot
-◈━━━━━━━━━━━━━━━━◈
-◈━━━━━━━━━━━━━━━━◈
-│❒ Owner
-│ ✘ join"
-│ ✘ leave
-│ ✘ block
-│ ✘ unblock
-│ ✘ setppbot
-│ ✘ anticall
-│ ✘ setstatus
-│ ✘ setnamebot
-│ ✘ autorecording
-│ ✘ autolike
-│ ✘ autotyping
-│ ✘ alwaysonline
-│ ✘ autoread
-│ ✘ autosview
-◈━━━━━━━━━━━━━━━━◈
-◈━━━━━━━━━━━━━━━━◈
-│Stalk
-│ truecaller
-│ instastalk
-│ githubstalk
-◈━━━━━━━━━━━━━━━━◈
+- . gemini 
 `;
           break;
 
