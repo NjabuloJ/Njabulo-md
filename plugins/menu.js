@@ -133,18 +133,16 @@ const menu = async (m, Matrix) => {
 
     // Handle main menu
     if (validCommands.includes(cmd)) {
-      const mainMenu = `
-┏━━━━━━⊷
-*│ ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
-*│ ᴘʟᴜɢɪɴs ᴄᴍᴅ : ${totalCommands}*
-*│ ᴘʀᴇғɪx : ${prefix}*
-*│ ᴍᴏᴅᴇ : ${mode}*
-┗━━━━━━
+      const mainMenu = `*╭─❖*                    𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭𑲭
+*┋ ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
+*┋ ᴘʟᴜɢɪɴs ᴄᴍᴅ : ${totalCommands}*
+*┋ ᴘʀᴇғɪx : ${prefix}*
+*┋ ᴍᴏᴅᴇ : ${mode}*
+*╰─❖*
 
 *${pushwish} @*${m.pushName}*! 
-Tap a button to select a menu category:
 
-Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
+> Tap a button to select a menu category:
 `;
 
       const messageOptions = {
@@ -152,12 +150,12 @@ Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
         buttons: [
           {
             buttonId: `${prefix}download-menu`,
-            buttonText: { displayText: `📥 ${toFancyFont("Commands")}` },
+            buttonText: { displayText: `📃 ${toFancyFont("Commands")}` },
             type: 1,
           },
           {
           buttonId: `${prefix}ping`,
-            buttonText: { displayText: `📥 ${toFancyFont("Njabulo Jb")}` },
+            buttonText: { displayText: `📃 ${toFancyFont("Njabulo Jb")}` },
             type: 1,
           },
         ],
