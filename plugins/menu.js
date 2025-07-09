@@ -241,38 +241,11 @@ ${menuResponse}
       if (menuImage) {
         await Matrix.sendMessage(
           m.from,
-          {
-            image: menuImage,
-            caption: fullResponse,
-            buttons: messageOptions,
-            contextInfo: {
-            mentionedJid: [m.sender],
-            forwardingScore: 999,
-            isForwarded: true,
-             forwardedNewsletterMessageInfo: {
-             newsletterJid: "120363398040175935@newsletter",
-             newsletterName: "Njabulo Jb",
-             serverMessageId: 143,
-              },
-            },
-          },
+          { image: menuImage, caption: fullResponse, ...messageOptions },
           { quoted: m }
         );
       } else {
-        await Matrix.sendMessage(m.from, {
-          text: fullResponse,
-          buttons: messageOptions,
-          contextInfo: {
-            mentionedJid: [m.sender],
-            forwardingScore: 999,
-            isForwarded: true,
-             forwardedNewsletterMessageInfo: {
-             newsletterJid: "120363398040175935@newsletter",
-             newsletterName: "Toxic-MD",
-             serverMessageId: 143,
-            },
-          },
-        }, { quoted: m });
+        await Matrix.sendMessage(m.from, { text: fullResponse, ...messageOptions }, { quoted: m });
       }
     }
   } catch (error) {
