@@ -21,7 +21,7 @@ const alive = async (m, Matrix) => {
       textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
     }
     await m.React(textEmoji);
-    const message = `• This it bot have program multi\n• Njabulo Jb alive - ${timeString}!\n•Tap button see more`;
+    const message = `   • .This it bot have program multi\n   • .Njabulo Jb alive - *${timeString}!*\n   • .Tap button see more`;
     const buttons = [
       {
         "name": "quick_reply",
