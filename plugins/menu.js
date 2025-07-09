@@ -236,23 +236,32 @@ ${menuResponse}
 
 > Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
 `;
+      const messagenjabulo = {
+        viewOnce: true,
+        buttons: [
+          {
+            buttonId: `${prefix}group-menu`,
+            buttonText: { displayText: `📃 ${toFancyFont("Group cmd")}` },
+            type: 1,
+          },
+        ],
 
       // Send sub-menu with or without image
       if (menuImage) {
         await Matrix.sendMessage(
           m.from,
-          { image: menuImage, caption: fullResponse, ...messageOptions },
+          { image: menuImage, caption: fullResponse, ...messagenjabulo },
           { quoted: m }
         );
       } else {
-        await Matrix.sendMessage(m.from, { text: fullResponse, ...messageOptions }, { quoted: m });
+        await Matrix.sendMessage(m.from, { text: fullResponse, ...messagenjabulo }, { quoted: m });
       }
     }
   } catch (error) {
     console.error(`❌ Menu error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
       text: `•
-• *Njabulo Jb* hit a snag! Error: ${error.message || "Failed to load menu"} 😡
+• *Njabulo Jb* hit a snag! Error: ${error.message || "Failed to load menu"} ⚠︎
 •`,
     }, { quoted: m });
   }
