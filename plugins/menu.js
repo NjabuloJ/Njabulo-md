@@ -117,7 +117,7 @@ const menu = async (m, Matrix) => {
 
     const validCommands = ["list", "help", "menu"];
     const subMenuCommands = [
-      "download-menu",
+      "plugins",
       "converter-menu",
       "ai-menu",
       "tools-menu",
@@ -151,8 +151,8 @@ Tap a button to select a menu category:
         viewOnce: true,
         buttons: [
           {
-            buttonId: `${prefix}commands-cmd`,
-            buttonText: { displayText: `📥 ${toFancyFont("commands")}` },
+            buttonId: `${prefix}plugins`,
+            buttonText: { displayText: `📥 ${toFancyFont("Commands")}` },
             type: 1,
           },
           {
@@ -198,8 +198,8 @@ Tap a button to select a menu category:
       let menuResponse;
 
       switch (cmd) {
-        case "commands-cmd":
-          menuTitle = "commands";
+        case "plugins":
+          menuTitle = "Commands";
           menuResponse = `
 ◈━━━━━━━━━━━━━━━━◈
 │❒ Download
