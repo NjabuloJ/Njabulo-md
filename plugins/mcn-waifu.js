@@ -1,4 +1,4 @@
-mport config from "../config.cjs";
+import config from "../config.cjs";
 import axios from 'axios';
 import pkg from 'baileys-pro';
 const { generateWAMessageFromContent, proto } = pkg;
