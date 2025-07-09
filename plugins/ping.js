@@ -21,19 +21,19 @@ const alive = async (m, Matrix) => {
       textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
     }
     await m.React(textEmoji);
-    const message = `◈━━━━━━━━━━━━━━━━◈ │❒ Toxic-MD alive - ${timeString}! ${reactionEmoji} ◈━━━━━━━━━━━━━━━━◈`;
+    const message = `• This it bot have program multi\n• Njabulo Jb alive - ${timeString}!\n•Tap button see more`;
     const buttons = [
       {
         "name": "quick_reply",
         "buttonParamsJson": JSON.stringify({
-          display_text: "PING",
+          display_text: "ping",
           id: `.ping`
         })
       },
       {
         "name": "quick_reply",
         "buttonParamsJson": JSON.stringify({
-          display_text: "MENU",
+          display_text: "menu",
           id: `.menu`
         })
       }
@@ -50,7 +50,7 @@ const alive = async (m, Matrix) => {
               text: message
             }),
             footer: proto.Message.InteractiveMessage.Footer.create({
-              text: "Toxic-MD Status"
+              text: "Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ"
             }),
             header: proto.Message.InteractiveMessage.Header.create({
               title: "",
@@ -69,7 +69,7 @@ const alive = async (m, Matrix) => {
   } catch (error) {
     console.error(`❌ Alive error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
-      text: `◈━━━━━━━━━━━━━━━━◈ │❒ *Toxic-MD* hit a snag! Error: ${error.message || "Failed to check status"} 😡 ◈━━━━━━━━━━━━━━━━◈`,
+      text: ` *Njabulo Jb* hit a snag! Error: ${error.message || "Failed to check status"}`,
     }, { quoted: m });
   }
 };
