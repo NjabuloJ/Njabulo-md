@@ -12,19 +12,16 @@ const anticallCommand = async (m, Matrix) => {
   if (validCommands.includes(cmd)) {
     if (!isCreator) return m.reply("* THIS IS AN OWNER COMMAND*");
 
-    if (!text) {
-      const responseMessage = `Reply with a number:\n- *${prefix + cmd} 1:* Enable AUTO STATUS VIEW\n- *${prefix + cmd} 2:* Disable AUTO STATUS SEEN`;
-      await Matrix.sendMessage(m.from, { text: responseMessage }, { quoted: m });
-    } else if (text === '1') {
+    if (text === '1') {
       config.AUTO_STATUS_SEEN = true;
-      const responseMessage = "AUTO STATUS SEEN has been enabled.";
+      const responseMessage = "Enable AUTO STATUS VIEW";
       await Matrix.sendMessage(m.from, { text: responseMessage }, { quoted: m });
     } else if (text === '2') {
       config.AUTO_STATUS_SEEN = false;
-      const responseMessage = "AUTO STATUS SEEN has been disabled.";
+      const responseMessage = "Disable AUTO STATUS SEEN";
       await Matrix.sendMessage(m.from, { text: responseMessage }, { quoted: m });
     } else {
-      const responseMessage = `Invalid input. Please reply with:\n- *${prefix + cmd} 1:* Enable AUTO STATUS VIEW\n- *${prefix + cmd} 2:* Disable AUTO STATUS SEEN`;
+      const responseMessage = `Reply with a number:\n- *${prefix + cmd} 1:* Enable AUTO STATUS VIEW\n- *${prefix + cmd} 2:* Disable AUTO STATUS SEEN`;
       await Matrix.sendMessage(m.from, { text: responseMessage }, { quoted: m });
     }
   }
