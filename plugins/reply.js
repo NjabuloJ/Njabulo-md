@@ -14,14 +14,16 @@ const anticallCommand = async (m, Matrix) => {
 
     let responseMessage;
 
-    if (text === '1') {
+    if (!text) {
+      responseMessage = `Reply with a number:\n- *1:* Enable AUTO STATUS VIEW\n- *2:* Disable AUTO STATUS SEEN`;
+    } else if (text === '1') {
       config.AUTO_STATUS_SEEN = true;
       responseMessage = "AUTO STATUS SEEN has been enabled.";
     } else if (text === '2') {
       config.AUTO_STATUS_SEEN = false;
       responseMessage = "AUTO STATUS SEEN has been disabled.";
     } else {
-      responseMessage = `Usage:\n- *${prefix + cmd} 1:* Enable AUTO STATUS VIEW\n- *${prefix + cmd} 2:* Disable AUTO STATUS SEEN`;
+      responseMessage = `Invalid input. Please reply with:\n- *1:* Enable AUTO STATUS VIEW\n- *2:* Disable AUTO STATUS SEEN`;
     }
 
     try {
