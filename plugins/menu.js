@@ -236,28 +236,6 @@ ${menuResponse}
 
 > Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
 `;
-  const messageOptiones = {
-        viewOnce: true,
-        buttons: [
-          {
-            buttonId: `${prefix}group-menu`,
-            buttonText: { displayText: `📃 ${toFancyFont("Group cmd")}` },
-            type: 1,
-          },
-        ],
-        contextInfo: {
-          mentionedJid: [m.sender],
-          externalAdReply: {
-          title: "NנɐႦυℓσ נႦ",
-          body: "Message via ad !",
-          thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-           sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
-           mediaType: 1,
-           showAdAttribution: true
-          },
-        },
-      };
-
       // Send menu with or without image
       if (menuImage) {
         await Matrix.sendMessage(
