@@ -150,22 +150,12 @@ const menu = async (m, Matrix) => {
         buttons: [
           {
             buttonId: `${prefix}download-menu`,
-            buttonText: { displayText: `📃 ${toFancyFont("AI cmd")}` },
+            buttonText: { displayText: `📃 ${toFancyFont("All Commands Cmd")}` },
             type: 1,
           },
           {
             buttonId: `${prefix}converter-menu`,
-            buttonText: { displayText: `📃 ${toFancyFont("owner cmd")}` },
-            type: 1,
-          },
-          {
-            buttonId: `${prefix}tools-menu`,
-            buttonText: { displayText: `📃 ${toFancyFont("seach cmd")}` },
-            type: 1,
-          },
-          {
-            buttonId: `${prefix}group-menu`,
-            buttonText: { displayText: `📃 ${toFancyFont("Group cmd")}` },
+            buttonText: { displayText: `📃 ${toFancyFont("Auto Join channel")}` },
             type: 1,
           },
         ],
@@ -208,18 +198,115 @@ const menu = async (m, Matrix) => {
 
       switch (cmd) {
         case "download-menu":
-          menuTitle = "AI cmd";
+          menuTitle = "All Commands Cmd";
           menuResponse = `   *【 AI】*
-- . ai
-- . bug
-- . report
-- . gpt
-- . dall
-- . remini
-- . gemini 
+Here's the reformatted list:
+
+① Download
+.①apk
+.②facebook
+.③mediafire
+.④pinters
+.⑤gitclone
+.⑥gdrive
+.⑦insta
+.⑧ytmp3
+.⑨ytmp4
+.⑩play
+.⑪song
+.⑫video
+.⑬ytmp3doc
+.⑭ytmp4doc
+.⑮tiktok
+
+② Converter
+.①attp
+.②attp2
+.③attp3
+.④ebinary
+.⑤dbinary
+.⑥emojimix
+.⑦mp3
+
+③ AI
+.①ai
+.②bug
+.③report
+.④gpt
+.⑤dall
+.⑥remini
+.⑦gemini
+
+④ Tools
+.①calculator
+.②tempmail
+.③checkmail
+.④trt
+.⑤tts
+
+⑤ Group
+.①linkgroup
+.②setppgc
+.③setname
+.④setdesc
+.⑤group
+.⑥gcsetting
+.⑦welcome
+.⑧add
+.⑨kick
+.⑩hidetag
+.⑪tagall
+.⑫antilink
+.⑬antitoxic
+.⑭promote
+.⑮demote
+.⑯getbio
+
+⑥ Search
+.①play
+.②yts
+.③imdb
+.④google
+.⑤gimage
+.⑥pinterest
+.⑦wallpaper
+.⑧wikimedia
+.⑨ytsearch
+.⑩ringtone
+.⑪lyrics
+
+⑦ Main
+.①ping
+.②alive
+.③owner
+.④menu
+.⑤infobot
+
+⑧ Owner
+.①join
+.②leave
+.③block
+.④unblock
+.⑤setppbot
+.⑥anticall
+.⑦setstatus
+.⑧setnamebot
+.⑨autorecording
+.⑩autolike
+.⑪autotyping
+.⑫alwaysonline
+.⑬autoread
+.⑭autosview
+
+⑨ Stalk
+.①truecaller
+.②instastalk
+.③githubstalk
+
+Let me know if you need any further changes!
 `;
           
-          break;
+        break;
 
         default:
           return;
@@ -227,32 +314,65 @@ const menu = async (m, Matrix) => {
 
       // Format the full response
       const fullResponse = `
-┏──────────────⊷
-*┊ ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
-*┊ ᴘʟᴜɢɪɴs ᴄᴍᴅ : ${totalCommands}*
-┗──────────────⊷
+◈━━━━━━━━━━━━━━━━◈
+│❒ ${toFancyFont("Toxic-MD")} - ${toFancyFont(menuTitle)} ⚠
+│
+│ 🤖 *${toFancyFont("Bot")}*: ${toFancyFont("Toxic-MD")}
+│ 👤 *${toFancyFont("User")}*: ${m.pushName}
+│ 🔣 *${toFancyFont("Prefix")}*: ${prefix}
+│ 📚 *${toFancyFont("Library")}*: Baileys
+◈━━━━━━━━━━━━━━━━◈
 
 ${menuResponse}
 
-> Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
+> Pσɯҽɾҽԃ Ⴆყ Tσxιƈ-ɱԃȥ
 `;
-      // Send menu with or without image
+
+      // Send sub-menu with or without image
       if (menuImage) {
         await Matrix.sendMessage(
           m.from,
-          { image: menuImage, caption: mainMenu, ...messageOptiones },
+          {
+            image: menuImage,
+            caption: fullResponse,
+            contextInfo: {
+              mentionedJid: [m.sender],
+              externalAdReply: {
+                showAdAttribution: true, // Marks as an ad
+                title: `${toFancyFont("Toxic-MD")} ${toFancyFont(menuTitle)}`,
+                body: `Explore Toxic-MD's ${menuTitle.toLowerCase()} commands!`,
+                sourceUrl: "https://github.com/xhclintohn/Toxic-MD",
+                mediaType: 1,
+                renderLargerThumbnail: true,
+                mediaUrl: "https://files.catbox.moe/zaqn1j.jpg",
+              },
+            },
+          },
           { quoted: m }
         );
       } else {
-        await Matrix.sendMessage(m.from, { text: mainMenu, ...messageOptiones }, { quoted: m });
-      }    
+        await Matrix.sendMessage(m.from, {
+          text: fullResponse,
+          contextInfo: {
+            mentionedJid: [m.sender],
+            externalAdReply: {
+              showAdAttribution: true, // Marks as an ad
+              title: `${toFancyFont("Toxic-MD")} ${toFancyFont(menuTitle)}`,
+              body: `Explore Toxic-MD's ${menuTitle.toLowerCase()} commands!`,
+              sourceUrl: "https://github.com/xhclintohn/Toxic-MD",
+              mediaType: 1,
+              renderLargerThumbnail: true,
+            },
+          },
+        }, { quoted: m });
+      }
     }
   } catch (error) {
     console.error(`❌ Menu error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
-      text: `•
-• *Njabulo Jb* hit a snag! Error: ${error.message || "Failed to load menu"} ⚠︎
-•`,
+      text: `◈━━━━━━━━━━━━━━━━◈
+│❒ *Toxic-MD* hit a snag! Error: ${error.message || "Failed to load menu"} 😡
+◈━━━━━━━━━━━━━━━━◈`,
     }, { quoted: m });
   }
 };
