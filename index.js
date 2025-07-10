@@ -170,13 +170,7 @@ async function start() {
           const firstMessage = [
             `┏──────────────⊷`,
             `┊⌛︎ *${getGreeting()}*`,
-            `┊⌛︎ Welcome to *Toxic-MD*! You're now connected.`,
-            `┊⌛︎ *Mode*: ${config.MODE || "public"}`,
-            `┊⌛︎ *Prefix*: ${prefix}`,
-            `┊⌛︎ *Time*: ${getCurrentTime()}`,
-            `┊⌛︎ *Database*: None`,
-            `┊⌛︎ *Library*: Baileys`,
-            `│┊⌛︎ *Credits*: xh_clinton`,
+            `│⌛︎ Njabulo Jb connected`,
             `┗──────────────⊷`,
           ].join("\n");
 
