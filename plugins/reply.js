@@ -12,25 +12,20 @@ const anticallCommand = async (m, Matrix) => {
   if (validCommands.includes(cmd)) {
     if (!isCreator) return m.reply("* THIS IS AN OWNER COMMAND*");
 
-    let responseMessage;
-
     if (!text) {
-      responseMessage = `Reply with a number:\n- *1:* Enable AUTO STATUS VIEW\n- *2:* Disable AUTO STATUS SEEN`;
+      const responseMessage = `Reply with a number:\n- *${prefix + cmd} 1:* Enable AUTO STATUS VIEW\n- *${prefix + cmd} 2:* Disable AUTO STATUS SEEN`;
+      await Matrix.sendMessage(m.from, { text: responseMessage }, { quoted: m });
     } else if (text === '1') {
       config.AUTO_STATUS_SEEN = true;
-      responseMessage = "AUTO STATUS SEEN has been enabled.";
+      const responseMessage = "AUTO STATUS SEEN has been enabled.";
+      await Matrix.sendMessage(m.from, { text: responseMessage }, { quoted: m });
     } else if (text === '2') {
       config.AUTO_STATUS_SEEN = false;
-      responseMessage = "AUTO STATUS SEEN has been disabled.";
-    } else {
-      responseMessage = `Invalid input. Please reply with:\n- *1:* Enable AUTO STATUS VIEW\n- *2:* Disable AUTO STATUS SEEN`;
-    }
-
-    try {
+      const responseMessage = "AUTO STATUS SEEN has been disabled.";
       await Matrix.sendMessage(m.from, { text: responseMessage }, { quoted: m });
-    } catch (error) {
-      console.error("Error processing your request:", error);
-      await Matrix.sendMessage(m.from, { text: 'Error processing your request.' }, { quoted: m });
+    } else {
+      const responseMessage = `Invalid input. Please reply with:\n- *${prefix + cmd} 1:* Enable AUTO STATUS VIEW\n- *${prefix + cmd} 2:* Disable AUTO STATUS SEEN`;
+      await Matrix.sendMessage(m.from, { text: responseMessage }, { quoted: m });
     }
   }
 };
