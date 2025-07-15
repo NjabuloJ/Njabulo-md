@@ -3,7 +3,7 @@ import {
   fetchLatestBaileysVersion,
   DisconnectReason,
   useMultiFileAuthState,
-} from "baileys-pro": "github:nstar-y/bail";
+} from "baileys-pro";
 import { Handler, Callupdate, GroupUpdate } from "./data/index.js";
 import express from "express";
 import pino from "pino";
