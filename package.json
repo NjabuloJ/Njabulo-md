@@ -12,12 +12,11 @@
   "keywords": ["Njabulo-md", "whatsapp-bot", "whatsapp md bot"],
   "author": "NjabuloJ",
   "license": "ISC",
-  "dependencies": {
-  "dependencies": {
+    "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@google/generative-ai": "^0.9.0",
     "@hapi/boom": "^10.0.1",
-    "baileys-pro": "github:nstar-y/bail",
+    "baileys-pro",
     "@xaviabot/fb-downloader": "^1.0.14",
     "acrcloud": "^1.4.0",
     "api-dylux": "^1.8.3",
@@ -68,4 +67,4 @@
     "wasitech": "npm:@distube/ytdl-core",
     "yt-search": "^2.11.0"
   }
-  }
+ }
