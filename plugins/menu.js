@@ -107,12 +107,13 @@ const menu = async (m, Matrix) => {
 
     // Handle main menu
     if (validCommands.includes(cmd)) {
-      const mainMenu = `*╭─❖*
-*┋ ʙᴏᴛ ɴᴀᴍᴇ : ɴᴊᴀʙᴜʟᴏ ᴊʙ*
-*┋ ᴘʟᴜɢɪɴs ᴄᴍᴅ : ${totalCommands}*
-*┋ ᴘʀᴇғɪx : ${prefix}*
-*┋ ᴍᴏᴅᴇ : ${mode}*
-*╰─❖*
+      const mainMenu = `
+• ${toFancyFont("aira")} *(Command Menu ⚠)*
+• *${toFancyFont("Bot")}*: ${toFancyFont("*(aira)*")}
+• *${toFancyFont("Total Commands")}*: ${totalCommands}
+• *${toFancyFont("Prefix")}*: ${prefix}
+• *${toFancyFont("Mode")}*: ${mode}
+ *${toFancyFont("Library")}*: *(Baileys)"
 
 *${pushwish} @*${m.pushName}*! 
 
