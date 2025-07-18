@@ -113,7 +113,24 @@ const menu = async (m, Matrix) => {
 • *${toFancyFont("Total Commands")}*: ${totalCommands}
 • *${toFancyFont("Prefix")}*: ${prefix}
 • *${toFancyFont("Mode")}*: ${mode}
- *${toFancyFont("Library")}*: *(Baileys)"
+• *${toFancyFont("Library")}*: *(Baileys)"
+
+ ╭──〔 *Aira* 〕
+│
+│ ➊    *ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ*
+│ ➋    *ɢʀᴏᴜᴘ ᴍᴇɴᴜ*
+│ ➌    *ғᴜɴ ᴍᴇɴᴜ*
+│ ➍    *ᴏᴡɴᴇʀ ᴍᴇɴᴜ*
+│ ➎    *ᴀɪ ᴍᴇɴᴜ*
+│ ➏    *ᴀɴɪᴍᴇ ᴍᴇɴᴜ*
+│ ➐    *ᴄᴏɴᴠᴇʀᴛ ᴍᴇɴᴜ*
+│ ➑    *ᴏᴛʜᴇʀ ᴍᴇɴᴜ*
+│ ➒    *ʀᴇᴀᴄᴛɪᴏɴ ᴍᴇɴᴜ*
+│ ➓    *ᴍᴀɪɴ ᴍᴇɴᴜ*
+│ ⓫    *ʟᴏɢᴏ ᴍᴀᴋᴇʀ*
+│ ⓬    *sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ*
+│
+╰──〔 *Aira* 〕
 
 *${pushwish} @*${m.pushName}*! 
 
