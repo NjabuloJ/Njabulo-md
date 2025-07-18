@@ -1,11 +1,11 @@
 {
-  "name": "Njabulo-md",
+  "name": "Njabulo-Jb",
   "version": "10.8.1",
   "description": "Njabulo-md multi device whatsapp bot",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "pm2 start index.js --attach",
+    "start": "pm2 start index.js --deep-monitoring --attach --name Njabulo-md",
     "stop": "pm2 stop Njabulo-md",
     "restart": "pm2 restart Njabulo-md"
   },
