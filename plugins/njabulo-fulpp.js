@@ -82,7 +82,7 @@ const setProfilePicture = async (m, Matrix) => {
           mentionedJid: [m.sender],
         },
       };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Yo, dumbass, reply to a damn image for Toxic-MD’s glow-up!")}`, ...messageOptions }, { quoted: m });
+      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Yo, dumbass, reply to a damn image for Aira’s glow-up!")}`, ...messageOptions }, { quoted: m });
     }
 
     await m.React("⏳"); // Loading reaction
@@ -109,7 +109,7 @@ const setProfilePicture = async (m, Matrix) => {
               mentionedJid: [m.sender],
             },
           };
-          return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Toxic-MD can’t grab that image, fam! Shit’s broken, try again!")}`, ...messageOptions }, { quoted: m });
+          return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Aira can’t grab that image, fam! Shit’s broken, try again!")}`, ...messageOptions }, { quoted: m });
         }
       }
     }
@@ -142,7 +142,7 @@ const setProfilePicture = async (m, Matrix) => {
         mentionedJid: [m.sender],
       },
     };
-    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Toxic-MD’s new drip is fuckin’")}*\n*${toFancyFont("Profile pic set, boss!")}`, ...messageOptions }, { quoted: m });
+    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Aira’s new drip is fuckin’")}*\n*${toFancyFont("Profile pic set, boss!")}`, ...messageOptions }, { quoted: m });
   } catch (error) {
     console.error(`❌ Fullpp error: ${error.message}`);
     await m.React("❌");
@@ -160,7 +160,7 @@ const setProfilePicture = async (m, Matrix) => {
         mentionedJid: [m.sender],
       },
     };
-    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Toxic-MD fucked up settin’ that pic, fam! Try again, you got this!")}`, ...messageOptions }, { quoted: m });
+    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo Jb fucked up settin’ that pic, fam! Try again, you got this!")}`, ...messageOptions }, { quoted: m });
   }
 };
 
