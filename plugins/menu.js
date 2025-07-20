@@ -108,12 +108,14 @@ const menu = async (m, Matrix) => {
     // Handle main menu
     if (validCommands.includes(cmd)) {
       const mainMenu = `
-• ${toFancyFont("aira")} *(Command Menu ⚠)*
-• *${toFancyFont("Bot")}*: ${toFancyFont("*(aira)*")}
-• *${toFancyFont("Total Commands")}*: ${totalCommands}
-• *${toFancyFont("Prefix")}*: ${prefix}
-• *${toFancyFont("Mode")}*: ${mode}
-• *${toFancyFont("Library")}*: *(Baileys)"
+①• ${toFancyFont("aira")} *(Command Menu ⚠)*
+②• ${toFancyFont("Bot")}*: ${toFancyFont("*(aira)*")}
+③• ${toFancyFont("Total Commands")}*: ${totalCommands}
+④• ${toFancyFont("Date")}: ${xdate}
+⑤• ${toFancyFont("Time)}: ${xtime} *(EAT)*
+⑥• ${toFancyFont("Prefix")}: *[ ${prefix} ]*
+⑦• ${toFancyFont("Mode")}: ${mode}
+⑧• ${toFancyFont("Library")}: *(Baileys)*
 
  ╭──〔 *Aira* 〕
 │
@@ -154,8 +156,8 @@ const menu = async (m, Matrix) => {
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-          title: "NנɐႦυℓσ נႦ",
-          body: "Message via ad !",
+          title: "Aira",
+          body: "commands",
           thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
            sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
            mediaType: 1,
