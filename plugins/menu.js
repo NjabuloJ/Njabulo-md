@@ -316,12 +316,11 @@ ${menuResponse}
 `;
 
        if (menuImage) {
-        await Matrix.sendMessage(
-          m.from,
-            caption: fullResponse,
+        await Matrix.sendMessage(m.from,{
+            text: fullResponse,
             contextInfo: {
-              isForwarded: true,
-              forwardedNewsletterMessageInfo: {
+             isForwarded: true,
+             forwardedNewsletterMessageInfo: {
              serverMessageId: 143,          
               },
             },
