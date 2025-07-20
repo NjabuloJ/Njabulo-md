@@ -192,111 +192,106 @@ const menu = async (m, Matrix) => {
       switch (cmd) {
         case "download-menu":
           menuTitle = "All Commands Cmd";
-          menuResponse = `   *【 AI】*
-Here's the reformatted list:
+          menuResponse = `*【Aira download】*
+${toFancyFont(".①apk")}
+${toFancyFont(".②facebook")}
+${toFancyFont(".③mediafire")}
+${toFancyFont(".④pinterest")}
+${toFancyFont(".⑤gitclone")}
+${toFancyFont(".⑥gdrive")}
+${toFancyFont(".⑦insta")}
+${toFancyFont(".⑧ytmp3")}
+${toFancyFont(".⑨ytmp4")}
+${toFancyFont(".⑩play")}
+${toFancyFont(".⑪song")}
+${toFancyFont(".⑫video")}
+${toFancyFont(".⑬ytmp3doc")}
+${toFancyFont(".⑭ytmp4doc")}
+${toFancyFont(".⑮tiktok")}
 
-① Download
-.①apk
-.②facebook
-.③mediafire
-.④pinters
-.⑤gitclone
-.⑥gdrive
-.⑦insta
-.⑧ytmp3
-.⑨ytmp4
-.⑩play
-.⑪song
-.⑫video
-.⑬ytmp3doc
-.⑭ytmp4doc
-.⑮tiktok
+${toFancyFont("② *【Converter】*")}
+${toFancyFont(".①attp")}
+${toFancyFont(".②attp2")}
+${toFancyFont(".③attp3")}
+${toFancyFont(".④ebinary")}
+${toFancyFont(".⑤dbinary")}
+${toFancyFont(".⑥emojimix")}
+${toFancyFont(".⑦mp3")}
 
-② Converter
-.①attp
-.②attp2
-.③attp3
-.④ebinary
-.⑤dbinary
-.⑥emojimix
-.⑦mp3
+${toFancyFont("③ *【AI】*")}
+${toFancyFont(".①ai")}
+${toFancyFont(".②bug")}
+${toFancyFont(".③report")}
+${toFancyFont(".④gpt")}
+${toFancyFont(".⑤dall")}
+${toFancyFont(".⑥remini")}
+${toFancyFont(".⑦gemini")}
 
-③ AI
-.①ai
-.②bug
-.③report
-.④gpt
-.⑤dall
-.⑥remini
-.⑦gemini
+${toFancyFont("④ *【Tools】*")}
+${toFancyFont(".①calculator")}
+${toFancyFont(".②tempmail")}
+${toFancyFont(".③checkmail")}
+${toFancyFont(".④trt")}
+${toFancyFont(".⑤tts")}
 
-④ Tools
-.①calculator
-.②tempmail
-.③checkmail
-.④trt
-.⑤tts
+${toFancyFont("⑤ *【Group】*")}
+${toFancyFont(".①linkgroup")}
+${toFancyFont(".②setppgc")}
+${toFancyFont(".③setname")}
+${toFancyFont(".④setdesc")}
+${toFancyFont(".⑤group")}
+${toFancyFont(".⑥gcsetting")}
+${toFancyFont(".⑦welcome")}
+${toFancyFont(".⑧add")}
+${toFancyFont(".⑨kick")}
+${toFancyFont(".⑩hidetag")}
+${toFancyFont(".⑪tagall")}
+${toFancyFont(".⑫antilink")}
+${toFancyFont(".⑬antitoxic")}
+${toFancyFont(".⑭promote")}
+${toFancyFont(".⑮demote")}
+${toFancyFont(".⑯getbio")}
 
-⑤ Group
-.①linkgroup
-.②setppgc
-.③setname
-.④setdesc
-.⑤group
-.⑥gcsetting
-.⑦welcome
-.⑧add
-.⑨kick
-.⑩hidetag
-.⑪tagall
-.⑫antilink
-.⑬antitoxic
-.⑭promote
-.⑮demote
-.⑯getbio
+${toFancyFont("⑥ *【Search】*")}
+${toFancyFont(".①play")}
+${toFancyFont(".②yts")}
+${toFancyFont(".③imdb")}
+${toFancyFont(".④google")}
+${toFancyFont(".⑤gimage")}
+${toFancyFont(".⑥pinterest")}
+${toFancyFont(".⑦wallpaper")}
+${toFancyFont(".⑧wikimedia")}
+${toFancyFont(".⑨ytsearch")}
+${toFancyFont(".⑩ringtone")}
+${toFancyFont(".⑪lyrics")}
 
-⑥ Search
-.①play
-.②yts
-.③imdb
-.④google
-.⑤gimage
-.⑥pinterest
-.⑦wallpaper
-.⑧wikimedia
-.⑨ytsearch
-.⑩ringtone
-.⑪lyrics
+${toFancyFont("⑦ *【Main】*")}
+${toFancyFont(".①ping")}
+${toFancyFont(".②alive")}
+${toFancyFont(".③owner")}
+${toFancyFont(".④menu")}
+${toFancyFont(".⑤infobot")}
 
-⑦ Main
-.①ping
-.②alive
-.③owner
-.④menu
-.⑤infobot
+${toFancyFont("⑧ *【Owner】*")}
+${toFancyFont(".①join")}
+${toFancyFont(".②leave")}
+${toFancyFont(".③block")}
+${toFancyFont(".④unblock")}
+${toFancyFont(".⑤setppbot")}
+${toFancyFont(".⑥anticall")}
+${toFancyFont(".⑦setstatus")}
+${toFancyFont(".⑧setnamebot")}
+${toFancyFont(".⑨autorecording")}
+${toFancyFont(".⑩autolike")}
+${toFancyFont(".⑪autotyping")}
+${toFancyFont(".⑫alwaysonline")}
+${toFancyFont(".⑬autoread")}
+${toFancyFont(".⑭autosview")}
 
-⑧ Owner
-.①join
-.②leave
-.③block
-.④unblock
-.⑤setppbot
-.⑥anticall
-.⑦setstatus
-.⑧setnamebot
-.⑨autorecording
-.⑩autolike
-.⑪autotyping
-.⑫alwaysonline
-.⑬autoread
-.⑭autosview
-
-⑨ Stalk
-.①truecaller
-.②instastalk
-.③githubstalk
-
-Let me know if you need any further changes!
+${toFancyFont("*【⑨ Stalk】*")}
+${toFancyFont(".①truecaller")}
+${toFancyFont(".②instastalk")}
+${toFancyFont(".③githubstalk")}
 `;
           
         break;
