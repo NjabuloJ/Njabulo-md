@@ -25,7 +25,7 @@ const alive = async (m, Matrix) => {
     const prefix = config.Prefix || config.PREFIX || ".";
     const cmd = m.body?.startsWith(prefix) ? m.body.slice(prefix.length).trim().split(" ")[0].toLowerCase() : "";
 
-    if (!["ali", "upe", "runt"].includes(cmd)) return;
+    if (!["ale", "upime", "rtime"].includes(cmd)) return;
 
     const reactionEmojis = ["🔥", "💖", "🚀", "💨", "🎯", "🎉", "🌟", "💥", "🕐", "🔹"];
     const textEmojis = ["💎", "🏆", "⚡", "🎖", "🎶", "🌠", "🌀", "🔱", "🚀", "✩"];
@@ -39,54 +39,50 @@ const alive = async (m, Matrix) => {
     await m.React(textEmoji);
 
     const message = ` • .This it bot have program multi\n • .Njabulo Jb alive - *${timeString}!*\n • .Tap button see more`;
-    const buttons = [
-      {
-        "name": "quick_reply",
-        "buttonParamsJson": JSON.stringify({
-          display_text: toFancyFont("Ping"),
-          id: `.ping`
-        })
-      },
-      {
-        "name": "quick_reply",
-        "buttonParamsJson": JSON.stringify({
-          display_text: toFancyFont("Menu"),
-          id: `.menu`
-        })
-      }
-    ];
-
-    const msg = generateWAMessageFromContent(m.from, {
-      viewOnceMessage: {
-        message: {
-          messageContextInfo: {
-            deviceListMetadata: {},
-            deviceListMetadataVersion: 2
-          },
-          interactiveMessage: proto.Message.InteractiveMessage.create({
-            body: proto.Message.InteractiveMessage.Body.create({
-              text: message
-            }),
-            footer: proto.Message.InteractiveMessage.Footer.create({
-              text: toFancyFont("Powered by Njabulo Jb")
-            }),
-            header: proto.Message.InteractiveMessage.Header.create({
-              title: "",
-              gifPlayback: true,
-              subtitle: "",
-              hasMediaAttachment: false
-            }),
-            nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-              buttons
-            }),
-          }),
+    const messageOptions = {
+      buttons: [
+        {
+          buttonId: `.ping`,
+          buttonText: { displayText: `📊 ${toFancyFont("Ping")}` },
+          type: 1,
+        },
+        {
+          buttonId: `.menu`,
+          buttonText: { displayText: `📋 ${toFancyFont("Menu")}` },
+          type: 1,
+        },
+      ],
+      contextInfo: {
+        mentionedJid: [m.sender],
+        externalAdReply: {
+          showAdAttribution: true,
+          title: toFancyFont("Njabulo Jb"),
+          body: toFancyFont("Alive"),
+          sourceUrl: "https://github.com/your-repo",                      
+          mediaType: 1,
+          renderLargerThumbnail: true,
         },
       },
-    }, {});
+    };
 
-    Matrix.relayMessage(msg.key.remoteJid, msg.message, {
-      messageId: msg.key.id
-    });
+    await Matrix.sendMessage(m.from, {
+      text: message,
+      ...messageOptions,
+    }, { quoted: m });
+  } catch (error) {
+    console.error(`❌ Alive error: ${error.message}`);
+    await Matrix.sendMessage(m.from, {
+      text: ` *Njabulo Jb* hit a snag! Error: ${error.message || "//github.com/your-repo",
+          mediaType: 1,
+          renderLargerThumbnail: true,
+        },
+      },
+    };
+
+    await Matrix.sendMessage(m.from, {
+      text: message,
+      ...messageOptions,
+    }, { quoted: m });
   } catch (error) {
     console.error(`❌ Alive error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
