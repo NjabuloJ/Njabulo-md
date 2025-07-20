@@ -182,15 +182,6 @@ const menu = async (m, Matrix) => {
         { audio: { url: "https://files.catbox.moe/f4zaz4.mp3" }, mimetype: "audio/mp4", ptt: true },
         { quoted: m }
       }
-    }
-  } catch (error) {
-    console.error(`❌ Menu error: ${error.message}`);
-    await Matrix.sendMessage(m.from, {
-      text: `◈━━━━━━━━━━━━━━━━◈
-│❒ *Toxic-MD* hit a snag! Error: ${error.message || "Failed to load menu"} 😡
-◈━━━━━━━━━━━━━━━━◈`,
-    }, { quoted: m });
-  }
-};
-
+    };
+  
 export default menu;
