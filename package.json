@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name Njabulo-md",
-    "stop": "pm2 stop Njabulo-md",
-    "restart": "pm2 restart Njabulo-md"
+    "pm2-start": "pm2 start index.js --attach",
+    "stop": "pm2 stop index.js --attach",
+    "restart": "pm2 restart index.js --attach"
   },
   "keywords": ["Njabulo-md", "whatsapp-bot", "whatsapp md bot"],
   "author": "xhclinton",
