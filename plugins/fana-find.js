@@ -52,15 +52,15 @@ const shazam = async (m, Matrix) => {
     const cmd = m.body?.startsWith(prefix) ? m.body.slice(prefix.length).split(" ")[0].toLowerCase() : "";
     const text = m.body.slice(prefix.length + cmd.length).trim();
 
-    const validCommands = ["shazam", "find", "whatmusic"];
+    const validCommands = ["namesong", "find", "whatmusic"];
     if (!validCommands.includes(cmd)) return;
 
     const quoted = m.quoted || {};
     if (!quoted || (quoted.mtype !== "audioMessage" && quoted.mtype !== "videoMessage")) {
       const buttons = [
         {
-          buttonId: `https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u`,
-          buttonText: { displayText: `${toFancyFont("update")}` },
+          buttonId: `.help`,
+          buttonText: { displayText: `${toFancyFont("help")}` },
           type: 1,
         },
       ];
@@ -71,7 +71,7 @@ const shazam = async (m, Matrix) => {
           mentionedJid: [m.sender],
         },
       };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Yo, Toxic-MD needs a quoted audio or video to ID, fam!")}`, ...messageOptions }, { quoted: m });
+      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Yo, Aira needs a quoted audio or video to ID, fam!")}`, ...messageOptions }, { quoted: m });
     }
 
     try {
@@ -103,7 +103,7 @@ const shazam = async (m, Matrix) => {
       }
 
       const { title, artists, album, genres, release_date } = res.metadata.music[0];
-      const txt = `*${toFancyFont("Toxic-MD FOUND IT!")}\n\n*${toFancyFont("Title")}:* ${title}\n*${toFancyFont("Artist")}:* ${artists ? artists.map((v) => v.name).join(", ") : "Unknown"}\n*${toFancyFont("Album")}:* ${album ? album.name : "Unknown"}\n*${toFancyFont("Genre")}:* ${genres ? genres.map((v) => v.name).join(", ") : "Unknown"}\n*${toFancyFont("Release")}:* ${release_date || "Unknown"}`;
+      const txt = `*${toFancyFont("Njabulo Jb IT!")}\n\n*${toFancyFont("Title")}:* ${title}\n*${toFancyFont("Artist")}:* ${artists ? artists.map((v) => v.name).join(", ") : "Unknown"}\n*${toFancyFont("Album")}:* ${album ? album.name : "Unknown"}\n*${toFancyFont("Genre")}:* ${genres ? genres.map((v) => v.name).join(", ") : "Unknown"}\n*${toFancyFont("Release")}:* ${release_date || "Unknown"}`;
 
       fs.unlinkSync(filePath);
       await Matrix.sendMessage(m.from, { text: txt, ...messageOptions }, { quoted: m });
@@ -124,7 +124,7 @@ const shazam = async (m, Matrix) => {
           mentionedJid: [m.sender],
         },
       };
-      await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Toxic-MD couldn’t ID that track, fam! Try another!")}`, ...messageOptions }, { quoted: m });
+      await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Aira couldn’t ID that track, fam! Try another!")}`, ...messageOptions }, { quoted: m });
     }
   } catch (error) {
     console.error(`❌ Shazam error: ${error.message}`);
@@ -142,7 +142,7 @@ const shazam = async (m, Matrix) => {
         mentionedJid: [m.sender],
       },
     };
-    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Toxic-MD hit a glitch, fam! Retry that jam!")}`, ...messageOptions }, { quoted: m });
+    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo jb hit a glitch, fam! Retry that jam!")}`, ...messageOptions }, { quoted: m });
   }
 };
 
