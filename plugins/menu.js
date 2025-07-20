@@ -315,12 +315,7 @@ ${menuResponse}
 > ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
 `;
 
-      // Send sub-menu with or without image
-      if (menuImage) {
-        await Matrix.sendMessage(
-          m.from,
-          {
-            image: menuImage,
+        await Matrix.sendMessage(m.from,{
             caption: fullResponse,
             contextInfo: {
               isForwarded: true,
