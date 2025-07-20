@@ -111,7 +111,7 @@ const facebook = async (m, Matrix) => {
     }
 
     const quality = hd_video ? "HD" : "SD";
-    const caption = `*${toFancyFont("Toxic-MD Facebook Video")}*\n*${toFancyFont("Title")}:* ${title || "No title"}\n*${toFancyFont("Quality")}:* ${quality}`;
+    const caption = `*${toFancyFont("Aira Facebook Video")}*\n*${toFancyFont("Title")}:* ${title || "No title"}\n*${toFancyFont("Quality")}:* ${quality}`;
 
     await Matrix.sendMessage(m.from, {
       video: { url: videoUrl },
@@ -137,7 +137,7 @@ const facebook = async (m, Matrix) => {
         mentionedJid: [m.sender],
       },
     };
-    Matrix.sendMessage(m.from, { text: `*${toFancyFont("Toxic-MD fucked up grabbin’ that video, fam! Try again, you got this!")}`, ...messageOptions }, { quoted: m });
+    Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo Jb fucked up grabbin’ that video, fam! Try again, you got this!")}`, ...messageOptions }, { quoted: m });
   }
 };
 
