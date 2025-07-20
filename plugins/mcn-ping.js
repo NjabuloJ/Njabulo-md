@@ -1,63 +1,79 @@
 import config from "../config.cjs";
-import pkg, { prepareWAMessageMedia } from baileys-pro';
+import pkg, { prepareWAMessageMedia } from "baileys-pro";
 const { generateWAMessageFromContent, proto } = pkg;
 
-const ping = async (m, sock) => {
-  const prefix = /^[\\/!#.]/gi.test(m.body) ? m.body.match(/^[\\/!#.]/gi)[0] : '/';
-  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).toLowerCase() : '';
+function toFancyFont(text, isUpperCase = false) {
+  const fonts = {
+    a: "ᴀ",
+    b: "ʙ",
+    c: "ᴄ",
+    d: "ᴅ",
+    e: "ᴇ",
+    f: "ғ",
+    g: "ɢ",
+    h: "ʜ",
+    i: "ɪ",
+    j: "ᴊ",
+    k: "ᴋ",
+    l: "ʟ",
+    m: "ᴍ",
+    n: "ɴ",
+    o: "ᴏ",
+    p: "ᴘ",
+    q: "ǫ",
+    r: "ʀ",
+    s: "s",
+    t: "ᴛ",
+    u: "ᴜ",
+    v: "ᴠ",
+    w: "ᴡ",
+    x: "x",
+    y: "ʏ",
+    z: "ᴢ",
+  };
+  const formattedText = isUpperCase ? text.toUpperCase() : text.toLowerCase();
+  return formattedText
+    .split("")
+    .map((char) => fonts[char] || char)
+    .join("");
+}
+
+const ping = async (m, Matrix) => {
+  const prefix = config.PREFIX || ".";
+  const cmd = m.body.startsWith(prefix)
+    ? m.body.slice(prefix.length).trim().split(" ")[0].toLowerCase()
+    : "";
   if (cmd === "ping") {
     const start = new Date().getTime();
-    await m.React('✈');
+    await m.React("✈");
     const end = new Date().getTime();
     const responseTime = (end - start) / 1000;
-    const text = `_Njabulo Jb : ${responseTime.toFixed(2)} s_`;
+    const text = `*${toFancyFont("Njabulo Jb")}* : ${responseTime.toFixed(2)} s`;
     const buttons = [
       {
-        "name": "quick_reply",
-        "buttonParamsJson": JSON.stringify({
-          display_text: "alive",
-          id: `.alive`
-        })
+        buttonId: `.alive`,
+        buttonText: { displayText: `📡${toFancyFont("Alive")}` },
+        type: 1,
       },
       {
-        "name": "quick_reply",
-        "buttonParamsJson": JSON.stringify({
-          display_text: "menu",
-          id: `.menu`
-        })
-      }
-    ];
-    const msg = generateWAMessageFromContent(m.from, {
-      viewOnceMessage: {
-        message: {
-          messageContextInfo: {
-            deviceListMetadata: {},
-            deviceListMetadataVersion: 2
-          },
-          interactiveMessage: proto.Message.InteractiveMessage.create({
-            body: proto.Message.InteractiveMessage.Body.create({
-              text
-            }),
-            footer: proto.Message.InteractiveMessage.Footer.create({
-              text: "© Powered By 𝕊𝕀𝕃𝕍𝔸"
-            }),
-            header: proto.Message.InteractiveMessage.Header.create({
-              title: "",
-              gifPlayback: true,
-              subtitle: "",
-              hasMediaAttachment: false
-            }),
-            nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.create({
-              buttons
-            }),
-          }),
-        },
+        buttonId: `.menu`,
+        buttonText: { displayText: `🧾${toFancyFont("Menu")}` },
+        type: 1,
       },
-    }, {});
-    sock.relayMessage(msg.key.remoteJid, msg.message, {
-      messageId: msg.key.id
-    });
+    ];
+    const messageOptions = {
+      viewOnce: true,
+      buttons,
+      contextInfo: {
+        mentionedJid: [m.sender],
+      },
+    };
+    await Matrix.sendMessage(
+      m.from,
+      { text, ...messageOptions },
+      { quoted: m }
+    );
   }
-}
+};
 
 export default ping;
