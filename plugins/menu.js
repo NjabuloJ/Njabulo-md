@@ -112,7 +112,7 @@ const menu = async (m, Matrix) => {
 ②• ${toFancyFont("Bot")}*: ${toFancyFont("*(aira)*")}
 ③• ${toFancyFont("Total Commands")}*: ${totalCommands}
 ④• ${toFancyFont("Date")}: ${xdate}
-⑤• ${toFancyFont("Time)}: ${xtime} *(EAT)*
+⑤• ${toFancyFont("Time")}: ${xtime} 
 ⑥• ${toFancyFont("Prefix")}: *[ ${prefix} ]*
 ⑦• ${toFancyFont("Mode")}: ${mode}
 ⑧• ${toFancyFont("Library")}: *(Baileys)*
