@@ -142,13 +142,13 @@ const menu = async (m, Matrix) => {
         viewOnce: true,
         buttons: [
           {
-            buttonId: `${prefix}download-menu`,
-            buttonText: { displayText: `📃 ${toFancyFont("All Commands Cmd")}` },
+            buttonId: `${prefix}alive`,
+            buttonText: { displayText: `📃 ${toFancyFont("alive")}` },
             type: 1,
           },
           {
-            buttonId: `${prefix}converter-menu`,
-            buttonText: { displayText: `📃 ${toFancyFont("Auto Join channel")}` },
+            buttonId: `${prefix}ping`,
+            buttonText: { displayText: `📃 ${toFancyFont("ping")}` },
             type: 1,
           },
         ],
