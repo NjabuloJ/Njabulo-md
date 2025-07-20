@@ -174,14 +174,16 @@ const menu = async (m, Matrix) => {
         );
       } else {
         await Matrix.sendMessage(m.from, { text: mainMenu, ...messageOptions }, { quoted: m });
-      }
+       }
+    }
+  } catch (error) {
+    console.error(`❌ Menu error: ${error.message}`);
+    await Matrix.sendMessage(m.from, {
+      text: `◈━━━━━━━━━━━━━━━━◈
+│❒ *Toxic-MD* hit a snag! Error: ${error.message || "Failed to load menu"} 😡
+◈━━━━━━━━━━━━━━━━◈`,
+    }, { quoted: m });
+  }
+};
 
-      // Send audio as a voice note
-      await Matrix.sendMessage(
-        m.from,
-        { audio: { url: "https://files.catbox.moe/f4zaz4.mp3" }, mimetype: "audio/mp4", ptt: true },
-        { quoted: m }
-      }
-    };
-  
 export default menu;
