@@ -323,15 +323,9 @@ ${menuResponse}
             image: menuImage,
             caption: fullResponse,
             contextInfo: {
-              mentionedJid: [m.sender],
-              externalAdReply: {
-                showAdAttribution: true, // Marks as an ad
-                title: `${toFancyFont("Aira")} ${toFancyFont(menuTitle)}`,
-                body: `Explore Njabulo Jb's ${menuTitle.toLowerCase()} commands!`,
-                sourceUrl: "https://github.com/NjabuloJ/Njabulo-Jb",
-                mediaType: 1,
-                renderLargerThumbnail: true,
-                mediaUrl: "https://files.catbox.moe/zaqn1j.jpg",
+              isForwarded: true,
+              forwardedNewsletterMessageInfo: {
+             serverMessageId: 143,          
               },
             },
           },
@@ -341,14 +335,9 @@ ${menuResponse}
         await Matrix.sendMessage(m.from, {
           text: fullResponse,
           contextInfo: {
-            mentionedJid: [m.sender],
-            externalAdReply: {
-              showAdAttribution: true, // Marks as an ad
-              title: `${toFancyFont("Aira")} ${toFancyFont(menuTitle)}`,
-              body: `Explore Aira's ${menuTitle.toLowerCase()} commands!`,
-              sourceUrl: "https://github.com/NjabuloJ/Njabulo-Jb",
-              mediaType: 1,
-              renderLargerThumbnail: true,
+            isForwarded: true,
+            forwardedNewsletterMessageInfo: {
+            serverMessageId: 143,
             },
           },
         }, { quoted: m });
