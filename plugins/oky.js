@@ -72,20 +72,6 @@ const alive = async (m, Matrix) => {
   } catch (error) {
     console.error(`❌ Alive error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
-      text: ` *Njabulo Jb* hit a snag! Error: ${error.message || "//github.com/your-repo",
-          mediaType: 1,
-          renderLargerThumbnail: true,
-        },
-      },
-    };
-
-    await Matrix.sendMessage(m.from, {
-      text: message,
-      ...messageOptions,
-    }, { quoted: m });
-  } catch (error) {
-    console.error(`❌ Alive error: ${error.message}`);
-    await Matrix.sendMessage(m.from, {
       text: ` *Njabulo Jb* hit a snag! Error: ${error.message || "Failed to check status"}`,
     }, {
       quoted: m
