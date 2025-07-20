@@ -48,7 +48,7 @@ const ping = async (m, Matrix) => {
     await m.React("✈");
     const end = new Date().getTime();
     const responseTime = (end - start) / 1000;
-    const text = `*${toFancyFont("Njabulo Jb")}* : ${responseTime.toFixed(2)} s`;
+    const text = `*${toFancyFont("Aira")}* : ${responseTime.toFixed(2)} s`;
     const buttons = [
       {
         buttonId: `.alive`,
