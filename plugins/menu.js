@@ -108,14 +108,13 @@ const menu = async (m, Matrix) => {
     // Handle main menu
     if (validCommands.includes(cmd)) {
       const mainMenu = `
-①• ${toFancyFont("aira")} *(Command Menu ⚠)*
-②• ${toFancyFont("Bot")}*: ${toFancyFont("*(aira)*")}
-③• ${toFancyFont("Total Commands")}*: ${totalCommands}
-④• ${toFancyFont("Date")}: ${xdate}
-⑤• ${toFancyFont("Time")}: ${xtime} 
-⑥• ${toFancyFont("Prefix")}: *[ ${prefix} ]*
-⑦• ${toFancyFont("Mode")}: ${mode}
-⑧• ${toFancyFont("Library")}: *(Baileys)*
+*①• ${toFancyFont("aira")} *(Command Menu ⚠)*
+*②• ${toFancyFont("Bot")}*: ${toFancyFont("*(aira)*")}
+*④• ${toFancyFont("Date")}*: ${xdate}
+*⑤• ${toFancyFont("Time")}*: ${xtime} 
+*⑥• ${toFancyFont("Prefix")}: [ ${prefix} ]*
+*⑦• ${toFancyFont("Mode")}*: ${mode}
+*⑧• ${toFancyFont("Library")}: (Baileys)*
 
  ╭──〔 *Aira* 〕
 │
@@ -308,18 +307,17 @@ Let me know if you need any further changes!
 
       // Format the full response
       const fullResponse = `
-◈━━━━━━━━━━━━━━━━◈
-│❒ ${toFancyFont("Toxic-MD")} - ${toFancyFont(menuTitle)} ⚠
-│
-│ 🤖 *${toFancyFont("Bot")}*: ${toFancyFont("Toxic-MD")}
-│ 👤 *${toFancyFont("User")}*: ${m.pushName}
-│ 🔣 *${toFancyFont("Prefix")}*: ${prefix}
-│ 📚 *${toFancyFont("Library")}*: Baileys
-◈━━━━━━━━━━━━━━━━◈
+*①• ${toFancyFont("aira")} *(Command Menu ⚠)*
+*②• ${toFancyFont("Bot")}*: ${toFancyFont("*(aira)*")}
+*④• ${toFancyFont("Date")}*: ${xdate}
+*⑤• ${toFancyFont("Time")}*: ${xtime} 
+*⑥• ${toFancyFont("Prefix")}: [ ${prefix} ]*
+*⑦• ${toFancyFont("Mode")}*: ${mode}
+*⑧• ${toFancyFont("Library")}: (Baileys)*
 
 ${menuResponse}
 
-> Pσɯҽɾҽԃ Ⴆყ Tσxιƈ-ɱԃȥ
+> ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
 `;
 
       // Send sub-menu with or without image
@@ -333,9 +331,9 @@ ${menuResponse}
               mentionedJid: [m.sender],
               externalAdReply: {
                 showAdAttribution: true, // Marks as an ad
-                title: `${toFancyFont("Toxic-MD")} ${toFancyFont(menuTitle)}`,
-                body: `Explore Toxic-MD's ${menuTitle.toLowerCase()} commands!`,
-                sourceUrl: "https://github.com/xhclintohn/Toxic-MD",
+                title: `${toFancyFont("Aira")} ${toFancyFont(menuTitle)}`,
+                body: `Explore Njabulo Jb's ${menuTitle.toLowerCase()} commands!`,
+                sourceUrl: "https://github.com/NjabuloJ/Njabulo-Jb",
                 mediaType: 1,
                 renderLargerThumbnail: true,
                 mediaUrl: "https://files.catbox.moe/zaqn1j.jpg",
@@ -351,9 +349,9 @@ ${menuResponse}
             mentionedJid: [m.sender],
             externalAdReply: {
               showAdAttribution: true, // Marks as an ad
-              title: `${toFancyFont("Toxic-MD")} ${toFancyFont(menuTitle)}`,
-              body: `Explore Toxic-MD's ${menuTitle.toLowerCase()} commands!`,
-              sourceUrl: "https://github.com/xhclintohn/Toxic-MD",
+              title: `${toFancyFont("Aira")} ${toFancyFont(menuTitle)}`,
+              body: `Explore Aira's ${menuTitle.toLowerCase()} commands!`,
+              sourceUrl: "https://github.com/NjabuloJ/Njabulo-Jb",
               mediaType: 1,
               renderLargerThumbnail: true,
             },
