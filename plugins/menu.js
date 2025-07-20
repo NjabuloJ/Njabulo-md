@@ -108,7 +108,7 @@ const menu = async (m, Matrix) => {
     // Handle main menu
     if (validCommands.includes(cmd)) {
       const mainMenu = `
-*①• ${toFancyFont("aira")} *(Command Menu ⚠)*
+*①• ${toFancyFont("aira")} (Command Menu ⚠)*
 *②• ${toFancyFont("Bot")}*: ${toFancyFont("*(aira)*")}
 *④• ${toFancyFont("Date")}*: ${xdate}
 *⑤• ${toFancyFont("Time")}*: ${xtime} 
@@ -118,18 +118,15 @@ const menu = async (m, Matrix) => {
 
  ╭──〔 *Aira* 〕
 │
-│ ➊    *ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ*
-│ ➋    *ɢʀᴏᴜᴘ ᴍᴇɴᴜ*
-│ ➌    *ғᴜɴ ᴍᴇɴᴜ*
-│ ➍    *ᴏᴡɴᴇʀ ᴍᴇɴᴜ*
-│ ➎    *ᴀɪ ᴍᴇɴᴜ*
-│ ➏    *ᴀɴɪᴍᴇ ᴍᴇɴᴜ*
-│ ➐    *ᴄᴏɴᴠᴇʀᴛ ᴍᴇɴᴜ*
-│ ➑    *ᴏᴛʜᴇʀ ᴍᴇɴᴜ*
-│ ➒    *ʀᴇᴀᴄᴛɪᴏɴ ᴍᴇɴᴜ*
-│ ➓    *ᴍᴀɪɴ ᴍᴇɴᴜ*
-│ ⓫    *ʟᴏɢᴏ ᴍᴀᴋᴇʀ*
-│ ⓬    *sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ*
+│ *➊• ${toFancyFont("download-menu")}*
+│ *➋• ${toFancyFont("converter-menu")}*
+│ *➌• ${toFancyFont("ai-menu")}*
+│ *➍• ${toFancyFont("tools-menu")}*
+│ *➎• ${toFancyFont("group-menu")}*
+│ *➏• ${toFancyFont("search-menu")}*
+│ *➐• ${toFancyFont("main-menu")}*
+│ *➑• ${toFancyFont("owner-menu")}*
+│ *➒• ${toFancyFont("stalk-menu")}*
 │
 ╰──〔 *Aira* 〕
 
@@ -302,7 +299,7 @@ ${toFancyFont(".③githubstalk")}
 
       // Format the full response
       const fullResponse = `
-*①• ${toFancyFont("aira")} *(Command Menu ⚠)*
+*①• ${toFancyFont("aira")} (Command Menu ⚠)*
 *②• ${toFancyFont("Bot")}*: ${toFancyFont("*(aira)*")}
 *④• ${toFancyFont("Date")}*: ${xdate}
 *⑤• ${toFancyFont("Time")}*: ${xtime} 
