@@ -41,10 +41,10 @@ async function sendFormattedMessage(Matrix, chatId, text, ms, prefix) {
     footer: `Powered by Toxic-MD`,
     buttons: [
       {
-        buttonId: `${prefix}menu`,
-        buttonText: {
-          displayText: "MENU",
-          type: 1,
+         "name": "quick_reply",
+         "buttonParamsJson": JSON.stringify({
+          display_text: "menu",
+          id: `.menu`
         },
       },
     ],
