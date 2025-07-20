@@ -40,22 +40,14 @@ const alive = async (m, Matrix) => {
 
     const message = ` • .This it bot have program multi\n • .Njabulo Jb alive - *${timeString}!*\n • .Tap button see more`;
     const buttons = [
-      {
-        "name": "quick_reply",
-        "buttonParamsJson": JSON.stringify({
-          display_text: `📃 ${toFancyFont("Ping")}`,
-          id: `.ping`
-        })
-      },
-      {
-        "name": "quick_reply",
-        "buttonParamsJson": JSON.stringify({
-          display_text: `📃 ${toFancyFont("Menu")}`,
-          id: `.menu`
-        })
-      }
-    ];
-
+     viewOnce: true,
+        buttons: [
+          {
+            buttonId: `${prefix}menu`,
+            buttonText: { displayText: `📥 ${toFancyFont("menu")}` },
+            type: 1,
+          },
+        ],
     const msg = generateWAMessageFromContent(m.from, {
       viewOnceMessage: {
         message: {
