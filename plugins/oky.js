@@ -25,7 +25,7 @@ const alive = async (m, Matrix) => {
     const prefix = config.Prefix || config.PREFIX || ".";
     const cmd = m.body?.startsWith(prefix) ? m.body.slice(prefix.length).trim().split(" ")[0].toLowerCase() : "";
 
-    if (!["ale", "upime", "rtime"].includes(cmd)) return;
+    if (!["alive", "uptime", "runtime"].includes(cmd)) return;
 
     const reactionEmojis = ["🔥", "💖", "🚀", "💨", "🎯", "🎉", "🌟", "💥", "🕐", "🔹"];
     const textEmojis = ["💎", "🏆", "⚡", "🎖", "🎶", "🌠", "🌀", "🔱", "🚀", "✩"];
@@ -38,7 +38,7 @@ const alive = async (m, Matrix) => {
 
     await m.React(textEmoji);
 
-    const message = ` • .This it bot have program multi\n • .Njabulo Jb alive - *${timeString}!*\n • .Tap button see more`;
+    const message = ${toFancyFont("aira")}: ${timeString}!;
     const messageOptions = {
      viewOnce: true,
       buttons: [
