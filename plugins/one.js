@@ -1,4 +1,4 @@
-import config from '../config.cjs';
+import config from "../config.cjs";
 
 const sendFormattedMessage = async (Matrix, chatId, text, ms) => {
   await Matrix.sendMessage(chatId, {
