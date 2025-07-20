@@ -1,4 +1,4 @@
-import config from '../../config.cjs';
+import config from '../config.cjs';
 import pkg, { prepareWAMessageMedia } from 'baileys-pro';
 const { generateWAMessageFromContent, proto } = pkg;
 
