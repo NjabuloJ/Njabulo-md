@@ -52,8 +52,7 @@ async function sendFormattedMessage(Matrix, chatId, text, ms, prefix) {
       externalAdReply: {
         title: "Njabulo Jb",
         body: "Message via ad !",
-        thumbnailUrl: "https:                                                 
-        sourceUrl: "//whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
+        thumbnailUrl: "//whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
         sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
         mediaType: 1,
         showAdAttribution: true
