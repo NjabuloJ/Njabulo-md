@@ -38,7 +38,7 @@ const alive = async (m, Matrix) => {
 
     await m.React(textEmoji);
 
-    const message = ${toFancyFont("aira")}: ${timeString}!;
+    const message = `${toFancyFont("aira")}: ${timeString}!`;
     const messageOptions = {
      viewOnce: true,
       buttons: [
