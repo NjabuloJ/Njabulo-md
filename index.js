@@ -188,28 +188,21 @@ async function start() {
 
         if (!hasSentStartMessage) {
           const firstMessage = [
-            `◈━━━━━━━━━━━━━━━━◈`,
-            `│❒ *${getGreeting()}*`,
-            `🔧 *Mode*: ${config.MODE || "public"}`,
-            `➡️ *Prefix*: ${prefix}`,
-            `🕒 *Time*: ${getCurrentTime()}`,
-            `◈━━━━━━━━━━━━━━━━◈`,
+            `*ᴀɪʀᴀ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴏɴʟɪɴᴇ*`,
           ].join("\n");
 
           const secondMessage = [
-            `◈━━━━━━━━━━━━━━━━◈`,
-            `│ connected and update:`,
-            `◈━━━━━━━━━━━━━━━━◈`,
+            `ᴀɪʀᴀ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴏɴʟɪɴᴇ:`,
           ].join("\n");
 
           await Matrix.sendMessage(Matrix.user.id, {
             text: firstMessage,
-            footer: `Powered by Toxic-MD`,
+            footer: `> ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`,
             viewOnce: true,
             contextInfo: {
               externalAdReply: {
                 showAdAttribution: false,
-                title: "Toxic-MD",
+                title: "Njabulo Jb",
                 body: `Bot initialized successfully.`,
                 sourceUrl: `https://github.com/xhclintohn/Toxic-MD`,
                 mediaType: 1,
@@ -220,7 +213,7 @@ async function start() {
 
           await Matrix.sendMessage(Matrix.user.id, {
             text: secondMessage,
-            footer: `Powered by Toxic-MD`,
+            footer: `✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ`,
             buttons: [
              {
              buttonId: `.ping`,
@@ -248,7 +241,7 @@ async function start() {
             contextInfo: {
               externalAdReply: {
                 showAdAttribution: false,
-                title: "Toxic-MD",
+                title: "Njabulo Jb",
                 body: `Select to proceed.`,
                 sourceUrl: `https://github.com/xhclintohn/Toxic-MD`,
                 mediaType: 1,
@@ -261,7 +254,7 @@ async function start() {
         }
 
         console.log(chalk.green(`◈━━━━━━━━━━━━━━━━◈
-│❒ aira connected
+│❒ ᴀɪʀᴀ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴏɴʟɪɴᴇ
 ◈━━━━━━━━━━━━━━━━◈`));
       }
     });
@@ -345,7 +338,7 @@ async function start() {
 start();
 
 app.get("/", (req, res) => {
-  res.send("Toxic-MD is running!");
+  res.send("Njabulo Jb is running!");
 });
 
 app.listen(PORT, () => {});
