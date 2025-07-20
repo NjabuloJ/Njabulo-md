@@ -59,8 +59,8 @@ const shazam = async (m, Matrix) => {
     if (!quoted || (quoted.mtype !== "audioMessage" && quoted.mtype !== "videoMessage")) {
       const buttons = [
         {
-          buttonId: `.help`,
-          buttonText: { displayText: `${toFancyFont("Help")}` },
+          buttonId: `https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u`,
+          buttonText: { displayText: `${toFancyFont("update")}` },
           type: 1,
         },
       ];
