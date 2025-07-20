@@ -315,7 +315,9 @@ ${menuResponse}
 > ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ
 `;
 
-        await Matrix.sendMessage(m.from,{
+       if (menuImage) {
+        await Matrix.sendMessage(
+          m.from,
             caption: fullResponse,
             contextInfo: {
               isForwarded: true,
