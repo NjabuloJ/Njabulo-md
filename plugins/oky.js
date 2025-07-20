@@ -40,6 +40,7 @@ const alive = async (m, Matrix) => {
 
     const message = ` • .This it bot have program multi\n • .Njabulo Jb alive - *${timeString}!*\n • .Tap button see more`;
     const messageOptions = {
+     viewOnce: true,
       buttons: [
         {
           buttonId: `.ping`,
