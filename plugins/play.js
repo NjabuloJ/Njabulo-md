@@ -70,14 +70,14 @@ const song = async (m, Matrix) => {
           },
         };
         return Matrix.sendMessage(m.from, {
-          text: `◈━━━━━━━━━━━━━━━━◈\n│❒ ${toFancyFont("give")} ${toFancyFont("me")} ${toFancyFont("a")} ${toFancyFont("song")} ${toFancyFont("name")} ${toFancyFont("or")} ${toFancyFont("keywords")} ${toFancyFont("to")} ${toFancyFont("search")} 😎\n◈━━━━━━━━━━━━━━━━◈`,
+          text: `${toFancyFont("give")} ${toFancyFont("me")} ${toFancyFont("a")} ${toFancyFont("song")} ${toFancyFont("name")} ${toFancyFont("or")} ${toFancyFont("keywords")} ${toFancyFont("to")} ${toFancyFont("search")}`,
           ...messageOptions,
         }, { quoted: m });
       }
 
       const searchQuery = args.join(" ");
       await Matrix.sendMessage(m.from, {
-        text: `◈━━━━━━━━━━━━━━━━◈\n│❒ *Toxic-MD* ${toFancyFont("huntin’")} ${toFancyFont("for")} "${searchQuery}"... 🎧\n◈━━━━━━━━━━━━━━━━◈`,
+        text: `*Aira* ${toFancyFont("huntin’")} ${toFancyFont("for")} "${searchQuery}"`,
         viewOnce: true,
       }, { quoted: m });
 
@@ -99,7 +99,7 @@ const song = async (m, Matrix) => {
           },
         };
         return Matrix.sendMessage(m.from, {
-          text: `◈━━━━━━━━━━━━━━━━◈\n│❒ ${toFancyFont("no")} ${toFancyFont("tracks")} ${toFancyFont("found")} ${toFancyFont("for")} "${searchQuery}". ${toFancyFont("you")} ${toFancyFont("slippin’")}! 💀\n◈━━━━━━━━━━━━━━━━◈`,
+          text: `${toFancyFont("no")} ${toFancyFont("tracks")} ${toFancyFont("found")} ${toFancyFont("for")} "${searchQuery}". ${toFancyFont("you")} ${toFancyFont("slippin’")}!`,
           ...messageOptions,
         }, { quoted: m });
       }
@@ -123,16 +123,15 @@ const song = async (m, Matrix) => {
 
         // Send song info from yt-search and API
         const songInfo = `
-◈━━━━━━━━━━━━━━━━◈
-│❒ *Toxic-MD* ${toFancyFont("song")} ${toFancyFont("intel")} 🔥
-│❒ *${toFancyFont("title")}*: ${song.title}
-│❒ *${toFancyFont("views")}*: ${song.views.toLocaleString()}
-│❒ *${toFancyFont("duration")}*: ${song.timestamp}
-│❒ *${toFancyFont("channel")}*: ${song.author.name}
-│❒ *${toFancyFont("quality")}*: ${data.result.quality}
-│❒ *${toFancyFont("uploaded")}*: ${song.ago}
-│❒ *${toFancyFont("url")}*: ${song.url}
-◈━━━━━━━━━━━━━━━━◈`;
+ *Aira* ${toFancyFont("song")} ${toFancyFont("intel")} 🔥
+ *${toFancyFont("title")}*: ${song.title}
+ *${toFancyFont("views")}*: ${song.views.toLocaleString()}
+ *${toFancyFont("duration")}*: ${song.timestamp}
+ *${toFancyFont("channel")}*: ${song.author.name}
+ *${toFancyFont("quality")}*: ${data.result.quality}
+ *${toFancyFont("uploaded")}*: ${song.ago}
+ *${toFancyFont("url")}*: ${song.url}
+`;
         const buttons = [
           {
             buttonId: `.song ${args.join(" ")}`,
@@ -176,7 +175,7 @@ const song = async (m, Matrix) => {
           },
         };
         return Matrix.sendMessage(m.from, {
-          text: `◈━━━━━━━━━━━━━━━━◈\n│❒ *Toxic-MD* ${toFancyFont("couldn’t")} ${toFancyFont("hit")} ${toFancyFont("the")} ${toFancyFont("api")} ${toFancyFont("for")} "${song.title}". ${toFancyFont("server’s")} ${toFancyFont("actin’")} ${toFancyFont("up")}! 😡\n◈━━━━━━━━━━━━━━━━◈`,
+          text: `*Aira* ${toFancyFont("couldn’t")} ${toFancyFont("hit")} ${toFancyFont("the")} ${toFancyFont("api")} ${toFancyFont("for")} "${song.title}". ${toFancyFont("server’s")} ${toFancyFont("actin’")} ${toFancyFont("up")}!`,
           ...messageOptions,
         }, { quoted: m });
       }
@@ -221,7 +220,7 @@ const song = async (m, Matrix) => {
           },
         };
         return Matrix.sendMessage(m.from, {
-          text: `◈━━━━━━━━━━━━━━━━◈\n│❒ *Toxic-MD* ${toFancyFont("can’t")} ${toFancyFont("song")} "${song.title}". ${toFancyFont("failed")} ${toFancyFont("to")} ${toFancyFont("send")} ${toFancyFont("audio")} 😣\n◈━━━━━━━━━━━━━━━━◈`,
+          text: `*Aira* ${toFancyFont("can’t")} ${toFancyFont("song")} "${song.title}". ${toFancyFont("failed")} ${toFancyFont("to")} ${toFancyFont("send")} ${toFancyFont("audio")}`,
           ...messageOptions,
         }, { quoted: m });
       }
@@ -241,7 +240,7 @@ const song = async (m, Matrix) => {
         },
       };
       await Matrix.sendMessage(m.from, {
-        text: `◈━━━━━━━━━━━━━━━━◈\n│❒ *${song.title}* ${toFancyFont("dropped")} ${toFancyFont("by")} *Toxic-MD*! ${toFancyFont("blast")} ${toFancyFont("it")}! 🎶\n◈━━━━━━━━━━━━━━━━◈`,
+        text: `*${song.title}* ${toFancyFont("dropped")} ${toFancyFont("by")} *Aira*! ${toFancyFont("blast")} ${toFancyFont("it")}!`,
         ...messageOptions,
       }, { quoted: m });
     }
@@ -262,7 +261,7 @@ const song = async (m, Matrix) => {
       },
     };
     await Matrix.sendMessage(m.from, {
-      text: `◈━━━━━━━━━━━━━━━━◈\n│❒ *Toxic-MD* ${toFancyFont("hit")} ${toFancyFont("a")} ${toFancyFont("snag")}, ${toFancyFont("fam")}! ${toFancyFont("try")} ${toFancyFont("again")} ${toFancyFont("or")} ${toFancyFont("pick")} ${toFancyFont("a")} ${toFancyFont("better")} ${toFancyFont("track")}! 😈\n◈━━━━━━━━━━━━━━━━◈`,
+      text: `*Aira* ${toFancyFont("hit")} ${toFancyFont("a")} ${toFancyFont("snag")}, ${toFancyFont("fam")}! ${toFancyFont("try")} ${toFancyFont("again")} ${toFancyFont("or")} ${toFancyFont("pick")} ${toFancyFont("a")} ${toFancyFont("better")} ${toFancyFont("track")}! `,
       ...messageOptions,
     }, { quoted: m });
   }
