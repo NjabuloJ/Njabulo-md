@@ -55,7 +55,7 @@ const joinGroup = async (m, gss) => {
       const buttons = [
         {
           buttonId: `.owner`,
-          buttonText: { displayText: `${toFancyFont("Contact Owner")}` },
+          buttonText: { displayText: `👤${toFancyFont("Contact Owner")}` },
           type: 1,
         },
       ];
@@ -73,7 +73,7 @@ const joinGroup = async (m, gss) => {
       const buttons = [
         {
           buttonId: `.help`,
-          buttonText: { displayText: `${toFancyFont("Help")}` },
+          buttonText: { displayText: `🥲${toFancyFont("Help")}` },
           type: 1,
         },
       ];
@@ -90,7 +90,7 @@ const joinGroup = async (m, gss) => {
       const buttons = [
         {
           buttonId: `.help`,
-          buttonText: { displayText: `${toFancyFont("Help")}` },
+          buttonText: { displayText: `💬${toFancyFont("Help")}` },
           type: 1,
         },
       ];
@@ -107,7 +107,7 @@ const joinGroup = async (m, gss) => {
     const buttons = [
       {
         buttonId: `.menu`,
-        buttonText: { displayText: `${toFancyFont("Menu")}` },
+        buttonText: { displayText: `📃${toFancyFont("Menu")}` },
         type: 1,
       },
     ];
@@ -129,7 +129,7 @@ const joinGroup = async (m, gss) => {
     const buttons = [
       {
         buttonId: `.report`,
-        buttonText: { displayText: `${toFancyFont("Report")}` },
+        buttonText: { displayText: `⚠︎${toFancyFont("Report")}` },
         type: 1,
       },
     ];
