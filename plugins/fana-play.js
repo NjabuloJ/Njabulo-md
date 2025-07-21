@@ -111,7 +111,7 @@ const song = async (m, Matrix) => {
       // Fetch download URL from the new API
       let apiResponse;
       try {
-        const apiUrl = `https://api.giftedtech.web.id/api/download/dlmp3?apikey=gifted_api_se5dccy&url=${encodeURIComponent(song.url)}`;
+        const apiUrl = `https://apis-keith.vercel.app/download/dlmp3?url=${encodeURIComponent(song.url)}`;
         apiResponse = await fetch(apiUrl);
         if (!apiResponse.ok) {
           throw new Error(`API responded with status: ${apiResponse.status}`);
