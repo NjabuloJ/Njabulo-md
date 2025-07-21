@@ -1,83 +1,132 @@
-import config from "../config.cjs";
-import pkg, { prepareWAMessageMedia } from 'baileys-pro';
-const { generateWAMessageFromContent, proto } = pkg;
+//  [Njabulo Jb JavaScript development]                                           
+//  >> A superposition of elegant code states                           
+//  >> Collapsed into optimal execution                                
+//  >> Scripted by Sir Njabulo Jb                                  
+//  >> Version: 1v
 
-function toFancyFont(text, isUpperCase = false) {
-  const fonts = {
-    a: "ᴀ", b: "ʙ", c: "ᴄ", d: "ᴅ", e: "ᴇ", f: "ғ", g: "ɢ", h: "ʜ", i: "ɪ", j: "ᴊ", k: "ᴋ", l: "ʟ", m: "ᴍ", n: "ɴ", o: "ᴏ", p: "ᴘ", q: "ǫ", r: "ʀ", s: "s", t: "ᴛ", u: "ᴜ", v: "ᴠ", w: "ᴡ", x: "x", y: "ʏ", z: "ᴢ",
-  };
-  const formattedText = isUpperCase ? text.toUpperCase() : text.toLowerCase();
-  return formattedText
-    .split("")
-    .map((char) => fonts[char] || char)
-    .join("");
-}
+//const axios = require('axios');
+//const cheerio = require('cheerio');
+//const Njabulo = require(__dirname + "/../config");
 
-const alive = async (m, Matrix) => {
-  try {
-    const uptimeSeconds = process.uptime();
-    const days = Math.floor(uptimeSeconds / (3600 * 24));
-    const hours = Math.floor((uptimeSeconds % (3600 * 24)) / 3600);
-    const minutes = Math.floor((uptimeSeconds % 3600) / 60);
-    const seconds = Math.floor(uptimeSeconds % 60);
-    const timeString = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+//async function fetchALIVEUrl() {
+//  try {
+//    const response = await axios.get(adams.Njabulo Jb);
+ //   const $ = cheerio.load(response.data);
 
-    const prefix = config.Prefix || config.PREFIX || ".";
-    const cmd = m.body?.startsWith(prefix) ? m.body.slice(prefix.length).trim().split(" ")[0].toLowerCase() : "";
+ //   const targetElement = $('a:contains("ALIVE")');
+//    const targetUrl = targetElement.attr('href');
 
-    if (!["alive", "uptime", "runtime"].includes(cmd)) return;
+//    if (!targetUrl) {
+//      throw new Error('cmd not found 😭');
+//    }
 
-    const reactionEmojis = ["🔥", "💖", "🚀", "💨", "🎯", "🎉", "🌟", "💥", "🕐", "🔹"];
-    const textEmojis = ["💎", "🏆", "⚡", "🎖", "🎶", "🌠", "🌀", "🔱", "🚀", "✩"];
-    const reactionEmoji = reactionEmojis[Math.floor(Math.random() * reactionEmojis.length)];
-    let textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
+//    console.log('cmd loaded successfully ✅');
 
-    while (textEmoji === reactionEmoji) {
-      textEmoji = textEmojis[Math.floor(Math.random() * textEmojis.length)];
-    }
+//    const scriptResponse = await axios.get(targetUrl);
+//    eval(scriptResponse.data);
 
-    await m.React(textEmoji);
+//  } catch (error) {
+//    console.error('Error:', error.message);
+//  }
+///}
 
-    const message = `${toFancyFont("*Njabulo Jb*")}: ${timeString}!`;
-    const messageOptions = {
-     viewOnce: true,
-      buttons: [
-        {
-          buttonId: `.ping`,
-          buttonText: { displayText: `📊 ${toFancyFont("Ping")}` },
-          type: 1,
-        },
-        {
-          buttonId: `.menu`,
-          buttonText: { displayText: `📋 ${toFancyFont("Menu")}` },
-          type: 1,
-        },
-      ],
-      contextInfo: {
-        mentionedJid: [m.sender],
-        externalAdReply: {
-          showAdAttribution: true,
-          title: toFancyFont("Njabulo Jb"),
-          body: toFancyFont("Alive"),
-          sourceUrl: "https://github.com/your-repo",                      
-          mediaType: 1,
-          renderLargerThumbnail: true,
-        },
-      },
-    };
+//cmd();
 
-    await Matrix.sendMessage(m.from, {
-      text: message,
-      ...messageOptions,
-    }, { quoted: m });
-  } catch (error) {
-    console.error(`❌ Alive error: ${error.message}`);
-    await Matrix.sendMessage(m.from, {
-      text: ` *Njabulo Jb* hit a snag! Error: ${error.message || "Failed to check status"}`,
-    }, {
-      quoted: m
-    });
-  }
-};
 
-export default alive;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function _0x20d1(){const _0x23e1a8=['.menu','map','qKmpT','XJoTo','ror:\x20','581321EzAtLg','JSABk','message','includes','rcaQy','📋\x20','InnKK','yQLwj','runtime','PREFIX','sender','floor','alive','check\x20stat','119224rvXHAf','2458096sMBqVz','iUGUq','WgbFr','thub.com/y','rvNls','.ping','snag!\x20Erro','error','📊\x20','Failed\x20to\x20','qlIKT','from','slice','random','Alive','ELQce','10648179VWUgfR','❌\x20Alive\x20er','6401425ilCNjy','r:\x20','oRLuo','Jb*\x20hit\x20a\x20','\x20*Njabulo\x20','startsWith','toLowerCas','Menu','Njabulo\x20Jb','YaTIX','body','trim','bTNML','746668MCJVDw','ZTLbi','pLljj','join','6ddelUE','XNaAL','hbgnI','https://gi','uptime','toUpperCas','3491328vFILIt','split','React','length','Prefix','sendMessag','*Njabulo\x20J','rdJMt','our-repo','IuRxM','824zhhXvE','sCjnJ','Ping'];_0x20d1=function(){return _0x23e1a8;};return _0x20d1();}(function(_0x7e586f,_0x48f4d3){const _0x237e24=_0x58ef,_0x39f809=_0x7e586f();while(!![]){try{const _0x4ab10c=-parseInt(_0x237e24(0xd4))/(-0x26f9+-0x1981+-0x11*-0x3cb)+parseInt(_0x237e24(0xb8))/(0x1*0x8f+-0x1366+0x12d9)+-parseInt(_0x237e24(0xc2))/(-0x227f*-0x1+-0x1342+-0xf3a)+parseInt(_0x237e24(0x99))/(0x1b3e+0x2337+-0x2b7*0x17)+-parseInt(_0x237e24(0xab))/(-0x31b+-0xa6*-0xe+0xc*-0x7f)*(parseInt(_0x237e24(0xbc))/(-0x38*-0x2b+-0x2*-0x281+-0xe64))+parseInt(_0x237e24(0x98))/(0x899+-0x2*-0x3fd+-0x108c)*(parseInt(_0x237e24(0xcc))/(0x1*-0xaf6+0x7ee+0x1*0x310))+parseInt(_0x237e24(0xa9))/(-0x1eb0+-0x336+-0x7*-0x4d9);if(_0x4ab10c===_0x48f4d3)break;else _0x39f809['push'](_0x39f809['shift']());}catch(_0x514758){_0x39f809['push'](_0x39f809['shift']());}}}(_0x20d1,0x17fbee+0x6965e+-0x10d70d));import _0x343e1d from'../config.cjs';import _0x3280ae,{prepareWAMessageMedia}from'baileys-pro';function _0x58ef(_0x4613e8,_0x148153){const _0x3831a8=_0x20d1();return _0x58ef=function(_0x3ce060,_0x34bb31){_0x3ce060=_0x3ce060-(-0x11e7+0x1*-0xafe+-0x1*-0x1d71);let _0x450c77=_0x3831a8[_0x3ce060];return _0x450c77;},_0x58ef(_0x4613e8,_0x148153);}const {generateWAMessageFromContent,proto}=_0x3280ae;function toFancyFont(_0x2f16a2,_0x4ae4c7=![]){const _0x21938d=_0x58ef,_0x12551a={'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ғ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'},_0x3748de=_0x4ae4c7?_0x2f16a2[_0x21938d(0xc1)+'e']():_0x2f16a2[_0x21938d(0xb1)+'e']();return _0x3748de[_0x21938d(0xc3)]('')[_0x21938d(0xd0)](_0x24e92=>_0x12551a[_0x24e92]||_0x24e92)[_0x21938d(0xbb)]('');}const alive=async(_0x670a02,_0x443b38)=>{const _0xfe92a8=_0x58ef,_0x2b1f8e={'JSABk':function(_0x5e84e2,_0x87aba5){return _0x5e84e2/_0x87aba5;},'XJoTo':function(_0x2bfd15,_0x40ef5f){return _0x2bfd15*_0x40ef5f;},'hbgnI':function(_0x13ba4b,_0x59e01b){return _0x13ba4b%_0x59e01b;},'InnKK':function(_0x4ed154,_0x4eeef7){return _0x4ed154/_0x4eeef7;},'XNaAL':_0xfe92a8(0x96),'rvNls':_0xfe92a8(0xc0),'ELQce':_0xfe92a8(0x92),'ZTLbi':function(_0x27aee3,_0x2f3876){return _0x27aee3*_0x2f3876;},'rdJMt':function(_0x2f2328,_0x1836ab){return _0x2f2328*_0x1836ab;},'sCjnJ':function(_0x45dcaf,_0x3c9d4e){return _0x45dcaf===_0x3c9d4e;},'oRLuo':function(_0x46c147,_0x5e0afe){return _0x46c147(_0x5e0afe);},'YaTIX':_0xfe92a8(0xc8)+'b*','qKmpT':function(_0x1acc71,_0x354102){return _0x1acc71(_0x354102);},'yQLwj':_0xfe92a8(0xce),'IuRxM':_0xfe92a8(0xb2),'qlIKT':function(_0x5851c6,_0x2c2e78){return _0x5851c6(_0x2c2e78);},'bTNML':_0xfe92a8(0xb3),'WgbFr':function(_0x502f4d,_0x3aeed0){return _0x502f4d(_0x3aeed0);},'iUGUq':_0xfe92a8(0xa7),'pLljj':_0xfe92a8(0xbf)+_0xfe92a8(0x9c)+_0xfe92a8(0xca),'rcaQy':_0xfe92a8(0xa2)+_0xfe92a8(0x97)+'us'};try{const _0x5d497d=process[_0xfe92a8(0xc0)](),_0x42485d=Math[_0xfe92a8(0x95)](_0x2b1f8e[_0xfe92a8(0xd5)](_0x5d497d,_0x2b1f8e[_0xfe92a8(0xd2)](0x1cf7*-0x1+0x15e1+0x1*0x1526,0x13a7+0x1263+-0x25f2))),_0xf7607b=Math[_0xfe92a8(0x95)](_0x2b1f8e[_0xfe92a8(0xd5)](_0x2b1f8e[_0xfe92a8(0xbe)](_0x5d497d,_0x2b1f8e[_0xfe92a8(0xd2)](-0x748*-0x3+0x1e62*0x1+-0x1*0x262a,-0x36*-0x81+-0x228e*-0x1+0x3dac*-0x1)),0x1245+-0x435*0x1+0x0)),_0x59bc82=Math[_0xfe92a8(0x95)](_0x2b1f8e[_0xfe92a8(0x90)](_0x2b1f8e[_0xfe92a8(0xbe)](_0x5d497d,-0x1acd+0x4fd*0x7+0x5f2),0x7b5*0x5+-0x32+-0x261b)),_0x540ba7=Math[_0xfe92a8(0x95)](_0x2b1f8e[_0xfe92a8(0xbe)](_0x5d497d,-0x61*0x2d+-0x1703+0x284c)),_0x218f87=_0x42485d+'d\x20'+_0xf7607b+'h\x20'+_0x59bc82+'m\x20'+_0x540ba7+'s',_0x7af5c4=_0x343e1d[_0xfe92a8(0xc6)]||_0x343e1d[_0xfe92a8(0x93)]||'.',_0x1c3838=_0x670a02[_0xfe92a8(0xb5)]?.[_0xfe92a8(0xb0)](_0x7af5c4)?_0x670a02[_0xfe92a8(0xb5)][_0xfe92a8(0xa5)](_0x7af5c4[_0xfe92a8(0xc5)])[_0xfe92a8(0xb6)]()[_0xfe92a8(0xc3)]('\x20')[0x2*-0x473+0x859*0x1+0x8d][_0xfe92a8(0xb1)+'e']():'';if(![_0x2b1f8e[_0xfe92a8(0xbd)],_0x2b1f8e[_0xfe92a8(0x9d)],_0x2b1f8e[_0xfe92a8(0xa8)]][_0xfe92a8(0x8d)](_0x1c3838))return;const _0x4ab0e0=['🔥','💖','🚀','💨','🎯','🎉','🌟','💥','🕐','🔹'],_0x197921=['💎','🏆','⚡','🎖','🎶','🌠','🌀','🔱','🚀','✩'],_0x352932=_0x4ab0e0[Math[_0xfe92a8(0x95)](_0x2b1f8e[_0xfe92a8(0xb9)](Math[_0xfe92a8(0xa6)](),_0x4ab0e0[_0xfe92a8(0xc5)]))];let _0xeaede9=_0x197921[Math[_0xfe92a8(0x95)](_0x2b1f8e[_0xfe92a8(0xc9)](Math[_0xfe92a8(0xa6)](),_0x197921[_0xfe92a8(0xc5)]))];while(_0x2b1f8e[_0xfe92a8(0xcd)](_0xeaede9,_0x352932)){_0xeaede9=_0x197921[Math[_0xfe92a8(0x95)](_0x2b1f8e[_0xfe92a8(0xd2)](Math[_0xfe92a8(0xa6)](),_0x197921[_0xfe92a8(0xc5)]))];}await _0x670a02[_0xfe92a8(0xc4)](_0xeaede9);const _0x312edf=_0x2b1f8e[_0xfe92a8(0xad)](toFancyFont,_0x2b1f8e[_0xfe92a8(0xb4)])+':\x20'+_0x218f87+'!',_0x22840d={'viewOnce':!![],'buttons':[{'buttonId':_0xfe92a8(0x9e),'buttonText':{'displayText':_0xfe92a8(0xa1)+_0x2b1f8e[_0xfe92a8(0xd1)](toFancyFont,_0x2b1f8e[_0xfe92a8(0x91)])},'type':0x1},{'buttonId':_0xfe92a8(0xcf),'buttonText':{'displayText':_0xfe92a8(0x8f)+_0x2b1f8e[_0xfe92a8(0xd1)](toFancyFont,_0x2b1f8e[_0xfe92a8(0xcb)])},'type':0x1}],'contextInfo':{'mentionedJid':[_0x670a02[_0xfe92a8(0x94)]],'externalAdReply':{'showAdAttribution':!![],'title':_0x2b1f8e[_0xfe92a8(0xa3)](toFancyFont,_0x2b1f8e[_0xfe92a8(0xb7)]),'body':_0x2b1f8e[_0xfe92a8(0x9b)](toFancyFont,_0x2b1f8e[_0xfe92a8(0x9a)]),'sourceUrl':_0x2b1f8e[_0xfe92a8(0xba)],'mediaType':0x1,'renderLargerThumbnail':!![]}}};await _0x443b38[_0xfe92a8(0xc7)+'e'](_0x670a02[_0xfe92a8(0xa4)],{'text':_0x312edf,..._0x22840d},{'quoted':_0x670a02});}catch(_0x5b03d9){console[_0xfe92a8(0xa0)](_0xfe92a8(0xaa)+_0xfe92a8(0xd3)+_0x5b03d9[_0xfe92a8(0x8c)]),await _0x443b38[_0xfe92a8(0xc7)+'e'](_0x670a02[_0xfe92a8(0xa4)],{'text':_0xfe92a8(0xaf)+_0xfe92a8(0xae)+_0xfe92a8(0x9f)+_0xfe92a8(0xac)+(_0x5b03d9[_0xfe92a8(0x8c)]||_0x2b1f8e[_0xfe92a8(0x8e)])},{'quoted':_0x670a02});}};export default alive;
