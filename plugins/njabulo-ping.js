@@ -45,10 +45,10 @@ const ping = async (m, Matrix) => {
     : "";
   if (cmd === "ping") {
     const start = new Date().getTime();
-    await m.React("✈");
+    await m.React("📡");
     const end = new Date().getTime();
     const responseTime = (end - start) / 1000;
-    const text = `*${toFancyFont("Aira")}* : ${responseTime.toFixed(2)} s`;
+    const text = `*${toFancyFont("Njabulo Jb")}* : ${responseTime.toFixed(2)} s`;
     const buttons = [
       {
         buttonId: `.alive`,
