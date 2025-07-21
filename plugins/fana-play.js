@@ -58,7 +58,7 @@ const song = async (m, Matrix) => {
         const buttons = [
           {
             buttonId: `.menu`,
-            buttonText: { displayText: `${toFancyFont("Menu")}` },
+            buttonText: { displayText: `,📃${toFancyFont("Menu")}` },
             type: 1,
           },
         ];
@@ -77,7 +77,7 @@ const song = async (m, Matrix) => {
 
       const searchQuery = args.join(" ");
       await Matrix.sendMessage(m.from, {
-        text: `*Aira* ${toFancyFont("huntin’")} ${toFancyFont("for")} "${searchQuery}"`,
+        text: `*ɴᴊᴀʙᴜʟᴏ ᴊʙ* ${toFancyFont("huntin’")} ${toFancyFont("for")} "${searchQuery}"`,
         viewOnce: true,
       }, { quoted: m });
 
@@ -87,7 +87,7 @@ const song = async (m, Matrix) => {
         const buttons = [
           {
             buttonId: `.menu`,
-            buttonText: { displayText: `${toFancyFont("Menu")}` },
+            buttonText: { displayText: `📃${toFancyFont("Menu")}` },
             type: 1,
           },
         ];
@@ -123,7 +123,7 @@ const song = async (m, Matrix) => {
 
         // Send song info from yt-search and API
         const songInfo = `
- *Aira* ${toFancyFont("song")} ${toFancyFont("intel")} 🔥
+ *ɴᴊᴀʙᴜʟᴏ ᴊʙ* ${toFancyFont("song")} ${toFancyFont("intel")} 🔥
  *${toFancyFont("title")}*: ${song.title}
  *${toFancyFont("views")}*: ${song.views.toLocaleString()}
  *${toFancyFont("duration")}*: ${song.timestamp}
@@ -135,7 +135,7 @@ const song = async (m, Matrix) => {
         const buttons = [
           {
             buttonId: `.song ${args.join(" ")}`,
-            buttonText: { displayText: `${toFancyFont("get")} ${toFancyFont("song")}` },
+            buttonText: { displayText: `🎧${toFancyFont("get")} ${toFancyFont("song")}` },
             type: 1,
           },
         ];
@@ -163,7 +163,7 @@ const song = async (m, Matrix) => {
         const buttons = [
           {
             buttonId: `.support`,
-            buttonText: { displayText: `${toFancyFont("support")}` },
+            buttonText: { displayText: `⚠︎${toFancyFont("support")}` },
             type: 1,
           },
         ];
@@ -208,7 +208,7 @@ const song = async (m, Matrix) => {
         const buttons = [
           {
             buttonId: `.support`,
-            buttonText: { displayText: `${toFancyFont("support")}` },
+            buttonText: { displayText: `⚠︎${toFancyFont("support")}` },
             type: 1,
           },
         ];
@@ -220,7 +220,7 @@ const song = async (m, Matrix) => {
           },
         };
         return Matrix.sendMessage(m.from, {
-          text: `*Aira* ${toFancyFont("can’t")} ${toFancyFont("song")} "${song.title}". ${toFancyFont("failed")} ${toFancyFont("to")} ${toFancyFont("send")} ${toFancyFont("audio")}`,
+          text: `*ɴᴊᴀʙᴜʟᴏ ᴊʙ* ${toFancyFont("can’t")} ${toFancyFont("song")} "${song.title}". ${toFancyFont("failed")} ${toFancyFont("to")} ${toFancyFont("send")} ${toFancyFont("audio")}`,
           ...messageOptions,
         }, { quoted: m });
       }
@@ -228,7 +228,7 @@ const song = async (m, Matrix) => {
       const buttons = [
         {
           buttonId: `.menu`,
-          buttonText: { displayText: `${toFancyFont("Menu")}` },
+          buttonText: { displayText: `📃${toFancyFont("Menu")}` },
           type: 1,
         },
       ];
@@ -249,7 +249,7 @@ const song = async (m, Matrix) => {
     const buttons = [
       {
         buttonId: `.support`,
-        buttonText: { displayText: `${toFancyFont("support")}` },
+        buttonText: { displayText: `⚠︎${toFancyFont("support")}` },
         type: 1,
       },
     ];
@@ -261,7 +261,7 @@ const song = async (m, Matrix) => {
       },
     };
     await Matrix.sendMessage(m.from, {
-      text: `*Aira* ${toFancyFont("hit")} ${toFancyFont("a")} ${toFancyFont("snag")}, ${toFancyFont("fam")}! ${toFancyFont("try")} ${toFancyFont("again")} ${toFancyFont("or")} ${toFancyFont("pick")} ${toFancyFont("a")} ${toFancyFont("better")} ${toFancyFont("track")}! `,
+      text: `*ɴᴊᴀʙᴜʟᴏ ᴊʙ* ${toFancyFont("hit")} ${toFancyFont("a")} ${toFancyFont("snag")}, ${toFancyFont("fam")}! ${toFancyFont("try")} ${toFancyFont("again")} ${toFancyFont("or")} ${toFancyFont("pick")} ${toFancyFont("a")} ${toFancyFont("better")} ${toFancyFont("track")}! `,
       ...messageOptions,
     }, { quoted: m });
   }
