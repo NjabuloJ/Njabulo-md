@@ -48,7 +48,7 @@ const restartBot = async (m) => {
       const buttons = [
         {
           buttonId: `.menu`,
-          buttonText: { displayText: `${toFancyFont("Menu")}` },
+          buttonText: { displayText: `📃${toFancyFont("Menu")}` },
           type: 1,
         },
       ];
@@ -67,7 +67,7 @@ const restartBot = async (m) => {
       const buttons = [
         {
           buttonId: `.report`,
-          buttonText: { displayText: `${toFancyFont("Report")}` },
+          buttonText: { displayText: `⚠︎${toFancyFont("Report")}` },
           type: 1,
         },
       ];
