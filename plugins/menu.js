@@ -108,15 +108,15 @@ const menu = async (m, Matrix) => {
     // Handle main menu
     if (validCommands.includes(cmd)) {
       const mainMenu = `
-*①• ${toFancyFont("aira")} (Command Menu ⚠)*
+*①• ${toFancyFont("njabulo jb")} (Command Menu ⚠)*
 *②• ${toFancyFont("Bot")}*: ${toFancyFont("*(aira)*")}
 *④• ${toFancyFont("Date")}*: ${xdate}
 *⑤• ${toFancyFont("Time")}*: ${xtime} 
 *⑥• ${toFancyFont("Prefix")}: [ ${prefix} ]*
 *⑦• ${toFancyFont("Mode")}*: ${mode}
-*⑧• ${toFancyFont("Library")}: (Baileys)*
+*⑧• ${toFancyFont("version")}: (000 V1)*
 
- ╭──〔 *Aira* 〕
+ ╭──〔 *ɴᴊᴀʙᴜʟᴏ ᴊʙ* 〕
 │
 │ *➊• ${toFancyFont("download-menu")}*
 │ *➋• ${toFancyFont("converter-menu")}*
@@ -128,7 +128,7 @@ const menu = async (m, Matrix) => {
 │ *➑• ${toFancyFont("owner-menu")}*
 │ *➒• ${toFancyFont("stalk-menu")}*
 │
-╰──〔 *Aira* 〕
+╰──〔 *ɴᴊᴀʙᴜʟᴏ ᴊʙ* 〕
 
 *${pushwish} @*${m.pushName}*! 
 
@@ -152,8 +152,8 @@ const menu = async (m, Matrix) => {
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-          title: "Aira",
-          body: "commands",
+          title: "ɴᴊᴀʙᴜʟᴏ ᴊʙ",
+          body: `${pushwish}`,
           thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
            sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
            mediaType: 1,
@@ -189,7 +189,7 @@ const menu = async (m, Matrix) => {
       switch (cmd) {
         case "download-menu":
           menuTitle = "All Commands Cmd";
-          menuResponse = `*【Aira download】*
+          menuResponse = `*【download】*
 ${toFancyFont(".①apk")}
 ${toFancyFont(".②facebook")}
 ${toFancyFont(".③mediafire")}
@@ -339,9 +339,9 @@ ${menuResponse}
   } catch (error) {
     console.error(`❌ Menu error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
-      text: `◈━━━━━━━━━━━━━━━━◈
-│❒ *Toxic-MD* hit a snag! Error: ${error.message || "Failed to load menu"} 😡
-◈━━━━━━━━━━━━━━━━◈`,
+      text: `•
+• *Njabulo Jb* hit a snag! Error: ${error.message || "Failed to load menu"} 😡
+•`,
     }, { quoted: m });
   }
 };
