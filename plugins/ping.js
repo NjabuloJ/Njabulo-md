@@ -61,14 +61,15 @@ const ping = async (m, Matrix) => {
         type: 1,
       },
       {
-        "buttonParamsJson": JSON.stringify({
-          "display_text": `${toFancyFont("Follow our Channel")}`,
-          "url": `https://whatsapp.com/channel/0029VagJlnG6xCSU2tS1Vz19`
+        name: "cta_url",
+        buttonParamsJson: JSON.stringify({
+          display_text: `${toFancyFont("Follow our Channel")}`,
+          url: `https://whatsapp.com/channel/0029VagJlnG6xCSU2tS1Vz19`,
         }),
-        "type": 2,
-        "name": "cta_url"
-      }
+        type: 1,
+      },
     ];
+
     const messageOptions = {
       viewOnce: true,
       buttons,
