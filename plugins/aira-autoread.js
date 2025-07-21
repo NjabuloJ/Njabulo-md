@@ -47,19 +47,19 @@ const autoreadCommand = async (m, Matrix) => {
 
   if (cmd === 'autoread') {
     if (!isCreator) return Matrix.sendMessage(m.from, {
-      text: "*📛 ᴛʜɪs ɪs ᴀɴ ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅ*",
+      text: "*ᴛʜɪs ɪs ᴀɴ ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅ*",
       viewOnce: true,
     }, { quoted: m });
     let responseMessage;
     const buttons = [
       {
-        buttonId: `.autoread ${toFancyFont("on")}`,
-        buttonText: { displayText: `${toFancyFont("on")}` },
+        buttonId: `.autoread on`,
+        buttonText: { displayText: `💬${toFancyFont("on")}` },
         type: 1,
       },
       {
-        buttonId: `.autoread ${toFancyFont("off")}`,
-        buttonText: { displayText: `${toFancyFont("off")}` },
+        buttonId: `.autoread off`,
+        buttonText: { displayText: `💬${toFancyFont("off")}` },
         type: 1,
       },
     ];
