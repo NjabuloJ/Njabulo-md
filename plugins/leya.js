@@ -63,6 +63,22 @@ function toFancyFont(text, isUpperCase = false) {
     .join("");
 }
 
+    const repoUrl = "https://api.github.com/repos/xhclintohn/Toxic-MD";
+    const headers = {
+      Accept: "application/vnd.github.v3+json",
+      ...(config.GITHUB_TOKEN ? { Authorization: `token ${config.GITHUB_TOKEN}` } : {}),
+    };
+
+    const response = await axios.get(repoUrl, { headers });
+    const repoData = response.data;
+
+    if (response.status !== 200 || !repoData.full_name) {
+      throw new Error("Failed to fetch repo data or repo not found.");
+    }
+
+    const createdDate = new Date(repoData.created_at).toLocaleDateString("en-GB");
+    const lastUpdateDate = new Date(repoData.updated_at).toLocaleDateString("en-GB");
+
 // Image fetch utility
 async function fetchMenuImage() {
   const imageUrl = "https://files.catbox.moe/omgszj.jpg";
@@ -115,6 +131,7 @@ const menu = async (m, Matrix) => {
 *⑥• ${toFancyFont("Prefix")}: [ ${prefix} ]*
 *⑦• ${toFancyFont("Mode")}*: ${mode}
 *⑧• ${toFancyFont("Library")}: (Baileys)*
+*Stars:* ${repoData.stargazers_count || 0} (star it, fam!)
 
  ╭──〔 *Aira* 〕
 │
