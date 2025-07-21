@@ -1,118 +1,103 @@
-import config from '../config.cjs';
-import pkg, { prepareWAMessageMedia } from "baileys-pro";
-const { generateWAMessageFromContent, proto } = pkg;
+//  [Njabulo Jb JavaScript development]                                           
+//  >> A superposition of elegant code states                           
+//  >> Collapsed into optimal execution                                
+//  >> Scripted by Sir Njabulo Jb                                  
+//  >> Version: 1v
 
-function toFancyFont(text) {
-  const fonts = {
-    a: "ᴀ",
-    b: "ʙ",
-    c: "ᴄ",
-    d: "ᴅ",
-    e: "ᴇ",
-    f: "ғ",
-    g: "ɢ",
-    h: "ʜ",
-    i: "ɪ",
-    j: "ᴊ",
-    k: "ᴋ",
-    l: "ʟ",
-    m: "ᴍ",
-    n: "ɴ",
-    o: "ᴏ",
-    p: "ᴘ",
-    q: "ǫ",
-    r: "ʀ",
-    s: "s",
-    t: "ᴛ",
-    u: "ᴜ",
-    v: "ᴠ",
-    w: "ᴡ",
-    x: "x",
-    y: "ʏ",
-    z: "ᴢ",
-  };
-  return text
-    .toLowerCase()
-    .split("")
-    .map((char) => fonts[char] || char)
-    .join("");
-}
+//const axios = require('axios');
+//const cheerio = require('cheerio');
+//const Njabulo = require(__dirname + "/../config");
 
-const autotypingCommand = async (m, Matrix) => {
-  const botNumber = await Matrix.decodeJid(Matrix.user.id);
-  const isCreator = [botNumber, config.OWNER_NUMBER + '@s.whatsapp.net'].includes(m.sender);
-  const prefix = config.PREFIX;
-  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
-  const text = m.body.slice(prefix.length + cmd.length).trim().toLowerCase();
+//async function fetchALIVEUrl() {
+//  try {
+//    const response = await axios.get(adams.Njabulo Jb);
+ //   const $ = cheerio.load(response.data);
 
-  if (cmd === 'autotyping') {
-    if (!isCreator) return Matrix.sendMessage(m.from, {
-      text: "*📛 ᴛʜɪs ɪs ᴀɴ ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅ*",
-      viewOnce: true,
-    }, { quoted: m });
-    let responseMessage;
-    const buttons = [
-      {
-        buttonId: `.autotyping ${toFancyFont("on")}`,
-        buttonText: { displayText: `${toFancyFont("on")}` },
-        type: 1,
-      },
-      {
-        buttonId: `.autotyping ${toFancyFont("off")}`,
-        buttonText: { displayText: `${toFancyFont("off")}` },
-        type: 1,
-      },
-    ];
+ //   const targetElement = $('a:contains("ALIVE")');
+//    const targetUrl = targetElement.attr('href');
 
-    if (!text) {
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(
-        m.from,
-        {
-          text: `Usage:\n- \`${prefix}autotyping ${toFancyFont("on")}\`: Enable Auto-Typing\n- \`${prefix}autotyping ${toFancyFont("off")}\`: Disable Auto-Typing`,
-          ...messageOptions,
-        },
-        { quoted: m }
-      );
-    }
+//    if (!targetUrl) {
+//      throw new Error('cmd not found 😭');
+//    }
 
-    if (text === 'on') {
-      config.AUTO_TYPING = true;
-      responseMessage = "Auto-Typing has been enabled.";
-    } else if (text === 'off') {
-      config.AUTO_TYPING = false;
-      responseMessage = "Auto-Typing has been disabled.";
-    } else {
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(
-        m.from,
-        {
-          text: `Usage:\n- \`${prefix}autotyping ${toFancyFont("on")}\`: Enable Auto-Typing\n- \`${prefix}autotyping ${toFancyFont("off")}\`: Disable Auto-Typing`,
-          ...messageOptions,
-        },
-        { quoted: m }
-      );
-    }
+//    console.log('cmd loaded successfully ✅');
 
-    try {
-      await Matrix.sendMessage(m.from, { text: responseMessage, viewOnce: true }, { quoted: m });
-    } catch (error) {
-      console.error("Error processing your request:", error);
-      await Matrix.sendMessage(m.from, { text: 'Error processing your request.', viewOnce: true }, { quoted: m });
-    }
-  }
-};
+//    const scriptResponse = await axios.get(targetUrl);
+//    eval(scriptResponse.data);
 
-export default autotypingCommand;
+//  } catch (error) {
+//    console.error('Error:', error.message);
+//  }
+///}
+
+//cmd();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function(_0x1aa943,_0x32bd08){const _0x443b01=_0x45f2,_0x1efec4=_0x1aa943();while(!![]){try{const _0x2db9a1=parseInt(_0x443b01(0x11a))/(-0x1ef4+-0x13fa+0x3eb*0xd)*(-parseInt(_0x443b01(0x13b))/(0x1f96+0x141c+-0x33b0))+parseInt(_0x443b01(0x149))/(0x1b*0xf7+-0x25dc+0xbd2)+parseInt(_0x443b01(0x13a))/(0x1479+0xe7c+-0x22f1)+-parseInt(_0x443b01(0x147))/(-0x117*0x1f+0x1*-0x1c71+0xc73*0x5)+parseInt(_0x443b01(0x153))/(-0xb8+-0x4ab+0x569)*(-parseInt(_0x443b01(0x117))/(-0xd8a*0x2+-0xd*-0xe9+-0x30e*-0x5))+parseInt(_0x443b01(0x12a))/(0x2ee*0x4+0x462+0xf2*-0x11)*(-parseInt(_0x443b01(0x12e))/(0x106b+-0x1d*0x6a+-0x460))+-parseInt(_0x443b01(0x120))/(0xd7b+-0x65*0x5e+0x17a5)*(-parseInt(_0x443b01(0x11d))/(-0xbf*0x2b+0x25fb+0x1*-0x5db));if(_0x2db9a1===_0x32bd08)break;else _0x1efec4['push'](_0x1efec4['shift']());}catch(_0x338061){_0x1efec4['push'](_0x1efec4['shift']());}}}(_0x2506,0x1930f+0x49*-0x9b1+0x49566));function _0x45f2(_0x4a1806,_0x3a20cc){const _0x30738f=_0x2506();return _0x45f2=function(_0x2dde88,_0x11588f){_0x2dde88=_0x2dde88-(-0x1977+-0x1*0x268d+0x4119);let _0x178e41=_0x30738f[_0x2dde88];return _0x178e41;},_0x45f2(_0x4a1806,_0x3a20cc);}function _0x2506(){const _0x4d8f69=['length','OWNER_NUMB','sender','`:\x20Disable','slice','JEAwC','15970ALkSgS','ᴄᴏᴍᴍᴀɴᴅ*','1225227rFjFWw','UFrbd','QTCwe','fimor','essing\x20you','YUyBJ','mDjhu','p.net','xoCWC','\x20enabled.','114AUhlgw','lwRLE','user','*📛\x20ᴛʜɪs\x20ɪs','HyLtR','decodeJid','1393xyNLdG','autotyping','AUTO_TYPIN','2GnSsCp','g\x20has\x20been','from','22JuVCaN','toLowerCas','trim','607610WnJCjk','`:\x20Enable\x20','error','vWKZL','sendMessag','g\x0a-\x20`','\x20disabled.','\x20Auto-Typi','Auto-Typin','PREFIX','905272VGufFs','body','PiWTl','join','27jbTUQc','SSLQV','startsWith','r\x20request.','map','.autotypin','@s.whatsap','Usage:\x0a-\x20`','\x20ᴀɴ\x20ᴏᴡɴᴇʀ\x20','r\x20request:','OrTwY','KzaAz','1622236jztqhI','366578dvVHMx','split','off','Error\x20proc','AnFLJ','includes'];_0x2506=function(){return _0x4d8f69;};return _0x2506();}import _0x4d341c from'../config.cjs';import _0x363d4f,{prepareWAMessageMedia}from'baileys-pro';const {generateWAMessageFromContent,proto}=_0x363d4f;function toFancyFont(_0x3e6f90){const _0x2c0799=_0x45f2,_0x4e87bc={'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ғ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'};return _0x3e6f90[_0x2c0799(0x11e)+'e']()[_0x2c0799(0x13c)]('')[_0x2c0799(0x132)](_0x34cf6a=>_0x4e87bc[_0x34cf6a]||_0x34cf6a)[_0x2c0799(0x12d)]('');}const autotypingCommand=async(_0xe1e6cf,_0x2a70a2)=>{const _0x265f62=_0x45f2,_0x36a5f0={'fimor':function(_0x165655,_0x90bba7){return _0x165655+_0x90bba7;},'lwRLE':_0x265f62(0x134)+_0x265f62(0x150),'vWKZL':function(_0x4a0bc7,_0x548856){return _0x4a0bc7===_0x548856;},'UFrbd':_0x265f62(0x118),'JEAwC':_0x265f62(0x156)+_0x265f62(0x136)+_0x265f62(0x148),'OrTwY':function(_0x2897ed,_0x50367a){return _0x2897ed(_0x50367a);},'AnFLJ':function(_0x32eafa,_0x172291){return _0x32eafa(_0x172291);},'QTCwe':function(_0x4da6a6,_0x2ca8ba){return _0x4da6a6(_0x2ca8ba);},'mDjhu':_0x265f62(0x13d),'KzaAz':_0x265f62(0x128)+_0x265f62(0x11b)+_0x265f62(0x152),'PiWTl':_0x265f62(0x128)+_0x265f62(0x11b)+_0x265f62(0x126),'HyLtR':function(_0x5488f0,_0x50e8d4){return _0x5488f0(_0x50e8d4);},'YUyBJ':function(_0x6ee5b4,_0x14ede5){return _0x6ee5b4(_0x14ede5);},'SSLQV':_0x265f62(0x13e)+_0x265f62(0x14d)+_0x265f62(0x137),'xoCWC':_0x265f62(0x13e)+_0x265f62(0x14d)+_0x265f62(0x131)},_0x3b1d76=await _0x2a70a2[_0x265f62(0x116)](_0x2a70a2[_0x265f62(0x155)]['id']),_0x289eda=[_0x3b1d76,_0x36a5f0[_0x265f62(0x14c)](_0x4d341c[_0x265f62(0x142)+'ER'],_0x36a5f0[_0x265f62(0x154)])][_0x265f62(0x140)](_0xe1e6cf[_0x265f62(0x143)]),_0x1102d0=_0x4d341c[_0x265f62(0x129)],_0x3d06da=_0xe1e6cf[_0x265f62(0x12b)][_0x265f62(0x130)](_0x1102d0)?_0xe1e6cf[_0x265f62(0x12b)][_0x265f62(0x145)](_0x1102d0[_0x265f62(0x141)])[_0x265f62(0x13c)]('\x20')[0x219c+-0x883*-0x1+-0x2a1f][_0x265f62(0x11e)+'e']():'',_0x4959f0=_0xe1e6cf[_0x265f62(0x12b)][_0x265f62(0x145)](_0x36a5f0[_0x265f62(0x14c)](_0x1102d0[_0x265f62(0x141)],_0x3d06da[_0x265f62(0x141)]))[_0x265f62(0x11f)]()[_0x265f62(0x11e)+'e']();if(_0x36a5f0[_0x265f62(0x123)](_0x3d06da,_0x36a5f0[_0x265f62(0x14a)])){if(!_0x289eda)return _0x2a70a2[_0x265f62(0x124)+'e'](_0xe1e6cf[_0x265f62(0x11c)],{'text':_0x36a5f0[_0x265f62(0x146)],'viewOnce':!![]},{'quoted':_0xe1e6cf});let _0x187bdb;const _0x6e862b=[{'buttonId':_0x265f62(0x133)+'g\x20'+_0x36a5f0[_0x265f62(0x138)](toFancyFont,'on'),'buttonText':{'displayText':''+_0x36a5f0[_0x265f62(0x13f)](toFancyFont,'on')},'type':0x1},{'buttonId':_0x265f62(0x133)+'g\x20'+_0x36a5f0[_0x265f62(0x14b)](toFancyFont,_0x36a5f0[_0x265f62(0x14f)]),'buttonText':{'displayText':''+_0x36a5f0[_0x265f62(0x138)](toFancyFont,_0x36a5f0[_0x265f62(0x14f)])},'type':0x1}];if(!_0x4959f0){const _0x347631={'viewOnce':!![],'buttons':_0x6e862b,'contextInfo':{'mentionedJid':[_0xe1e6cf[_0x265f62(0x143)]]}};return _0x2a70a2[_0x265f62(0x124)+'e'](_0xe1e6cf[_0x265f62(0x11c)],{'text':_0x265f62(0x135)+_0x1102d0+(_0x265f62(0x118)+'\x20')+_0x36a5f0[_0x265f62(0x138)](toFancyFont,'on')+(_0x265f62(0x121)+_0x265f62(0x128)+_0x265f62(0x125))+_0x1102d0+(_0x265f62(0x118)+'\x20')+_0x36a5f0[_0x265f62(0x14b)](toFancyFont,_0x36a5f0[_0x265f62(0x14f)])+(_0x265f62(0x144)+_0x265f62(0x127)+'ng'),..._0x347631},{'quoted':_0xe1e6cf});}if(_0x36a5f0[_0x265f62(0x123)](_0x4959f0,'on'))_0x4d341c[_0x265f62(0x119)+'G']=!![],_0x187bdb=_0x36a5f0[_0x265f62(0x139)];else{if(_0x36a5f0[_0x265f62(0x123)](_0x4959f0,_0x36a5f0[_0x265f62(0x14f)]))_0x4d341c[_0x265f62(0x119)+'G']=![],_0x187bdb=_0x36a5f0[_0x265f62(0x12c)];else{const _0x3f09c8={'viewOnce':!![],'buttons':_0x6e862b,'contextInfo':{'mentionedJid':[_0xe1e6cf[_0x265f62(0x143)]]}};return _0x2a70a2[_0x265f62(0x124)+'e'](_0xe1e6cf[_0x265f62(0x11c)],{'text':_0x265f62(0x135)+_0x1102d0+(_0x265f62(0x118)+'\x20')+_0x36a5f0[_0x265f62(0x115)](toFancyFont,'on')+(_0x265f62(0x121)+_0x265f62(0x128)+_0x265f62(0x125))+_0x1102d0+(_0x265f62(0x118)+'\x20')+_0x36a5f0[_0x265f62(0x14e)](toFancyFont,_0x36a5f0[_0x265f62(0x14f)])+(_0x265f62(0x144)+_0x265f62(0x127)+'ng'),..._0x3f09c8},{'quoted':_0xe1e6cf});}}try{await _0x2a70a2[_0x265f62(0x124)+'e'](_0xe1e6cf[_0x265f62(0x11c)],{'text':_0x187bdb,'viewOnce':!![]},{'quoted':_0xe1e6cf});}catch(_0x19d21d){console[_0x265f62(0x122)](_0x36a5f0[_0x265f62(0x12f)],_0x19d21d),await _0x2a70a2[_0x265f62(0x124)+'e'](_0xe1e6cf[_0x265f62(0x11c)],{'text':_0x36a5f0[_0x265f62(0x151)],'viewOnce':!![]},{'quoted':_0xe1e6cf});}}};export default autotypingCommand;
