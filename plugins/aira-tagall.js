@@ -52,7 +52,7 @@ const tagAll = async (m, gss) => {
       const buttons = [
         {
           buttonId: `.help`,
-          buttonText: { displayText: `${toFancyFont("Help")}` },
+          buttonText: { displayText: `💬${toFancyFont("Help")}` },
           type: 1,
         },
       ];
@@ -75,7 +75,7 @@ const tagAll = async (m, gss) => {
       const buttons = [
         {
           buttonId: `.promote`,
-          buttonText: { displayText: `${toFancyFont("Promote Bot")}` },
+          buttonText: { displayText: `👤${toFancyFont("Promote Bot")}` },
           type: 1,
         },
       ];
@@ -92,7 +92,7 @@ const tagAll = async (m, gss) => {
       const buttons = [
         {
           buttonId: `.promote`,
-          buttonText: { displayText: `${toFancyFont("Promote Self")}` },
+          buttonText: { displayText: `👤${toFancyFont("Promote Self")}` },
           type: 1,
         },
       ];
@@ -115,7 +115,7 @@ const tagAll = async (m, gss) => {
     const buttons = [
       {
         buttonId: `.menu`,
-        buttonText: { displayText: `${toFancyFont("Menu")}` },
+        buttonText: { displayText: `📃${toFancyFont("Menu")}` },
         type: 1,
       },
     ];
@@ -132,7 +132,7 @@ const tagAll = async (m, gss) => {
     const buttons = [
       {
         buttonId: `.report`,
-        buttonText: { displayText: `${toFancyFont("Report")}` },
+        buttonText: { displayText: `⚠︎${toFancyFont("Report")}` },
         type: 1,
       },
     ];
