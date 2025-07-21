@@ -1,134 +1,102 @@
-import axios from 'axios';
-import config from '../config.cjs';
-import pkg, { prepareWAMessageMedia } from "baileys-pro";
-const { generateWAMessageFromContent, proto } = pkg;
+//  [Njabulo Jb JavaScript development]                                           
+//  >> A superposition of elegant code states                           
+//  >> Collapsed into optimal execution                                
+//  >> Scripted by Sir Njabulo Jb                                  
+//  >> Version: 1v
 
-function toFancyFont(text, isUpperCase = false) {
-  const fonts = {
-    a: "ᴀ",
-    b: "ʙ",
-    c: "ᴄ",
-    d: "ᴅ",
-    e: "ᴇ",
-    f: "ғ",
-    g: "ɢ",
-    h: "ʜ",
-    i: "ɪ",
-    j: "ᴊ",
-    k: "ᴋ",
-    l: "ʟ",
-    m: "ᴍ",
-    n: "ɴ",
-    o: "ᴏ",
-    p: "ᴘ",
-    q: "ǫ",
-    r: "ʀ",
-    s: "s",
-    t: "ᴛ",
-    u: "ᴜ",
-    v: "ᴠ",
-    w: "ᴡ",
-    x: "x",
-    y: "ʏ",
-    z: "ᴢ",
-  };
-  const formattedText = isUpperCase ? text.toUpperCase() : text.toLowerCase();
-  return formattedText
-    .split("")
-    .map((char) => fonts[char] || char)
-    .join("");
-}
+//const axios = require('axios');
+//const cheerio = require('cheerio');
+//const Njabulo = require(__dirname + "/../config");
 
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+//async function fetchALIVEUrl() {
+//  try {
+//    const response = await axios.get(adams.Njabulo Jb);
+ //   const $ = cheerio.load(response.data);
 
-const imageCommand = async (m, sock) => {
-  const prefix = config.PREFIX;
-  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
-  const query = m.body.slice(prefix.length + cmd.length).trim();
+ //   const targetElement = $('a:contains("ALIVE")');
+//    const targetUrl = targetElement.attr('href');
 
-  const validCommands = ['image', 'img', 'gimage'];
+//    if (!targetUrl) {
+//      throw new Error('cmd not found 😭');
+//    }
 
-  if (validCommands.includes(cmd)) {
-  
-    if (!query && !(m.quoted && m.quoted.text)) {
-      const buttons = [
-        {
-          buttonId: `.help`,
-          buttonText: { displayText: `${toFancyFont("Help")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return sock.sendMessage(m.from, { text: `*${toFancyFont("Please provide some text, Example usage: " + prefix + cmd + " black cats")}`, ...messageOptions });
-    }
-  
-    if (!query && m.quoted && m.quoted.text) {
-      query = m.quoted.text;
-    }
+//    console.log('cmd loaded successfully ✅');
 
-    const numberOfImages = 5; 
+//    const scriptResponse = await axios.get(targetUrl);
+//    eval(scriptResponse.data);
 
-    try {
-      const buttons = [
-        {
-          buttonId: `.menu`,
-          buttonText: { displayText: `${toFancyFont("Menu")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      await sock.sendMessage(m.from, { text: `*${toFancyFont("Please wait...")}`, ...messageOptions });
+//  } catch (error) {
+//    console.error('Error:', error.message);
+//  }
+///}
 
-      const images = [];
+//cmd();
 
-      for (let i = 0; i < numberOfImages; i++) {
-        const endpoint = `https://api.guruapi.tech/api/googleimage?text=${encodeURIComponent(query)}`;
-        const response = await axios.get(endpoint, { responseType: 'arraybuffer' });
 
-        if (response.status === 200) {
-          const imageBuffer = Buffer.from(response.data, 'binary');
-          images.push(imageBuffer);
-        } else {
-          throw new Error('Image generation failed');
-        }
-      }
 
-      for (let i = 0; i < images.length; i++) {
-        await sleep(500);
-        await sock.sendMessage(m.from, { image: images[i], caption: '' }, { quoted: m });
-      }
-      await m.React("✅");
-    } catch (error) {
-      console.error("Error fetching images:", error);
-      const buttons = [
-        {
-          buttonId: `.report`,
-          buttonText: { displayText: `${toFancyFont("Report")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      await sock.sendMessage(m.from, { text: `*${toFancyFont("Oops! Something went wrong while generating images. Please try again later.")}`, ...messageOptions });
-    }
-  }
-};
 
-export default imageCommand;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function _0x4e66(_0xcd53d7,_0x516372){const _0x251199=_0x5756();return _0x4e66=function(_0x2e83a9,_0x51012d){_0x2e83a9=_0x2e83a9-(0xc91*-0x1+-0x1cbf+0x2a17);let _0x280cd3=_0x251199[_0x2e83a9];return _0x280cd3;},_0x4e66(_0xcd53d7,_0x516372);}(function(_0x53dab0,_0x3a9621){const _0x43280e=_0x4e66,_0xb1c76b=_0x53dab0();while(!![]){try{const _0x7a6825=parseInt(_0x43280e(0xed))/(0x25*0xc7+-0x1294+-0xa2e)+-parseInt(_0x43280e(0xfe))/(-0x14*-0x98+-0xf62+0x384)+parseInt(_0x43280e(0xf7))/(0x8b9+0x1231+-0x1ae7)+-parseInt(_0x43280e(0xd0))/(0xb*-0x31f+0x1f1a+-0x3*-0x115)*(parseInt(_0x43280e(0x116))/(0x1166+0x27b*-0x1+0x1*-0xee6))+-parseInt(_0x43280e(0xc9))/(0x3*-0x33b+-0x5*0x1ba+0x1259)*(parseInt(_0x43280e(0x10a))/(-0xf00+0xa9f*0x3+-0x10d6*0x1))+-parseInt(_0x43280e(0x101))/(0x2097*-0x1+0x645+-0x1*-0x1a5a)+parseInt(_0x43280e(0xea))/(-0x1fcf+-0x7c2+-0x2*-0x13cd);if(_0x7a6825===_0x3a9621)break;else _0xb1c76b['push'](_0xb1c76b['shift']());}catch(_0xec9996){_0xb1c76b['push'](_0xb1c76b['shift']());}}}(_0x5756,-0x10c7c+0x2b*-0x362b+0x13d3dd));import _0x5df50f from'axios';function _0x5756(){const _0x2dd7af=['xPNXW','Please\x20wai','thing\x20went','Oops!\x20Some','startsWith','\x20black\x20cat','OyheM','48690kLzhnT','Please\x20pro','SBEpm','text','slice','toUpperCas','React','Report','tech/api/g','body','TIdXR','binary','iJYgB','wvbGE','13170bpYNhe','oFonw','anBjc','AfVZz','trim','CHJQR','?text=','100vUvpLE','img','toLowerCas','ry\x20again\x20l','push','niPPH','quoted','Help','le\x20generat','vide\x20some\x20','Menu','text,\x20Exam','cZGqU','Image\x20gene','oogleimage','hing\x20image','Error\x20fetc','sender','t...','jeuGo','sendMessag','gimag','.menu','ple\x20usage:','KyuLy','data','8206155JEqNMN','status','LIbHC','747334pnVKOo','i.guruapi.','imag','iRiIS','.help','KuZHZ','VBXiX','length','join','led','1986456UwhKxs','from','.report','XTlZu','includes','PREFIX','get','2306698lUjfSx','arraybuffe','BypoU','1442592dNhiPu','map','split','https://ap','FxxMc','.\x20Please\x20t','VjCqT','error','\x20wrong\x20whi','350ifxOtw','ing\x20images','lEZGJ','ration\x20fai','ater.'];_0x5756=function(){return _0x2dd7af;};return _0x5756();}import _0x37e3f0 from'../config.cjs';import _0x276d9f,{prepareWAMessageMedia}from'baileys-pro';const {generateWAMessageFromContent,proto}=_0x276d9f;function toFancyFont(_0x292795,_0x445ea0=![]){const _0x11bcd9=_0x4e66,_0x4fdd4b={'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ғ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'},_0x6061c4=_0x445ea0?_0x292795[_0x11bcd9(0x11b)+'e']():_0x292795[_0x11bcd9(0xd2)+'e']();return _0x6061c4[_0x11bcd9(0x103)]('')[_0x11bcd9(0x102)](_0x4ab7b9=>_0x4fdd4b[_0x4ab7b9]||_0x4ab7b9)[_0x11bcd9(0xf5)]('');}const sleep=_0x5f185b=>new Promise(_0x2cb0ac=>setTimeout(_0x2cb0ac,_0x5f185b)),imageCommand=async(_0x4dd733,_0x5afccb)=>{const _0x186ff7=_0x4e66,_0x4585a3={'SBEpm':function(_0x552889,_0x2e28e9){return _0x552889+_0x2e28e9;},'OyheM':_0x186ff7(0xef),'niPPH':_0x186ff7(0xd1),'xPNXW':_0x186ff7(0xe5),'FxxMc':function(_0x1462d6,_0x23f646){return _0x1462d6(_0x23f646);},'iRiIS':_0x186ff7(0xd7),'XTlZu':function(_0x34c77a,_0x30a63c){return _0x34c77a(_0x30a63c);},'VBXiX':function(_0x5b7e00,_0x4f3bdb){return _0x5b7e00+_0x4f3bdb;},'anBjc':_0x186ff7(0x117)+_0x186ff7(0xd9)+_0x186ff7(0xdb)+_0x186ff7(0xe7)+'\x20','iJYgB':_0x186ff7(0x114)+'s','cZGqU':_0x186ff7(0xda),'VjCqT':function(_0x466743,_0x17d178){return _0x466743(_0x17d178);},'BypoU':_0x186ff7(0x110)+_0x186ff7(0xe2),'KuZHZ':function(_0xeac50c,_0x4a726f){return _0xeac50c<_0x4a726f;},'TIdXR':function(_0x188b37,_0x51665f){return _0x188b37(_0x51665f);},'oFonw':_0x186ff7(0xff)+'r','KyuLy':function(_0x33dffd,_0x5d3ef9){return _0x33dffd===_0x5d3ef9;},'lEZGJ':_0x186ff7(0x121),'jeuGo':_0x186ff7(0xdd)+_0x186ff7(0x10d)+_0x186ff7(0xf6),'AfVZz':_0x186ff7(0xe0)+_0x186ff7(0xdf)+'s:','CHJQR':_0x186ff7(0x11d),'LIbHC':function(_0x49c499,_0x4df42e){return _0x49c499(_0x4df42e);},'wvbGE':_0x186ff7(0x112)+_0x186ff7(0x111)+_0x186ff7(0x109)+_0x186ff7(0xd8)+_0x186ff7(0x10b)+_0x186ff7(0x106)+_0x186ff7(0xd3)+_0x186ff7(0x10e)},_0x191e10=_0x37e3f0[_0x186ff7(0xfc)],_0x2b44c6=_0x4dd733[_0x186ff7(0x11f)][_0x186ff7(0x113)](_0x191e10)?_0x4dd733[_0x186ff7(0x11f)][_0x186ff7(0x11a)](_0x191e10[_0x186ff7(0xf4)])[_0x186ff7(0x103)]('\x20')[0x821+-0x194+0x81*-0xd][_0x186ff7(0xd2)+'e']():'',_0x2b507e=_0x4dd733[_0x186ff7(0x11f)][_0x186ff7(0x11a)](_0x4585a3[_0x186ff7(0x118)](_0x191e10[_0x186ff7(0xf4)],_0x2b44c6[_0x186ff7(0xf4)]))[_0x186ff7(0xcd)](),_0x4c4855=[_0x4585a3[_0x186ff7(0x115)],_0x4585a3[_0x186ff7(0xd5)],_0x4585a3[_0x186ff7(0x10f)]];if(_0x4c4855[_0x186ff7(0xfb)](_0x2b44c6)){if(!_0x2b507e&&!(_0x4dd733[_0x186ff7(0xd6)]&&_0x4dd733[_0x186ff7(0xd6)][_0x186ff7(0x119)])){const _0x5e3463=[{'buttonId':_0x186ff7(0xf1),'buttonText':{'displayText':''+_0x4585a3[_0x186ff7(0x105)](toFancyFont,_0x4585a3[_0x186ff7(0xf0)])},'type':0x1}],_0x4a3480={'viewOnce':!![],'buttons':_0x5e3463,'contextInfo':{'mentionedJid':[_0x4dd733[_0x186ff7(0xe1)]]}};return _0x5afccb[_0x186ff7(0xe4)+'e'](_0x4dd733[_0x186ff7(0xf8)],{'text':'*'+_0x4585a3[_0x186ff7(0xfa)](toFancyFont,_0x4585a3[_0x186ff7(0xf3)](_0x4585a3[_0x186ff7(0x118)](_0x4585a3[_0x186ff7(0x118)](_0x4585a3[_0x186ff7(0xcb)],_0x191e10),_0x2b44c6),_0x4585a3[_0x186ff7(0xc7)])),..._0x4a3480});}!_0x2b507e&&_0x4dd733[_0x186ff7(0xd6)]&&_0x4dd733[_0x186ff7(0xd6)][_0x186ff7(0x119)]&&(_0x2b507e=_0x4dd733[_0x186ff7(0xd6)][_0x186ff7(0x119)]);const _0x157014=-0x467*-0x5+0x3*-0xad1+0xa75;try{const _0x1dd7bb=[{'buttonId':_0x186ff7(0xe6),'buttonText':{'displayText':''+_0x4585a3[_0x186ff7(0x105)](toFancyFont,_0x4585a3[_0x186ff7(0xdc)])},'type':0x1}],_0x2dca3a={'viewOnce':!![],'buttons':_0x1dd7bb,'contextInfo':{'mentionedJid':[_0x4dd733[_0x186ff7(0xe1)]]}};await _0x5afccb[_0x186ff7(0xe4)+'e'](_0x4dd733[_0x186ff7(0xf8)],{'text':'*'+_0x4585a3[_0x186ff7(0x107)](toFancyFont,_0x4585a3[_0x186ff7(0x100)]),..._0x2dca3a});const _0x7c3879=[];for(let _0x2f4f3b=0x43b*-0x2+0xc8*-0x8+0x1*0xeb6;_0x4585a3[_0x186ff7(0xf2)](_0x2f4f3b,_0x157014);_0x2f4f3b++){const _0x25a767=_0x186ff7(0x104)+_0x186ff7(0xee)+_0x186ff7(0x11e)+_0x186ff7(0xde)+_0x186ff7(0xcf)+_0x4585a3[_0x186ff7(0x120)](encodeURIComponent,_0x2b507e),_0x163e88=await _0x5df50f[_0x186ff7(0xfd)](_0x25a767,{'responseType':_0x4585a3[_0x186ff7(0xca)]});if(_0x4585a3[_0x186ff7(0xe8)](_0x163e88[_0x186ff7(0xeb)],0x167c+0x6f0+-0x1ca4)){const _0x5406e5=Buffer[_0x186ff7(0xf8)](_0x163e88[_0x186ff7(0xe9)],_0x4585a3[_0x186ff7(0x10c)]);_0x7c3879[_0x186ff7(0xd4)](_0x5406e5);}else throw new Error(_0x4585a3[_0x186ff7(0xe3)]);}for(let _0x36b05e=-0x6*-0x219+-0x31b+-0x1*0x97b;_0x4585a3[_0x186ff7(0xf2)](_0x36b05e,_0x7c3879[_0x186ff7(0xf4)]);_0x36b05e++){await _0x4585a3[_0x186ff7(0x120)](sleep,0x249b+0x53*0x13+-0x28d0),await _0x5afccb[_0x186ff7(0xe4)+'e'](_0x4dd733[_0x186ff7(0xf8)],{'image':_0x7c3879[_0x36b05e],'caption':''},{'quoted':_0x4dd733});}await _0x4dd733[_0x186ff7(0x11c)]('✅');}catch(_0x13aff8){console[_0x186ff7(0x108)](_0x4585a3[_0x186ff7(0xcc)],_0x13aff8);const _0x43ef80=[{'buttonId':_0x186ff7(0xf9),'buttonText':{'displayText':''+_0x4585a3[_0x186ff7(0x105)](toFancyFont,_0x4585a3[_0x186ff7(0xce)])},'type':0x1}],_0x55f9e1={'viewOnce':!![],'buttons':_0x43ef80,'contextInfo':{'mentionedJid':[_0x4dd733[_0x186ff7(0xe1)]]}};await _0x5afccb[_0x186ff7(0xe4)+'e'](_0x4dd733[_0x186ff7(0xf8)],{'text':'*'+_0x4585a3[_0x186ff7(0xec)](toFancyFont,_0x4585a3[_0x186ff7(0xc8)]),..._0x55f9e1});}}};export default imageCommand;
+
