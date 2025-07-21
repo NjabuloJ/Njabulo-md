@@ -58,7 +58,7 @@ const song = async (m, Matrix) => {
         const buttons = [
           {
             buttonId: `.menu`,
-            buttonText: { displayText: `,📃${toFancyFont("Menu")}` },
+            buttonText: { displayText: `📃${toFancyFont("Menu")}` },
             type: 1,
           },
         ];
