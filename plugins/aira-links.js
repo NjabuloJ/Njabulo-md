@@ -44,7 +44,7 @@ const linkgc = async (m, gss) => {
     const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
     const text = m.body.slice(prefix.length + cmd.length).trim();
 
-    const validCommands = ['linkgc', 'grouplink'];
+    const validCommands = ['invite', 'grouplink'];
 
     if (!validCommands.includes(cmd)) return;
 
@@ -52,7 +52,7 @@ const linkgc = async (m, gss) => {
       const buttons = [
         {
           buttonId: `.help`,
-          buttonText: { displayText: `${toFancyFont("Help")}` },
+          buttonText: { displayText: `💬${toFancyFont("Help")}` },
           type: 1,
         },
       ];
@@ -73,7 +73,7 @@ const linkgc = async (m, gss) => {
       const buttons = [
         {
           buttonId: `.promote`,
-          buttonText: { displayText: `${toFancyFont("Promote Bot")}` },
+          buttonText: { displayText: `👤${toFancyFont("Promote Bot")}` },
           type: 1,
         },
       ];
@@ -91,7 +91,7 @@ const linkgc = async (m, gss) => {
     const buttons = [
       {
         buttonId: `.menu`,
-        buttonText: { displayText: `${toFancyFont("Menu")}` },
+        buttonText: { displayText: `📃${toFancyFont("Menu")}` },
         type: 1,
       },
     ];
@@ -113,7 +113,7 @@ const linkgc = async (m, gss) => {
     const buttons = [
       {
         buttonId: `.report`,
-        buttonText: { displayText: `${toFancyFont("Report")}` },
+        buttonText: { displayText: `⚠︎${toFancyFont("Report")}` },
         type: 1,
       },
     ];
