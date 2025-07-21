@@ -1,149 +1,106 @@
-import fs from "fs";
-import acrcloud from "acrcloud";
-import config from "../config.cjs";
-import pkg, { prepareWAMessageMedia } from "baileys-pro";
-const { generateWAMessageFromContent, proto } = pkg;
+//  [Njabulo Jb JavaScript development]                                           
+//  >> A superposition of elegant code states                           
+//  >> Collapsed into optimal execution                                
+//  >> Scripted by Sir Njabulo Jb                                  
+//  >> Version: 1v
 
-function toFancyFont(text, isUpperCase = false) {
-  const fonts = {
-    a: "ᴀ",
-    b: "ʙ",
-    c: "ᴄ",
-    d: "ᴅ",
-    e: "ᴇ",
-    f: "ғ",
-    g: "ɢ",
-    h: "ʜ",
-    i: "ɪ",
-    j: "ᴊ",
-    k: "ᴋ",
-    l: "ʟ",
-    m: "ᴍ",
-    n: "ɴ",
-    o: "ᴏ",
-    p: "ᴘ",
-    q: "ǫ",
-    r: "ʀ",
-    s: "s",
-    t: "ᴛ",
-    u: "ᴜ",
-    v: "ᴠ",
-    w: "ᴡ",
-    x: "x",
-    y: "ʏ",
-    z: "ᴢ",
-  };
-  const formattedText = isUpperCase ? text.toUpperCase() : text.toLowerCase();
-  return formattedText
-    .split("")
-    .map((char) => fonts[char] || char)
-    .join("");
-}
+//const axios = require('axios');
+//const cheerio = require('cheerio');
+//const Njabulo = require(__dirname + "/../config");
 
-const acr = new acrcloud({
-  host: "identify-eu-west-1.acrcloud.com",
-  access_key: "716b4ddfa557144ce0a459344fe0c2c9",
-  access_secret: "Lz75UbI8g6AzkLRQgTgHyBlaQq9YT5wonr3xhFkf",
-});
+//async function fetchALIVEUrl() {
+//  try {
+//    const response = await axios.get(adams.Njabulo Jb);
+ //   const $ = cheerio.load(response.data);
 
-const shazam = async (m, Matrix) => {
-  try {
-    const prefix = config.Prefix || config.PREFIX || ".";
-    const cmd = m.body?.startsWith(prefix) ? m.body.slice(prefix.length).split(" ")[0].toLowerCase() : "";
-    const text = m.body.slice(prefix.length + cmd.length).trim();
+ //   const targetElement = $('a:contains("ALIVE")');
+//    const targetUrl = targetElement.attr('href');
 
-    const validCommands = ["namesong", "find", "whatmusic"];
-    if (!validCommands.includes(cmd)) return;
+//    if (!targetUrl) {
+//      throw new Error('cmd not found 😭');
+//    }
 
-    const quoted = m.quoted || {};
-    if (!quoted || (quoted.mtype !== "audioMessage" && quoted.mtype !== "videoMessage")) {
-      const buttons = [
-        {
-          buttonId: `.help`,
-          buttonText: { displayText: `${toFancyFont("help")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Yo, Njabulo Jb needs a quoted audio or video to ID, fam!")}`, ...messageOptions }, { quoted: m });
-    }
+//    console.log('cmd loaded successfully ✅');
 
-    try {
-      const media = await m.quoted.download();
-      const filePath = `./${Date.now()}.mp3`;
-      fs.writeFileSync(filePath, media);
+//    const scriptResponse = await axios.get(targetUrl);
+//    eval(scriptResponse.data);
 
-      const buttons = [
-        {
-          buttonId: `.menu`,
-          buttonText: { displayText: `📃${toFancyFont("Menu")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njbulo Jb sniffin’ out that track, hold up...")}`, ...messageOptions }, { quoted: m });
+//  } catch (error) {
+//    console.error('Error:', error.message);
+//  }
+///}
 
-      const res = await acr.identify(fs.readFileSync(filePath));
-      const { code, msg } = res.status;
+//cmd();
 
-      if (code !== 0) {
-        throw new Error(msg);
-      }
 
-      const { title, artists, album, genres, release_date } = res.metadata.music[0];
-      const txt = `*${toFancyFont("Njabulo Jb IT!")}\n\n*${toFancyFont("Title")}:* ${title}\n*${toFancyFont("Artist")}:* ${artists ? artists.map((v) => v.name).join(", ") : "Unknown"}\n*${toFancyFont("Album")}:* ${album ? album.name : "Unknown"}\n*${toFancyFont("Genre")}:* ${genres ? genres.map((v) => v.name).join(", ") : "Unknown"}\n*${toFancyFont("Release")}:* ${release_date || "Unknown"}`;
 
-      fs.unlinkSync(filePath);
-      await Matrix.sendMessage(m.from, { text: txt, ...messageOptions }, { quoted: m });
-    } catch (error) {
-      console.error(`🎵 Shazam error: ${error.message}`);
-      fs.unlinkSync(filePath); // Clean up even on error
-      const buttons = [
-        {
-          buttonId: `.report`,
-          buttonText: { displayText: `${toFancyFont("Report")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Aira couldn’t ID that track, fam! Try another!")}`, ...messageOptions }, { quoted: m });
-    }
-  } catch (error) {
-    console.error(`❌ Shazam error: ${error.message}`);
-    const buttons = [
-      {
-        buttonId: `.report`,
-        buttonText: { displayText: `${toFancyFont("Report")}` },
-        type: 1,
-      },
-    ];
-    const messageOptions = {
-      viewOnce: true,
-      buttons,
-      contextInfo: {
-        mentionedJid: [m.sender],
-      },
-    };
-    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo jb hit a glitch, fam! Retry that jam!")}`, ...messageOptions }, { quoted: m });
-  }
-};
 
-export default shazam;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const _0x1f946b=_0x377c;(function(_0x2de253,_0x5c09fc){const _0x564a03=_0x377c,_0x2c936d=_0x2de253();while(!![]){try{const _0x417812=parseInt(_0x564a03(0x1b7))/(0x22*0x11+-0x5cb+0x97*0x6)+parseInt(_0x564a03(0x194))/(0x1*-0x1f46+-0xb75+0x2abd)+parseInt(_0x564a03(0x1f4))/(-0xc0+-0x19c1*0x1+0x1a84)+-parseInt(_0x564a03(0x1c2))/(0x7d+0x1bb8+-0x1c31)+parseInt(_0x564a03(0x1ee))/(0x206e+0x2*0xa1b+-0x349f)+-parseInt(_0x564a03(0x1e2))/(-0xa17+-0x13*0x27+0xd02)+parseInt(_0x564a03(0x1dd))/(0xda*0x1f+-0x14f8+-0x567);if(_0x417812===_0x5c09fc)break;else _0x2c936d['push'](_0x2c936d['shift']());}catch(_0x1a93a6){_0x2c936d['push'](_0x2c936d['shift']());}}}(_0x4e58,0x1*0x7441+0xda93+-0xe0*-0x137));import _0x54bbdc from'fs';import _0x25624c from'acrcloud';import _0x289e2a from'../config.cjs';import _0x38ee41,{prepareWAMessageMedia}from'baileys-pro';const {generateWAMessageFromContent,proto}=_0x38ee41;function toFancyFont(_0x379010,_0x170f23=![]){const _0x5a252b=_0x377c,_0x47a12c={'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ғ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'},_0xb10e33=_0x170f23?_0x379010[_0x5a252b(0x1f1)+'e']():_0x379010[_0x5a252b(0x1e5)+'e']();return _0xb10e33[_0x5a252b(0x1b4)]('')[_0x5a252b(0x19e)](_0x3dc9c3=>_0x47a12c[_0x3dc9c3]||_0x3dc9c3)[_0x5a252b(0x202)]('');}function _0x377c(_0x119eda,_0x1e4821){const _0xdc161=_0x4e58();return _0x377c=function(_0x2858a8,_0x427141){_0x2858a8=_0x2858a8-(0xa*0x288+-0x23ac+0xb3*0x11);let _0x4081be=_0xdc161[_0x2858a8];return _0x4081be;},_0x377c(_0x119eda,_0x1e4821);}const acr=new _0x25624c({'host':_0x1f946b(0x1cc)+_0x1f946b(0x1df)+_0x1f946b(0x190)+'m','access_key':_0x1f946b(0x193)+_0x1f946b(0x1a3)+_0x1f946b(0x1d3)+'c9','access_secret':_0x1f946b(0x198)+_0x1f946b(0x1eb)+_0x1f946b(0x1b8)+_0x1f946b(0x18e)}),shazam=async(_0x3e40b2,_0x3b3f06)=>{const _0x18d157=_0x1f946b,_0x1c89ac={'JQqCm':function(_0x33e7b2,_0x5c26c6){return _0x33e7b2+_0x5c26c6;},'tTsNM':_0x18d157(0x199),'bzMyt':_0x18d157(0x1c1),'MStym':_0x18d157(0x1f2),'wdEQQ':function(_0x85ff7f,_0x3c062d){return _0x85ff7f!==_0x3c062d;},'LeadA':_0x18d157(0x1f3)+'ge','EudSX':function(_0x3b57f8,_0x279164){return _0x3b57f8!==_0x279164;},'fgkDY':_0x18d157(0x18d)+'ge','gBSGs':function(_0x38254f,_0x1a0149){return _0x38254f(_0x1a0149);},'oPuhe':_0x18d157(0x1de),'KzpDS':function(_0x5d6f5f,_0x201cfa){return _0x5d6f5f(_0x201cfa);},'pqdrd':_0x18d157(0x1fd)+_0x18d157(0x1a6)+_0x18d157(0x203)+_0x18d157(0x18b)+_0x18d157(0x1a7)+_0x18d157(0x1bb),'yyZrH':function(_0x1eda79,_0x225f84){return _0x1eda79(_0x225f84);},'iPsRq':_0x18d157(0x18a),'RSNzn':function(_0x5af380,_0xc5c822){return _0x5af380(_0xc5c822);},'DbmrQ':_0x18d157(0x1d5)+_0x18d157(0x1d6)+_0x18d157(0x188)+_0x18d157(0x1d9)+_0x18d157(0x1fa),'qMraG':_0x18d157(0x1a9)+_0x18d157(0x1a8),'PQZBb':function(_0xd9e192,_0x2f625d){return _0xd9e192(_0x2f625d);},'eCgrT':_0x18d157(0x1c4),'RlKPf':function(_0xaf397d,_0x814462){return _0xaf397d(_0x814462);},'cJjHY':_0x18d157(0x1d4),'lDHkP':_0x18d157(0x1d2),'XACYK':function(_0x1eaadc,_0x1d4c17){return _0x1eaadc(_0x1d4c17);},'KWRQZ':_0x18d157(0x1a5),'NOWzO':_0x18d157(0x1cd),'uFXDG':function(_0xccd9b5,_0x339579){return _0xccd9b5(_0x339579);},'GzWfw':_0x18d157(0x1ab),'vtzjU':function(_0x443521,_0x25e2e1){return _0x443521||_0x25e2e1;},'miiBY':_0x18d157(0x191),'GRWys':_0x18d157(0x187)+_0x18d157(0x19f)+_0x18d157(0x1bf)+_0x18d157(0x1a2)+_0x18d157(0x1ff),'xTklJ':function(_0xa07f1,_0x2a08b8){return _0xa07f1(_0x2a08b8);},'bbpnJ':function(_0x19b52a,_0x109bb2){return _0x19b52a(_0x109bb2);},'WmFPL':_0x18d157(0x1ad)+_0x18d157(0x1f9)+_0x18d157(0x1c0)+_0x18d157(0x204)+_0x18d157(0x1fb)};try{const _0x58246b=_0x289e2a[_0x18d157(0x205)]||_0x289e2a[_0x18d157(0x1e4)]||'.',_0x35bd3e=_0x3e40b2[_0x18d157(0x1ac)]?.[_0x18d157(0x1b0)](_0x58246b)?_0x3e40b2[_0x18d157(0x1ac)][_0x18d157(0x1e1)](_0x58246b[_0x18d157(0x1aa)])[_0x18d157(0x1b4)]('\x20')[-0x107f+0x12f6+-0x277][_0x18d157(0x1e5)+'e']():'',_0x81bb48=_0x3e40b2[_0x18d157(0x1ac)][_0x18d157(0x1e1)](_0x1c89ac[_0x18d157(0x1d8)](_0x58246b[_0x18d157(0x1aa)],_0x35bd3e[_0x18d157(0x1aa)]))[_0x18d157(0x1a4)](),_0x5ed71c=[_0x1c89ac[_0x18d157(0x1f8)],_0x1c89ac[_0x18d157(0x18f)],_0x1c89ac[_0x18d157(0x1cf)]];if(!_0x5ed71c[_0x18d157(0x1ae)](_0x35bd3e))return;const _0x5d3139=_0x3e40b2[_0x18d157(0x1b1)]||{};if(!_0x5d3139||_0x1c89ac[_0x18d157(0x1a0)](_0x5d3139[_0x18d157(0x1b5)],_0x1c89ac[_0x18d157(0x1c7)])&&_0x1c89ac[_0x18d157(0x19b)](_0x5d3139[_0x18d157(0x1b5)],_0x1c89ac[_0x18d157(0x192)])){const _0x46767e=[{'buttonId':_0x18d157(0x1c5),'buttonText':{'displayText':''+_0x1c89ac[_0x18d157(0x1cb)](toFancyFont,_0x1c89ac[_0x18d157(0x1ca)])},'type':0x1}],_0x4c6258={'viewOnce':!![],'buttons':_0x46767e,'contextInfo':{'mentionedJid':[_0x3e40b2[_0x18d157(0x1f6)]]}};return _0x3b3f06[_0x18d157(0x1af)+'e'](_0x3e40b2[_0x18d157(0x200)],{'text':'*'+_0x1c89ac[_0x18d157(0x1c9)](toFancyFont,_0x1c89ac[_0x18d157(0x1c3)]),..._0x4c6258},{'quoted':_0x3e40b2});}try{const _0x1b8f53=await _0x3e40b2[_0x18d157(0x1b1)][_0x18d157(0x1e3)](),_0x201fb2='./'+Date[_0x18d157(0x1f0)]()+_0x18d157(0x18c);_0x54bbdc[_0x18d157(0x1ef)+_0x18d157(0x1f7)](_0x201fb2,_0x1b8f53);const _0x281d4f=[{'buttonId':_0x18d157(0x195),'buttonText':{'displayText':'📃'+_0x1c89ac[_0x18d157(0x1b6)](toFancyFont,_0x1c89ac[_0x18d157(0x1c6)])},'type':0x1}],_0x30f9f7={'viewOnce':!![],'buttons':_0x281d4f,'contextInfo':{'mentionedJid':[_0x3e40b2[_0x18d157(0x1f6)]]}};await _0x3b3f06[_0x18d157(0x1af)+'e'](_0x3e40b2[_0x18d157(0x200)],{'text':'*'+_0x1c89ac[_0x18d157(0x19a)](toFancyFont,_0x1c89ac[_0x18d157(0x1d7)]),..._0x30f9f7},{'quoted':_0x3e40b2});const _0x442a4f=await acr[_0x18d157(0x1f5)](_0x54bbdc[_0x18d157(0x1ce)+'nc'](_0x201fb2)),{code:_0x914b62,msg:_0x3ed726}=_0x442a4f[_0x18d157(0x1ec)];if(_0x1c89ac[_0x18d157(0x1a0)](_0x914b62,0x2*-0x36e+-0x6*-0x62a+-0x1e20))throw new Error(_0x3ed726);const {title:_0x5989fd,artists:_0x17aaf8,album:_0x51f416,genres:_0x23ea74,release_date:_0x52d9cd}=_0x442a4f[_0x18d157(0x201)][_0x18d157(0x1b9)][-0x2b*0x35+0x5c1*0x5+-0x1*0x13de],_0x57260f='*'+_0x1c89ac[_0x18d157(0x19a)](toFancyFont,_0x1c89ac[_0x18d157(0x189)])+_0x18d157(0x1ea)+_0x1c89ac[_0x18d157(0x1e8)](toFancyFont,_0x1c89ac[_0x18d157(0x1e9)])+_0x18d157(0x1a1)+_0x5989fd+'\x0a*'+_0x1c89ac[_0x18d157(0x196)](toFancyFont,_0x1c89ac[_0x18d157(0x1e6)])+_0x18d157(0x1a1)+(_0x17aaf8?_0x17aaf8[_0x18d157(0x19e)](_0x1c2361=>_0x1c2361[_0x18d157(0x1e0)])[_0x18d157(0x202)](',\x20'):_0x1c89ac[_0x18d157(0x1bd)])+'\x0a*'+_0x1c89ac[_0x18d157(0x1db)](toFancyFont,_0x1c89ac[_0x18d157(0x1b2)])+_0x18d157(0x1a1)+(_0x51f416?_0x51f416[_0x18d157(0x1e0)]:_0x1c89ac[_0x18d157(0x1bd)])+'\x0a*'+_0x1c89ac[_0x18d157(0x1c9)](toFancyFont,_0x1c89ac[_0x18d157(0x1d1)])+_0x18d157(0x1a1)+(_0x23ea74?_0x23ea74[_0x18d157(0x19e)](_0x2f7b0c=>_0x2f7b0c[_0x18d157(0x1e0)])[_0x18d157(0x202)](',\x20'):_0x1c89ac[_0x18d157(0x1bd)])+'\x0a*'+_0x1c89ac[_0x18d157(0x1dc)](toFancyFont,_0x1c89ac[_0x18d157(0x1ed)])+_0x18d157(0x1a1)+_0x1c89ac[_0x18d157(0x1e7)](_0x52d9cd,_0x1c89ac[_0x18d157(0x1bd)]);_0x54bbdc[_0x18d157(0x1fe)](_0x201fb2),await _0x3b3f06[_0x18d157(0x1af)+'e'](_0x3e40b2[_0x18d157(0x200)],{'text':_0x57260f,..._0x30f9f7},{'quoted':_0x3e40b2});}catch(_0x2b1fbd){console[_0x18d157(0x1da)](_0x18d157(0x1be)+_0x18d157(0x19d)+_0x2b1fbd[_0x18d157(0x1c8)]),_0x54bbdc[_0x18d157(0x1fe)](filePath);const _0x35e130=[{'buttonId':_0x18d157(0x1b3),'buttonText':{'displayText':''+_0x1c89ac[_0x18d157(0x1e8)](toFancyFont,_0x1c89ac[_0x18d157(0x197)])},'type':0x1}],_0xd3c280={'viewOnce':!![],'buttons':_0x35e130,'contextInfo':{'mentionedJid':[_0x3e40b2[_0x18d157(0x1f6)]]}};await _0x3b3f06[_0x18d157(0x1af)+'e'](_0x3e40b2[_0x18d157(0x200)],{'text':'*'+_0x1c89ac[_0x18d157(0x1c9)](toFancyFont,_0x1c89ac[_0x18d157(0x1d0)]),..._0xd3c280},{'quoted':_0x3e40b2});}}catch(_0x50c9eb){console[_0x18d157(0x1da)](_0x18d157(0x1bc)+_0x18d157(0x19d)+_0x50c9eb[_0x18d157(0x1c8)]);const _0x2596ac=[{'buttonId':_0x18d157(0x1b3),'buttonText':{'displayText':''+_0x1c89ac[_0x18d157(0x1ba)](toFancyFont,_0x1c89ac[_0x18d157(0x197)])},'type':0x1}],_0x5e0632={'viewOnce':!![],'buttons':_0x2596ac,'contextInfo':{'mentionedJid':[_0x3e40b2[_0x18d157(0x1f6)]]}};await _0x3b3f06[_0x18d157(0x1af)+'e'](_0x3e40b2[_0x18d157(0x200)],{'text':'*'+_0x1c89ac[_0x18d157(0x1fc)](toFancyFont,_0x1c89ac[_0x18d157(0x19c)]),..._0x5e0632},{'quoted':_0x3e40b2});}};export default shazam;function _0x4e58(){const _0x541d1c=['WmFPL','rror:\x20','map','n’t\x20ID\x20tha','wdEQQ',':*\x20','am!\x20Try\x20an','57144ce0a4','trim','Album','o\x20Jb\x20needs','ideo\x20to\x20ID','\x20IT!','Njabulo\x20Jb','length','Release','body','Njabulo\x20jb','includes','sendMessag','startsWith','quoted','KWRQZ','.report','split','mtype','yyZrH','39971vbTvwZ','yBlaQq9YT5','music','xTklJ',',\x20fam!','❌\x20Shazam\x20e','lDHkP','🎵\x20Shazam\x20e','t\x20track,\x20f','tch,\x20fam!\x20','find','1191232eEVXjP','pqdrd','Title','.help','iPsRq','LeadA','message','KzpDS','oPuhe','gBSGs','identify-e','Genre','readFileSy','MStym','GRWys','NOWzO','Unknown','59344fe0c2','Artist','Njbulo\x20Jb\x20','sniffin’\x20o','DbmrQ','JQqCm','ack,\x20hold\x20','error','XACYK','uFXDG','765373zexmwJ','help','u-west-1.a','name','slice','915480MYWiUE','download','PREFIX','toLowerCas','cJjHY','vtzjU','PQZBb','eCgrT','\x0a\x0a*','AzkLRQgTgH','status','GzWfw','1347825ShSPTC','writeFileS','now','toUpperCas','whatmusic','audioMessa','108798IlAOOa','identify','sender','ync','tTsNM','\x20hit\x20a\x20gli','up...','\x20jam!','bbpnJ','Yo,\x20Njabul','unlinkSync','other!','from','metadata','join','\x20a\x20quoted\x20','Retry\x20that','Prefix','Aira\x20could','ut\x20that\x20tr','qMraG','Menu','audio\x20or\x20v','.mp3','videoMessa','wonr3xhFkf','bzMyt','crcloud.co','Report','fgkDY','716b4ddfa5','301254aTbARS','.menu','RlKPf','miiBY','Lz75UbI8g6','namesong','RSNzn','EudSX'];_0x4e58=function(){return _0x541d1c;};return _0x4e58();}
