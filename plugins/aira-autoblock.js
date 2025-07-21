@@ -53,13 +53,13 @@ const autoblockCommand = async (m, Matrix) => {
     let responseMessage;
     const buttons = [
       {
-        buttonId: `.autoblock ${toFancyFont("on")}`,
-        buttonText: { displayText: `${toFancyFont("on")}` },
+        buttonId: `.autoblock on`,
+        buttonText: { displayText: `💬${toFancyFont("on")}` },
         type: 1,
       },
       {
-        buttonId: `.autoblock ${toFancyFont("off")}`,
-        buttonText: { displayText: `${toFancyFont("off")}` },
+        buttonId: `.autoblock off`,
+        buttonText: { displayText: `💬${toFancyFont("off")}` },
         type: 1,
       },
     ];
