@@ -51,7 +51,7 @@ const facebook = async (m, Matrix) => {
       const buttons = [
         {
           buttonId: `.help`,
-          buttonText: { displayText: `${toFancyFont("Help")}` },
+          buttonText: { displayText: `💬${toFancyFont("Help")}` },
           type: 1,
         },
       ];
@@ -74,7 +74,7 @@ const facebook = async (m, Matrix) => {
       const buttons = [
         {
           buttonId: `.report`,
-          buttonText: { displayText: `${toFancyFont("Report")}` },
+          buttonText: { displayText: `⚠︎${toFancyFont("Report")}` },
           type: 1,
         },
       ];
@@ -85,7 +85,7 @@ const facebook = async (m, Matrix) => {
           mentionedJid: [m.sender],
         },
       };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Toxic-MD couldn’t grab that video, fam! URL’s trash or somethin’s busted!")}`, ...messageOptions }, { quoted: m });
+      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo Jb couldn’t grab that video, fam! URL’s trash or somethin’s busted!")}`, ...messageOptions }, { quoted: m });
     }
 
     const { title, hd_video, sd_video, thumbnail } = data.result;
@@ -96,7 +96,7 @@ const facebook = async (m, Matrix) => {
       const buttons = [
         {
           buttonId: `.help`,
-          buttonText: { displayText: `${toFancyFont("Help")}` },
+          buttonText: { displayText: `💬${toFancyFont("Help")}` },
           type: 1,
         },
       ];
@@ -126,7 +126,7 @@ const facebook = async (m, Matrix) => {
     const buttons = [
       {
         buttonId: `.report`,
-        buttonText: { displayText: `${toFancyFont("Report")}` },
+        buttonText: { displayText: `⚠︎${toFancyFont("Report")}` },
         type: 1,
       },
     ];
