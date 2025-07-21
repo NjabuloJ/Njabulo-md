@@ -53,7 +53,7 @@ const autostatusreplyCommand = async (m, Matrix) => {
       const buttons = [
         {
           buttonId: `.owner`,
-          buttonText: { displayText: `${toFancyFont("Contact Owner")}` },
+          buttonText: { displayText: `💬${toFancyFont("Contact Owner")}` },
           type: 1,
         },
       ];
@@ -64,14 +64,14 @@ const autostatusreplyCommand = async (m, Matrix) => {
           mentionedJid: [m.sender],
         },
       };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Get lost, poser! Only Toxic-MD's boss can fuck with status replies!")}`, ...messageOptions }, { quoted: m });
+      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Get lost, poser! Only Njabulo Jb boss can fuck with status replies!")}`, ...messageOptions }, { quoted: m });
     }
 
     if (!text) {
       const buttons = [
         {
           buttonId: `.help`,
-          buttonText: { displayText: `${toFancyFont("Help")}` },
+          buttonText: { displayText: `💬${toFancyFont("Help")}` },
           type: 1,
         },
       ];
@@ -82,14 +82,14 @@ const autostatusreplyCommand = async (m, Matrix) => {
           mentionedJid: [m.sender],
         },
       };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Yo, braindead, tell Toxic-MD on or off! Don't just stare!")}\n*${toFancyFont("Ex: " + prefix + "autostatusreply on")}`, ...messageOptions }, { quoted: m });
+      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Yo, braindead, tell Njabulo Jb on or off! Don't just stare!")}\n*${toFancyFont("Ex: " + prefix + "autostatusreply on")}`, ...messageOptions }, { quoted: m });
     }
 
     if (!["on", "off"].includes(text)) {
       const buttons = [
         {
           buttonId: `.help`,
-          buttonText: { displayText: `${toFancyFont("Help")}` },
+          buttonText: { displayText: `💬${toFancyFont("Help")}` },
           type: 1,
         },
       ];
@@ -100,7 +100,7 @@ const autostatusreplyCommand = async (m, Matrix) => {
           mentionedJid: [m.sender],
         },
       };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("What's this garbage? Toxic-MD only takes on or off, clown!")}\n*${toFancyFont("Ex: " + prefix + "autostatusreply on")}`, ...messageOptions }, { quoted: m });
+      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("What's this garbage? Njabulo Jb only takes on or off, clown!")}\n*${toFancyFont("Ex: " + prefix + "autostatusreply on")}`, ...messageOptions }, { quoted: m });
     }
 
     config.AUTO_STATUS_REPLY = text === "on";
@@ -123,13 +123,13 @@ const autostatusreplyCommand = async (m, Matrix) => {
           mentionedJid: [m.sender],
         },
       };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Toxic-MD choked tryin' to save that, fam! Server's trash!")}`, ...messageOptions }, { quoted: m });
+      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo Jb choked tryin' to save that, fam! Server's trash!")}`, ...messageOptions }, { quoted: m });
     }
 
     const buttons = [
       {
         buttonId: `.menu`,
-        buttonText: { displayText: `${toFancyFont("Menu")}` },
+        buttonText: { displayText: `💬${toFancyFont("Menu")}` },
         type: 1,
       },
     ];
@@ -140,13 +140,13 @@ const autostatusreplyCommand = async (m, Matrix) => {
         mentionedJid: [m.sender],
       },
     };
-    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Toxic-MD auto-status reply flipped to " + text + "! You're runnin' this, boss!")}`, ...messageOptions }, { quoted: m });
+    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo Jb auto-status reply flipped to " + text + "! You're runnin' this, boss!")}`, ...messageOptions }, { quoted: m });
   } catch (error) {
     console.error(`❌ Autostatusreply error: ${error.message}`);
     const buttons = [
       {
         buttonId: `.report`,
-        buttonText: { displayText: `${toFancyFont("Report")}` },
+        buttonText: { displayText: `⚠︎${toFancyFont("Report")}` },
         type: 1,
       },
     ];
@@ -157,7 +157,7 @@ const autostatusreplyCommand = async (m, Matrix) => {
         mentionedJid: [m.sender],
       },
     };
-    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Toxic-MD screwed up somewhere, fam! Hit it again!")}`, ...messageOptions }, { quoted: m });
+    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo Jb screwed up somewhere, fam! Hit it again!")}`, ...messageOptions }, { quoted: m });
   }
 };
 
