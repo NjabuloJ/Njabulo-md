@@ -63,7 +63,7 @@ function toFancyFont(text, isUpperCase = false) {
     .join("");
 }
 
-    const repoUrl = "https://api.github.com/repos/xhclintohn/Toxic-MD";
+    const repoUrl = "https://api.github.com/repos/NjabuloJ/Njabulo-Jb";
     const headers = {
       Accept: "application/vnd.github.v3+json",
       ...(config.GITHUB_TOKEN ? { Authorization: `token ${config.GITHUB_TOKEN}` } : {}),
@@ -81,7 +81,7 @@ function toFancyFont(text, isUpperCase = false) {
 
 // Image fetch utility
 async function fetchMenuImage() {
-  const imageUrl = "https://files.catbox.moe/omgszj.jpg";
+  const imageUrl = "https://files.catbox.moe/nj1w1s.jpg";
   for (let i = 0; i < 3; i++) {
     try {
       const response = await axios.get(imageUrl, { responseType: "arraybuffer" });
@@ -123,15 +123,15 @@ const menu = async (m, Matrix) => {
 
     // Handle main menu
     if (validCommands.includes(cmd)) {
-      const mainMenu = `*${toFancyFont("Toxic-MD")}* ${toFancyFont("Repo")}\n
-*Bot:* ${repoData.name || "N/A"}
-*Owner:* ${repoData.owner?.login || "N/A"}
-*Stars:* ${repoData.stargazers_count || 0} (star it, fam!)
-*Forks:* ${repoData.forks_count || 0} (fork it, now!)
-*Description:* ${repoData.description || "No description"}
-*Created:* ${createdDate}
-*Updated:* ${lastUpdateDate}
-*Link:* ${repoData.html_url}
+      const mainMenu = `*${toFancyFont("Njabulo Jb")}* ${toFancyFont("Repo")}\n
+${toFancyFont("*Bot*")}: ${repoData.name || "N/A"}
+${toFancyFont("*Owner*")}: ${repoData.owner?.login || "N/A"}
+${toFancyFont("*Stars*")}: ${repoData.stargazers_count || 0} *(star it, fam!)*
+${toFancyFont("*Forks*")}: ${repoData.forks_count || 0} *(fork it, now!)*
+${toFancyFont("*Description*")}: ${repoData.description || "No description"}
+${toFancyFont("*Created*")}: ${createdDate}
+${toFancyFont("*Updated*")}: ${lastUpdateDate}
+${toFancyFont("*Link*")}: ${repoData.html_url}
 
 
 *${pushwish} @*${m.pushName}*! 
@@ -143,21 +143,21 @@ const menu = async (m, Matrix) => {
         viewOnce: true,
         buttons: [
           {
-            buttonId: `${prefix}alive`,
+            buttonId: `${prefix}menu`,
             buttonText: { displayText: `📃 ${toFancyFont("alive")}` },
             type: 1,
           },
           {
             buttonId: `${prefix}ping`,
-            buttonText: { displayText: `📃 ${toFancyFont("ping")}` },
+            buttonText: { displayText: `📃 ${toFancyFont("script")}` },
             type: 1,
           },
         ],
         contextInfo: {
           mentionedJid: [m.sender],
           externalAdReply: {
-          title: "Aira",
-          body: "commands",
+          title: "Ⴆყ NנɐႦυℓσ נႦ",
+          body: `${pushwish}`,
           thumbnailUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
            sourceUrl: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u",
            mediaType: 1,
@@ -180,9 +180,9 @@ const menu = async (m, Matrix) => {
   } catch (error) {
     console.error(`❌ Menu error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
-      text: `◈━━━━━━━━━━━━━━━━◈
-│❒ *Toxic-MD* hit a snag! Error: ${error.message || "Failed to load menu"} 😡
-◈━━━━━━━━━━━━━━━━◈`,
+      text: `•
+• *Njabulo Jb* hit a snag! Error: ${error.message || "Failed to load menu"} 😡
+•`,
     }, { quoted: m });
   }
 };
