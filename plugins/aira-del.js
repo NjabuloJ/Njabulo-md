@@ -53,7 +53,7 @@ const deleteMessage = async (m, gss) => {
         const buttons = [
           {
             buttonId: `.owner`,
-            buttonText: { displayText: `${toFancyFont("Contact Owner")}` },
+            buttonText: { displayText: `👤${toFancyFont("Contact Owner")}` },
             type: 1,
           },
         ];
@@ -64,14 +64,14 @@ const deleteMessage = async (m, gss) => {
             mentionedJid: [m.sender],
           },
         };
-        return gss.sendMessage(m.from, { text: "*📛 THIS IS AN OWNER COMMAND*", ...messageOptions });
+        return gss.sendMessage(m.from, { text: "* THIS IS AN OWNER COMMAND*", ...messageOptions });
       }
 
       if (!m.quoted) {
         const buttons = [
           {
             buttonId: `.help`,
-            buttonText: { displayText: `${toFancyFont("Help")}` },
+            buttonText: { displayText: `🤲${toFancyFont("Help")}` },
             type: 1,
           },
         ];
@@ -96,7 +96,7 @@ const deleteMessage = async (m, gss) => {
       const buttons = [
         {
           buttonId: `.menu`,
-          buttonText: { displayText: `${toFancyFont("Menu")}` },
+          buttonText: { displayText: `📃${toFancyFont("Menu")}` },
           type: 1,
         },
       ];
@@ -114,7 +114,7 @@ const deleteMessage = async (m, gss) => {
     const buttons = [
       {
         buttonId: `.report`,
-        buttonText: { displayText: `${toFancyFont("Report")}` },
+        buttonText: { displayText: `⚠︎${toFancyFont("Report")}` },
         type: 1,
       },
     ];
