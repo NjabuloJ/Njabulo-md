@@ -123,32 +123,16 @@ const menu = async (m, Matrix) => {
 
     // Handle main menu
     if (validCommands.includes(cmd)) {
-      const mainMenu = `
-*①• ${toFancyFont("aira")} *(Command Menu ⚠)*
-*②• ${toFancyFont("Bot")}*: ${toFancyFont("*(aira)*")}
-*④• ${toFancyFont("Date")}*: ${xdate}
-*⑤• ${toFancyFont("Time")}*: ${xtime} 
-*⑥• ${toFancyFont("Prefix")}: [ ${prefix} ]*
-*⑦• ${toFancyFont("Mode")}*: ${mode}
-*⑧• ${toFancyFont("Library")}: (Baileys)*
+      const mainMenu = `*${toFancyFont("Toxic-MD")}* ${toFancyFont("Repo")}\n
+*Bot:* ${repoData.name || "N/A"}
+*Owner:* ${repoData.owner?.login || "N/A"}
 *Stars:* ${repoData.stargazers_count || 0} (star it, fam!)
+*Forks:* ${repoData.forks_count || 0} (fork it, now!)
+*Description:* ${repoData.description || "No description"}
+*Created:* ${createdDate}
+*Updated:* ${lastUpdateDate}
+*Link:* ${repoData.html_url}
 
- ╭──〔 *Aira* 〕
-│
-│ ➊    *ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴇɴᴜ*
-│ ➋    *ɢʀᴏᴜᴘ ᴍᴇɴᴜ*
-│ ➌    *ғᴜɴ ᴍᴇɴᴜ*
-│ ➍    *ᴏᴡɴᴇʀ ᴍᴇɴᴜ*
-│ ➎    *ᴀɪ ᴍᴇɴᴜ*
-│ ➏    *ᴀɴɪᴍᴇ ᴍᴇɴᴜ*
-│ ➐    *ᴄᴏɴᴠᴇʀᴛ ᴍᴇɴᴜ*
-│ ➑    *ᴏᴛʜᴇʀ ᴍᴇɴᴜ*
-│ ➒    *ʀᴇᴀᴄᴛɪᴏɴ ᴍᴇɴᴜ*
-│ ➓    *ᴍᴀɪɴ ᴍᴇɴᴜ*
-│ ⓫    *ʟᴏɢᴏ ᴍᴀᴋᴇʀ*
-│ ⓬    *sᴇᴛᴛɪɴɢs ᴍᴇɴᴜ*
-│
-╰──〔 *Aira* 〕
 
 *${pushwish} @*${m.pushName}*! 
 
