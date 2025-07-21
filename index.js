@@ -42,9 +42,9 @@ if (!fs.existsSync(sessionDir)) {
 async function loadBase64Session() {
   const base64Creds = config.SESSION_ID;
   if (!base64Creds || base64Creds === "Your Session Id") {
-    console.error(chalk.red(`◈━━━━━━━━━━━━━━━━◈
-│❒ Invalid or missing SESSION_ID in .env
-◈━━━━━━━━━━━━━━━━◈`));
+    console.error(chalk.red(`╭━━❖
+│Invalid or missing SESSION_ID in .env
+╰━━━━━━⊱`));
     process.exit(1);
   }
 
@@ -53,9 +53,9 @@ async function loadBase64Session() {
     await fs.promises.writeFile(credsPath, credsBuffer);
     return true;
   } catch (error) {
-    console.error(chalk.red(`◈━━━━━━━━━━━━━━━━◈
-│❒ Failed to load SESSION_ID: ${error.message}
-◈━━━━━━━━━━━━━━━━◈`));
+    console.error(chalk.red(`╭━━❖
+│Failed to load SESSION_ID: ${error.message}
+╰━━━━━━⊱`));
     process.exit(1);
   }
 }
@@ -152,9 +152,9 @@ async function start() {
         const statusCode = lastDisconnect.error?.output?.statusCode;
         switch (statusCode) {
           case DisconnectReason.badSession:
-            console.error(chalk.red(`◈━━━━━━━━━━━━━━━━◈
-│❒ Invalid session, update SESSION_ID in .env
-◈━━━━━━━━━━━━━━━━◈`));
+            console.error(chalk.red(`╭━━❖
+│ Invalid session, update SESSION_ID in .env
+╰━━━━━━⊱`));
             process.exit();
             break;
           case DisconnectReason.connectionClosed:
@@ -167,9 +167,9 @@ async function start() {
             process.exit();
             break;
           case DisconnectReason.loggedOut:
-            console.error(chalk.red(`◈━━━━━━━━━━━━━━━━◈
-│❒ Logged out, update SESSION_ID in .env
-◈━━━━━━━━━━━━━━━━◈`));
+            console.error(chalk.red(`╭━━❖«• error•»
+│ Logged out, update SESSION_ID in .env
+╰━━━━━━⊱`));
             hasSentStartMessage = false;
             process.exit();
             break;
@@ -188,11 +188,11 @@ async function start() {
 
         if (!hasSentStartMessage) {
           const firstMessage = [
-            `*ᴀɪʀᴀ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴏɴʟɪɴᴇ*`,
+            `*ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴏɴʟɪɴᴇ*`,
           ].join("\n");
 
           const secondMessage = [
-            `ᴀɪʀᴀ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴏɴʟɪɴᴇ:`,
+            `ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴏɴʟɪɴᴇ:`,
           ].join("\n");
 
           await Matrix.sendMessage(Matrix.user.id, {
@@ -204,7 +204,7 @@ async function start() {
                 showAdAttribution: false,
                 title: "Njabulo Jb",
                 body: `Bot initialized successfully.`,
-                sourceUrl: `https://github.com/xhclintohn/Toxic-MD`,
+                sourceUrl: `https://github.com/NjabuloJ/Njabulo-Jb`,
                 mediaType: 1,
                 renderLargerThumbnail: true,
               },
@@ -253,9 +253,9 @@ async function start() {
           hasSentStartMessage = true;
         }
 
-        console.log(chalk.green(`◈━━━━━━━━━━━━━━━━◈
-│❒ ᴀɪʀᴀ ᴄᴏɴɴᴇᴄᴛᴇᴅ ᴏɴʟɪɴᴇ
-◈━━━━━━━━━━━━━━━━◈`));
+        console.log(chalk.green(`╭━━❖ *«•📡alive📡•»*
+│Njabulo Jb connected online 🟢✅
+╰━━━━━━⊱`));
       }
     });
 
@@ -328,9 +328,9 @@ async function start() {
       Matrix.public = false;
     }
   } catch (error) {
-    console.error(chalk.red(`◈━━━━━━━━━━━━━━━━◈
-│❒ Critical Error: ${error.message}
-◈━━━━━━━━━━━━━━━━◈`));
+    console.error(chalk.red(`╭━━❖
+│Critical Error: ${error.message}
+╰━━━━━━⊱`));
     process.exit(1);
   }
 }
