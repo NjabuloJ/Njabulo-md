@@ -50,7 +50,7 @@ const anticallCommand = async (m, Matrix) => {
       const buttons = [
         {
           buttonId: `.owner`,
-          buttonText: { displayText: `${toFancyFont("Contact Owner")}` },
+          buttonText: { displayText: `👤${toFancyFont("Contact Owner")}` },
           type: 1,
         },
       ];
@@ -77,7 +77,7 @@ const anticallCommand = async (m, Matrix) => {
       const buttons = [
         {
           buttonId: `.menu`,
-          buttonText: { displayText: `${toFancyFont("Menu")}` },
+          buttonText: { displayText: `📃${toFancyFont("Menu")}` },
           type: 1,
         },
       ];
@@ -94,7 +94,7 @@ const anticallCommand = async (m, Matrix) => {
       const buttons = [
         {
           buttonId: `.report`,
-          buttonText: { displayText: `${toFancyFont("Report")}` },
+          buttonText: { displayText: `⚠︎${toFancyFont("Report")}` },
           type: 1,
         },
       ];
