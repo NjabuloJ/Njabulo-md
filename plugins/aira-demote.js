@@ -83,7 +83,7 @@ const demote = async (m, gss) => {
       const buttons = [
         {
           buttonId: `.demote @user`,
-          buttonText: { displayText: `${toFancyFont("demote user")}` },
+          buttonText: { displayText: `👤${toFancyFont("demote user")}` },
           type: 1,
         },
       ];
@@ -108,7 +108,7 @@ const demote = async (m, gss) => {
         const buttons = [
           {
             buttonId: `.promote @user`,
-            buttonText: { displayText: `${toFancyFont("promote user")}` },
+            buttonText: { displayText: `👤${toFancyFont("promote user")}` },
             type: 1,
           },
         ];
