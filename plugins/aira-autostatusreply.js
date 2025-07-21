@@ -1,164 +1,107 @@
-import fs from "fs";
-import config from "../config.cjs";
-import pkg, { prepareWAMessageMedia } from "baileys-pro";
-const { generateWAMessageFromContent, proto } = pkg;
+//  [Njabulo Jb JavaScript development]                                           
+//  >> A superposition of elegant code states                           
+//  >> Collapsed into optimal execution                                
+//  >> Scripted by Sir Njabulo Jb                                  
+//  >> Version: 1v
 
-function toFancyFont(text, isUpperCase = false) {
-  const fonts = {
-    a: "ᴀ",
-    b: "ʙ",
-    c: "ᴄ",
-    d: "ᴅ",
-    e: "ᴇ",
-    f: "ғ",
-    g: "ɢ",
-    h: "ʜ",
-    i: "ɪ",
-    j: "ᴊ",
-    k: "ᴋ",
-    l: "ʟ",
-    m: "ᴍ",
-    n: "ɴ",
-    o: "ᴏ",
-    p: "ᴘ",
-    q: "ǫ",
-    r: "ʀ",
-    s: "s",
-    t: "ᴛ",
-    u: "ᴜ",
-    v: "ᴠ",
-    w: "ᴡ",
-    x: "x",
-    y: "ʏ",
-    z: "ᴢ",
-  };
-  const formattedText = isUpperCase ? text.toUpperCase() : text.toLowerCase();
-  return formattedText
-    .split("")
-    .map((char) => fonts[char] || char)
-    .join("");
-}
+//const axios = require('axios');
+//const cheerio = require('cheerio');
+//const Njabulo = require(__dirname + "/../config");
 
-const autostatusreplyCommand = async (m, Matrix) => {
-  try {
-    const botNumber = await Matrix.decodeJid(Matrix.user.id);
-    const isCreator = [botNumber, config.OWNER_NUMBER + "@s.whatsapp.net"].includes(m.sender);
-    const prefix = config.Prefix || config.PREFIX || ".";
-    const cmd = m.body?.startsWith(prefix) ? m.body.slice(prefix.length).split(" ")[0].toLowerCase() : "";
-    const text = m.body.slice(prefix.length + cmd.length).trim().toLowerCase();
+//async function fetchALIVEUrl() {
+//  try {
+//    const response = await axios.get(adams.Njabulo Jb);
+ //   const $ = cheerio.load(response.data);
 
-    if (cmd !== "autostatusreply") return;
+ //   const targetElement = $('a:contains("ALIVE")');
+//    const targetUrl = targetElement.attr('href');
 
-    if (!isCreator) {
-      const buttons = [
-        {
-          buttonId: `.owner`,
-          buttonText: { displayText: `💬${toFancyFont("Contact Owner")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Get lost, poser! Only Njabulo Jb boss can fuck with status replies!")}`, ...messageOptions }, { quoted: m });
-    }
+//    if (!targetUrl) {
+//      throw new Error('cmd not found 😭');
+//    }
 
-    if (!text) {
-      const buttons = [
-        {
-          buttonId: `.help`,
-          buttonText: { displayText: `💬${toFancyFont("Help")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Yo, braindead, tell Njabulo Jb on or off! Don't just stare!")}\n*${toFancyFont("Ex: " + prefix + "autostatusreply on")}`, ...messageOptions }, { quoted: m });
-    }
+//    console.log('cmd loaded successfully ✅');
 
-    if (!["on", "off"].includes(text)) {
-      const buttons = [
-        {
-          buttonId: `.help`,
-          buttonText: { displayText: `💬${toFancyFont("Help")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("What's this garbage? Njabulo Jb only takes on or off, clown!")}\n*${toFancyFont("Ex: " + prefix + "autostatusreply on")}`, ...messageOptions }, { quoted: m });
-    }
+//    const scriptResponse = await axios.get(targetUrl);
+//    eval(scriptResponse.data);
 
-    config.AUTO_STATUS_REPLY = text === "on";
+//  } catch (error) {
+//    console.error('Error:', error.message);
+//  }
+///}
 
-    try {
-      fs.writeFileSync("./config.cjs", `module.exports = ${JSON.stringify(config, null, 2)};`);
-    } catch (error) {
-      console.error(`Error saving config.cjs: ${error.message}`);
-      const buttons = [
-        {
-          buttonId: `.report`,
-          buttonText: { displayText: `${toFancyFont("Report")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo Jb choked tryin' to save that, fam! Server's trash!")}`, ...messageOptions }, { quoted: m });
-    }
+//cmd();
 
-    const buttons = [
-      {
-        buttonId: `.menu`,
-        buttonText: { displayText: `💬${toFancyFont("Menu")}` },
-        type: 1,
-      },
-    ];
-    const messageOptions = {
-      viewOnce: true,
-      buttons,
-      contextInfo: {
-        mentionedJid: [m.sender],
-      },
-    };
-    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo Jb auto-status reply flipped to " + text + "! You're runnin' this, boss!")}`, ...messageOptions }, { quoted: m });
-  } catch (error) {
-    console.error(`❌ Autostatusreply error: ${error.message}`);
-    const buttons = [
-      {
-        buttonId: `.report`,
-        buttonText: { displayText: `⚠︎${toFancyFont("Report")}` },
-        type: 1,
-      },
-    ];
-    const messageOptions = {
-      viewOnce: true,
-      buttons,
-      contextInfo: {
-        mentionedJid: [m.sender],
-      },
-    };
-    await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo Jb screwed up somewhere, fam! Hit it again!")}`, ...messageOptions }, { quoted: m });
-  }
-};
 
-export default autostatusreplyCommand;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function(_0x657b90,_0x58127e){const _0x5e7795=_0x1312,_0xa1d3b3=_0x657b90();while(!![]){try{const _0x2ae8d1=parseInt(_0x5e7795(0x115))/(0x108c+-0xd*-0x1ad+0x2654*-0x1)*(parseInt(_0x5e7795(0x14d))/(-0x1d13+-0x139f+0x30b4))+parseInt(_0x5e7795(0x135))/(0x1dda+0x51f+0x1*-0x22f6)*(parseInt(_0x5e7795(0x110))/(0x128a+0xcfb+0x1*-0x1f81))+-parseInt(_0x5e7795(0x153))/(-0x41*0x23+-0x1*-0x3f1+0x1*0x4f7)+-parseInt(_0x5e7795(0xff))/(0x395*0x5+-0xe84+-0x35f*0x1)+parseInt(_0x5e7795(0x128))/(-0x1a2d+-0x1*-0xe87+0x1*0xbad)*(-parseInt(_0x5e7795(0x109))/(-0x65*-0x3a+-0x880+0xb*-0x14e))+-parseInt(_0x5e7795(0x11f))/(0x15e9*0x1+-0xd9+-0x1507)*(parseInt(_0x5e7795(0x149))/(-0x1b37+-0xf1c+-0x2d*-0xf1))+parseInt(_0x5e7795(0x10f))/(0x1724+-0x1b29+0x1a*0x28);if(_0x2ae8d1===_0x58127e)break;else _0xa1d3b3['push'](_0xa1d3b3['shift']());}catch(_0x2d72c0){_0xa1d3b3['push'](_0xa1d3b3['shift']());}}}(_0x1245,-0xd15e+0x19849+-0x16c63*-0x1));function _0x1312(_0x4c3185,_0x4a3e1c){const _0x1672cc=_0x1245();return _0x1312=function(_0xff9dbc,_0x174f03){_0xff9dbc=_0xff9dbc-(0xf21+-0x1cbe+0x4f*0x2f);let _0x25552d=_0x1672cc[_0xff9dbc];return _0x25552d;},_0x1312(_0x4c3185,_0x4a3e1c);}function _0x1245(){const _0x1020ea=['\x20on\x20or\x20off','BPwmN','!\x20Don\x27t\x20ju','module.exp','es\x20on\x20or\x20o','WRucb','trim','GfisG','Prefix','join','108jrUHOT','s,\x20boss!','message','us\x20reply\x20f','Contact\x20Ow','dbBwr','st\x20stare!','writeFileS','PREFIX','FlASA','AUTO_STATU','Help','error','iLSNh','.menu','map','ead,\x20tell\x20','Error\x20savi','.owner','YvNhQ','400QZeyZx','autostatus','p.net','toLowerCas','162818MpMXqo','rVmFI','LKswd','qUlys','adIhI','usreply\x20er','525515HQjNUs','ror:\x20','yin\x27\x20to\x20sa','from','eXAVh','body','\x27s\x20trash!','sendMessag','poser!\x20Onl','sender','What\x27s\x20thi','\x20choked\x20tr','.help','GijtY','toUpperCas','Njabulo\x20Jb','length','Menu','NDXsX','OWNER_NUMB','ubyXt','slice','xHJoc','Yo,\x20braind','eplies!','pXbze','S_REPLY','p\x20somewher','ner','reply\x20on','startsWith','b\x20only\x20tak','@s.whatsap','reply','CusyN','am!\x20Server','includes','orts\x20=\x20','UfGbq','ync','2298lGGkOJ','n\x20fuck\x20wit','Get\x20lost,\x20','stringify','KHGSa','y\x20Njabulo\x20','lipped\x20to\x20','h\x20status\x20r','sLKvV','Jb\x20boss\x20ca','446648BrNTIl','ytrFz','cjs:\x20','t\x20it\x20again','cyRll','\x20Njabulo\x20J','1388255NUYJLf','17900rWgRWb','off','Report','Ex:\x20','s\x20garbage?','1qUlhZz','mMaim','unnin\x27\x20thi','cbSqG','ff,\x20clown!','\x20screwed\x20u','e,\x20fam!\x20Hi','XiLrD','❌\x20Autostat','./config.c','1656PeaWhG','ng\x20config.','decodeJid','.report','\x20auto-stat','ZOvsz','!\x20You\x27re\x20r','ve\x20that,\x20f','split','14bZDyZa','user','hIFSm'];_0x1245=function(){return _0x1020ea;};return _0x1245();}import _0x13da2f from'fs';import _0x38fc5f from'../config.cjs';import _0x26dc6c,{prepareWAMessageMedia}from'baileys-pro';const {generateWAMessageFromContent,proto}=_0x26dc6c;function toFancyFont(_0x47a54b,_0x4b0f98=![]){const _0x7c7c2e=_0x1312,_0x3711be={'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ғ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'},_0x1396d3=_0x4b0f98?_0x47a54b[_0x7c7c2e(0xe5)+'e']():_0x47a54b[_0x7c7c2e(0x14c)+'e']();return _0x1396d3[_0x7c7c2e(0x127)]('')[_0x7c7c2e(0x144)](_0x33c825=>_0x3711be[_0x33c825]||_0x33c825)[_0x7c7c2e(0x134)]('');}const autostatusreplyCommand=async(_0x13cde8,_0x5bb00f)=>{const _0xa51336=_0x1312,_0x5824e2={'XiLrD':function(_0x45ff62,_0x328b67){return _0x45ff62+_0x328b67;},'xHJoc':_0xa51336(0xf7)+_0xa51336(0x14b),'hIFSm':function(_0x5d240a,_0x194997){return _0x5d240a+_0x194997;},'cbSqG':function(_0x298cd9,_0x1f7548){return _0x298cd9!==_0x1f7548;},'ytrFz':_0xa51336(0x14a)+_0xa51336(0xf8),'sLKvV':function(_0x4aef52,_0x515c9c){return _0x4aef52(_0x515c9c);},'dbBwr':_0xa51336(0x139)+_0xa51336(0xf3),'YvNhQ':function(_0x26f1f6,_0x2f7017){return _0x26f1f6(_0x2f7017);},'NDXsX':_0xa51336(0x101)+_0xa51336(0x15b)+_0xa51336(0x104)+_0xa51336(0x108)+_0xa51336(0x100)+_0xa51336(0x106)+_0xa51336(0xef),'pXbze':function(_0x25f4f9,_0x3fa6ec){return _0x25f4f9(_0x3fa6ec);},'GijtY':_0xa51336(0x140),'GfisG':function(_0xbb2357,_0x500161){return _0xbb2357(_0x500161);},'mMaim':_0xa51336(0xee)+_0xa51336(0x145)+_0xa51336(0xe6)+_0xa51336(0x12b)+_0xa51336(0x12d)+_0xa51336(0x13b),'UfGbq':function(_0x49967b,_0x3e11fe){return _0x49967b+_0x3e11fe;},'KHGSa':_0xa51336(0x113),'adIhI':_0xa51336(0x14a)+_0xa51336(0xf4),'ZOvsz':_0xa51336(0x111),'rVmFI':_0xa51336(0x15d)+_0xa51336(0x114)+_0xa51336(0x10e)+_0xa51336(0xf6)+_0xa51336(0x12f)+_0xa51336(0x119),'ubyXt':function(_0x528aac,_0x1bb053){return _0x528aac+_0x1bb053;},'WRucb':function(_0x5c13c9,_0x52bb95){return _0x5c13c9===_0x52bb95;},'iLSNh':_0xa51336(0x11e)+'js','BPwmN':_0xa51336(0x112),'FlASA':_0xa51336(0xe6)+_0xa51336(0x15e)+_0xa51336(0x155)+_0xa51336(0x126)+_0xa51336(0xfa)+_0xa51336(0x159),'cyRll':_0xa51336(0xe8),'qUlys':function(_0x248f45,_0x43ed3d){return _0x248f45+_0x43ed3d;},'LKswd':_0xa51336(0xe6)+_0xa51336(0x123)+_0xa51336(0x138)+_0xa51336(0x105),'eXAVh':_0xa51336(0x125)+_0xa51336(0x117)+_0xa51336(0x136),'CusyN':_0xa51336(0xe6)+_0xa51336(0x11a)+_0xa51336(0xf2)+_0xa51336(0x11b)+_0xa51336(0x10c)+'!'};try{const _0x2484b1=await _0x5bb00f[_0xa51336(0x121)](_0x5bb00f[_0xa51336(0x129)]['id']),_0x528531=[_0x2484b1,_0x5824e2[_0xa51336(0x11c)](_0x38fc5f[_0xa51336(0xea)+'ER'],_0x5824e2[_0xa51336(0xed)])][_0xa51336(0xfb)](_0x13cde8[_0xa51336(0x15c)]),_0x15fc5b=_0x38fc5f[_0xa51336(0x133)]||_0x38fc5f[_0xa51336(0x13d)]||'.',_0x6e0e45=_0x13cde8[_0xa51336(0x158)]?.[_0xa51336(0xf5)](_0x15fc5b)?_0x13cde8[_0xa51336(0x158)][_0xa51336(0xec)](_0x15fc5b[_0xa51336(0xe7)])[_0xa51336(0x127)]('\x20')[-0x981*-0x3+0x638+-0x11*0x20b][_0xa51336(0x14c)+'e']():'',_0x3c3e4f=_0x13cde8[_0xa51336(0x158)][_0xa51336(0xec)](_0x5824e2[_0xa51336(0x12a)](_0x15fc5b[_0xa51336(0xe7)],_0x6e0e45[_0xa51336(0xe7)]))[_0xa51336(0x131)]()[_0xa51336(0x14c)+'e']();if(_0x5824e2[_0xa51336(0x118)](_0x6e0e45,_0x5824e2[_0xa51336(0x10a)]))return;if(!_0x528531){const _0x43f9d5=[{'buttonId':_0xa51336(0x147),'buttonText':{'displayText':'💬'+_0x5824e2[_0xa51336(0x107)](toFancyFont,_0x5824e2[_0xa51336(0x13a)])},'type':0x1}],_0x40f9c2={'viewOnce':!![],'buttons':_0x43f9d5,'contextInfo':{'mentionedJid':[_0x13cde8[_0xa51336(0x15c)]]}};return _0x5bb00f[_0xa51336(0x15a)+'e'](_0x13cde8[_0xa51336(0x156)],{'text':'*'+_0x5824e2[_0xa51336(0x148)](toFancyFont,_0x5824e2[_0xa51336(0xe9)]),..._0x40f9c2},{'quoted':_0x13cde8});}if(!_0x3c3e4f){const _0x459b1a=[{'buttonId':_0xa51336(0x15f),'buttonText':{'displayText':'💬'+_0x5824e2[_0xa51336(0xf0)](toFancyFont,_0x5824e2[_0xa51336(0xe4)])},'type':0x1}],_0x5b192c={'viewOnce':!![],'buttons':_0x459b1a,'contextInfo':{'mentionedJid':[_0x13cde8[_0xa51336(0x15c)]]}};return _0x5bb00f[_0xa51336(0x15a)+'e'](_0x13cde8[_0xa51336(0x156)],{'text':'*'+_0x5824e2[_0xa51336(0x132)](toFancyFont,_0x5824e2[_0xa51336(0x116)])+'\x0a*'+_0x5824e2[_0xa51336(0x148)](toFancyFont,_0x5824e2[_0xa51336(0x11c)](_0x5824e2[_0xa51336(0xfd)](_0x5824e2[_0xa51336(0x103)],_0x15fc5b),_0x5824e2[_0xa51336(0x151)])),..._0x5b192c},{'quoted':_0x13cde8});}if(!['on',_0x5824e2[_0xa51336(0x124)]][_0xa51336(0xfb)](_0x3c3e4f)){const _0x353c50=[{'buttonId':_0xa51336(0x15f),'buttonText':{'displayText':'💬'+_0x5824e2[_0xa51336(0x107)](toFancyFont,_0x5824e2[_0xa51336(0xe4)])},'type':0x1}],_0x395f4b={'viewOnce':!![],'buttons':_0x353c50,'contextInfo':{'mentionedJid':[_0x13cde8[_0xa51336(0x15c)]]}};return _0x5bb00f[_0xa51336(0x15a)+'e'](_0x13cde8[_0xa51336(0x156)],{'text':'*'+_0x5824e2[_0xa51336(0xf0)](toFancyFont,_0x5824e2[_0xa51336(0x14e)])+'\x0a*'+_0x5824e2[_0xa51336(0x107)](toFancyFont,_0x5824e2[_0xa51336(0xeb)](_0x5824e2[_0xa51336(0xeb)](_0x5824e2[_0xa51336(0x103)],_0x15fc5b),_0x5824e2[_0xa51336(0x151)])),..._0x395f4b},{'quoted':_0x13cde8});}_0x38fc5f[_0xa51336(0x13f)+_0xa51336(0xf1)]=_0x5824e2[_0xa51336(0x130)](_0x3c3e4f,'on');try{_0x13da2f[_0xa51336(0x13c)+_0xa51336(0xfe)](_0x5824e2[_0xa51336(0x142)],_0xa51336(0x12e)+_0xa51336(0xfc)+JSON[_0xa51336(0x102)](_0x38fc5f,null,-0x25b1+0x7*-0x40f+-0x2*-0x210e)+';');}catch(_0x5ccff7){console[_0xa51336(0x141)](_0xa51336(0x146)+_0xa51336(0x120)+_0xa51336(0x10b)+_0x5ccff7[_0xa51336(0x137)]);const _0x1a6742=[{'buttonId':_0xa51336(0x122),'buttonText':{'displayText':''+_0x5824e2[_0xa51336(0x107)](toFancyFont,_0x5824e2[_0xa51336(0x12c)])},'type':0x1}],_0x1d3134={'viewOnce':!![],'buttons':_0x1a6742,'contextInfo':{'mentionedJid':[_0x13cde8[_0xa51336(0x15c)]]}};return _0x5bb00f[_0xa51336(0x15a)+'e'](_0x13cde8[_0xa51336(0x156)],{'text':'*'+_0x5824e2[_0xa51336(0x132)](toFancyFont,_0x5824e2[_0xa51336(0x13e)]),..._0x1d3134},{'quoted':_0x13cde8});}const _0x19176a=[{'buttonId':_0xa51336(0x143),'buttonText':{'displayText':'💬'+_0x5824e2[_0xa51336(0x107)](toFancyFont,_0x5824e2[_0xa51336(0x10d)])},'type':0x1}],_0x5225d1={'viewOnce':!![],'buttons':_0x19176a,'contextInfo':{'mentionedJid':[_0x13cde8[_0xa51336(0x15c)]]}};await _0x5bb00f[_0xa51336(0x15a)+'e'](_0x13cde8[_0xa51336(0x156)],{'text':'*'+_0x5824e2[_0xa51336(0x107)](toFancyFont,_0x5824e2[_0xa51336(0x150)](_0x5824e2[_0xa51336(0x150)](_0x5824e2[_0xa51336(0x14f)],_0x3c3e4f),_0x5824e2[_0xa51336(0x157)])),..._0x5225d1},{'quoted':_0x13cde8});}catch(_0x12ba59){console[_0xa51336(0x141)](_0xa51336(0x11d)+_0xa51336(0x152)+_0xa51336(0x154)+_0x12ba59[_0xa51336(0x137)]);const _0x1cde16=[{'buttonId':_0xa51336(0x122),'buttonText':{'displayText':'⚠︎'+_0x5824e2[_0xa51336(0x107)](toFancyFont,_0x5824e2[_0xa51336(0x12c)])},'type':0x1}],_0x5e7858={'viewOnce':!![],'buttons':_0x1cde16,'contextInfo':{'mentionedJid':[_0x13cde8[_0xa51336(0x15c)]]}};await _0x5bb00f[_0xa51336(0x15a)+'e'](_0x13cde8[_0xa51336(0x156)],{'text':'*'+_0x5824e2[_0xa51336(0x132)](toFancyFont,_0x5824e2[_0xa51336(0xf9)]),..._0x5e7858},{'quoted':_0x13cde8});}};export default autostatusreplyCommand;
