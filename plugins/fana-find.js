@@ -71,7 +71,7 @@ const shazam = async (m, Matrix) => {
           mentionedJid: [m.sender],
         },
       };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Yo, Aira needs a quoted audio or video to ID, fam!")}`, ...messageOptions }, { quoted: m });
+      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Yo, Njabulo Jb needs a quoted audio or video to ID, fam!")}`, ...messageOptions }, { quoted: m });
     }
 
     try {
@@ -82,7 +82,7 @@ const shazam = async (m, Matrix) => {
       const buttons = [
         {
           buttonId: `.menu`,
-          buttonText: { displayText: `${toFancyFont("Menu")}` },
+          buttonText: { displayText: `📃${toFancyFont("Menu")}` },
           type: 1,
         },
       ];
@@ -93,7 +93,7 @@ const shazam = async (m, Matrix) => {
           mentionedJid: [m.sender],
         },
       };
-      await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Toxic-MD sniffin’ out that track, hold up...")}`, ...messageOptions }, { quoted: m });
+      await Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njbulo Jb sniffin’ out that track, hold up...")}`, ...messageOptions }, { quoted: m });
 
       const res = await acr.identify(fs.readFileSync(filePath));
       const { code, msg } = res.status;
