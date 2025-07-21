@@ -1,144 +1,99 @@
-import axios from "axios";
-import config from "../config.cjs";
-import pkg, { prepareWAMessageMedia } from "baileys-pro";
-const { generateWAMessageFromContent, proto } = pkg;
+//  [Njabulo Jb JavaScript development]                                           
+//  >> A superposition of elegant code states                           
+//  >> Collapsed into optimal execution                                
+//  >> Scripted by Sir Njabulo Jb                                  
+//  >> Version: 1v
 
-function toFancyFont(text, isUpperCase = false) {
-  const fonts = {
-    a: "ᴀ",
-    b: "ʙ",
-    c: "ᴄ",
-    d: "ᴅ",
-    e: "ᴇ",
-    f: "ғ",
-    g: "ɢ",
-    h: "ʜ",
-    i: "ɪ",
-    j: "ᴊ",
-    k: "ᴋ",
-    l: "ʟ",
-    m: "ᴍ",
-    n: "ɴ",
-    o: "ᴏ",
-    p: "ᴘ",
-    q: "ǫ",
-    r: "ʀ",
-    s: "s",
-    t: "ᴛ",
-    u: "ᴜ",
-    v: "ᴠ",
-    w: "ᴡ",
-    x: "x",
-    y: "ʏ",
-    z: "ᴢ",
-  };
-  const formattedText = isUpperCase ? text.toUpperCase() : text.toLowerCase();
-  return formattedText
-    .split("")
-    .map((char) => fonts[char] || char)
-    .join("");
-}
+//const axios = require('axios');
+//const cheerio = require('cheerio');
+//const Njabulo = require(__dirname + "/../config");
 
-const facebook = async (m, Matrix) => {
-  try {
-    const prefix = config.PREFIX;
-    const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(" ")[0].toLowerCase() : "";
-    const query = m.body.slice(prefix.length + cmd.length).trim();
+//async function fetchALIVEUrl() {
+//  try {
+//    const response = await axios.get(adams.Njabulo Jb);
+ //   const $ = cheerio.load(response.data);
 
-    if (!["fb", "facebook"].includes(cmd)) return;
+ //   const targetElement = $('a:contains("ALIVE")');
+//    const targetUrl = targetElement.attr('href');
 
-    if (!query || !query.startsWith("http")) {
-      const buttons = [
-        {
-          buttonId: `.help`,
-          buttonText: { displayText: `💬${toFancyFont("Help")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Yo, dumbass, gimme a proper Facebook video URL!")}*`, ...messageOptions }, { quoted: m });
-    }
+//    if (!targetUrl) {
+//      throw new Error('cmd not found 😭');
+//    }
 
-    await Matrix.sendMessage(m.from, { react: { text: "⏳", key: m.key } });
+//    console.log('cmd loaded successfully ✅');
 
-    const { data } = await axios.get(`https://api.giftedtech.web.id/api/download/facebook?apikey=gifted_api_se5dccy&url=${encodeURIComponent(query)}`);
+//    const scriptResponse = await axios.get(targetUrl);
+//    eval(scriptResponse.data);
 
-    if (!data.success || !data.result) {
-      await Matrix.sendMessage(m.from, { react: { text: "❌", key: m.key } });
-      const buttons = [
-        {
-          buttonId: `.report`,
-          buttonText: { displayText: `⚠︎${toFancyFont("Report")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo Jb couldn’t grab that video, fam! URL’s trash or somethin’s busted!")}`, ...messageOptions }, { quoted: m });
-    }
+//  } catch (error) {
+//    console.error('Error:', error.message);
+//  }
+///}
 
-    const { title, hd_video, sd_video, thumbnail } = data.result;
-    const videoUrl = hd_video || sd_video;
+//cmd();
 
-    if (!videoUrl) {
-      await Matrix.sendMessage(m.from, { react: { text: "❌", key: m.key } });
-      const buttons = [
-        {
-          buttonId: `.help`,
-          buttonText: { displayText: `💬${toFancyFont("Help")}` },
-          type: 1,
-        },
-      ];
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(m.from, { text: `*${toFancyFont("No video worth downloadin’ here, fam! Toxic-MD ain’t got time for this shit!")}`, ...messageOptions }, { quoted: m });
-    }
 
-    const quality = hd_video ? "HD" : "SD";
-    const caption = `*${toFancyFont("Aira Facebook Video")}*\n*${toFancyFont("Title")}:* ${title || "No title"}\n*${toFancyFont("Quality")}:* ${quality}`;
 
-    await Matrix.sendMessage(m.from, {
-      video: { url: videoUrl },
-      mimetype: "video/mp4",
-      caption,
-    }, { quoted: m });
 
-    await Matrix.sendMessage(m.from, { react: { text: "✅", key: m.key } });
-  } catch (error) {
-    console.error(`❌ Facebook error: ${error.message}`);
-    await Matrix.sendMessage(m.from, { react: { text: "❌", key: m.key } });
-    const buttons = [
-      {
-        buttonId: `.report`,
-        buttonText: { displayText: `⚠︎${toFancyFont("Report")}` },
-        type: 1,
-      },
-    ];
-    const messageOptions = {
-      viewOnce: true,
-      buttons,
-      contextInfo: {
-        mentionedJid: [m.sender],
-      },
-    };
-    Matrix.sendMessage(m.from, { text: `*${toFancyFont("Njabulo Jb fucked up grabbin’ that video, fam! Try again, you got this!")}`, ...messageOptions }, { quoted: m });
-  }
-};
 
-export default facebook;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function(_0x1b3397,_0x3e7562){const _0x4fcaf0=_0x242d,_0x5cb2cd=_0x1b3397();while(!![]){try{const _0x4aa1ba=parseInt(_0x4fcaf0(0x154))/(0x15ef+0x11*0x197+-0x53*0x97)*(-parseInt(_0x4fcaf0(0x13f))/(-0x3db+0x19aa+-0x1*0x15cd))+-parseInt(_0x4fcaf0(0x168))/(-0x1d21*0x1+0x325+0x19ff)*(-parseInt(_0x4fcaf0(0x140))/(0x10b3+0x365*-0x7+0x97*0xc))+parseInt(_0x4fcaf0(0x15d))/(0x2527+-0x1224+-0x97f*0x2)*(-parseInt(_0x4fcaf0(0x11a))/(0x16*-0x8d+0x1193+-0x56f))+-parseInt(_0x4fcaf0(0x123))/(0x778*-0x5+-0x1*-0x5d9+-0x1e*-0x10d)+parseInt(_0x4fcaf0(0x160))/(0x22d2+0x8f1*0x2+-0x34ac)+parseInt(_0x4fcaf0(0x128))/(0x3cb+0x136c*0x1+-0x56*0x45)*(parseInt(_0x4fcaf0(0x12e))/(-0x3*0x764+0x977+0xcbf*0x1))+parseInt(_0x4fcaf0(0x166))/(-0x657+0x6a+0x5f8);if(_0x4aa1ba===_0x3e7562)break;else _0x5cb2cd['push'](_0x5cb2cd['shift']());}catch(_0x198faf){_0x5cb2cd['push'](_0x5cb2cd['shift']());}}}(_0x231d,-0x20323+0x188940+0x3a*-0x23c5));import _0x14555c from'axios';import _0x3c2ad7 from'../config.cjs';import _0x26d765,{prepareWAMessageMedia}from'baileys-pro';const {generateWAMessageFromContent,proto}=_0x26d765;function toFancyFont(_0x3c2d3c,_0x26af80=![]){const _0xd1b43a=_0x242d,_0x7204bf={'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ғ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'},_0x109291=_0x26af80?_0x3c2d3c[_0xd1b43a(0x139)+'e']():_0x3c2d3c[_0xd1b43a(0x126)+'e']();return _0x109291[_0xd1b43a(0x14e)]('')[_0xd1b43a(0x13e)](_0x33e3a6=>_0x7204bf[_0x33e3a6]||_0x33e3a6)[_0xd1b43a(0x150)]('');}function _0x242d(_0x18f465,_0x32d512){const _0x2496cf=_0x231d();return _0x242d=function(_0x153857,_0x46c9ca){_0x153857=_0x153857-(-0x1f8c+-0xdc+0x2173);let _0x19394e=_0x2496cf[_0x153857];return _0x19394e;},_0x242d(_0x18f465,_0x32d512);}const facebook=async(_0xa33f62,_0x5a684b)=>{const _0x560509=_0x242d,_0x4be670={'NgFmM':function(_0x32293d,_0xf64a8){return _0x32293d+_0xf64a8;},'wLWVY':_0x560509(0x120),'ptqhz':_0x560509(0x158),'Lkgww':function(_0x2dc0ff,_0x47bea8){return _0x2dc0ff(_0x47bea8);},'ClNgo':_0x560509(0x11e),'SYYsI':_0x560509(0x12c)+_0x560509(0x161)+_0x560509(0x132)+_0x560509(0x116)+_0x560509(0x163),'lzpkO':_0x560509(0x142),'OeWHW':function(_0xc18aa5,_0x3746bb){return _0xc18aa5(_0x3746bb);},'XKmFx':_0x560509(0x156)+_0x560509(0x137)+_0x560509(0x112)+_0x560509(0x162)+_0x560509(0x15b)+_0x560509(0x141)+_0x560509(0x11f)+_0x560509(0x10b),'DrOTf':function(_0x27659c,_0x1994e8){return _0x27659c||_0x1994e8;},'VlJWv':function(_0xdb6ef3,_0x5368b6){return _0xdb6ef3(_0x5368b6);},'yKtUp':_0x560509(0x151)+_0x560509(0x155)+_0x560509(0x130)+_0x560509(0x16a)+_0x560509(0x148)+_0x560509(0x13c)+_0x560509(0x11c)+_0x560509(0x10d),'dLets':_0x560509(0x16e)+_0x560509(0x115),'kEYDR':_0x560509(0x11b),'ILSiw':function(_0x1cdb82,_0x5c87bd){return _0x1cdb82||_0x5c87bd;},'rjipw':_0x560509(0x135),'hSXdX':function(_0x225968,_0x2f11bd){return _0x225968(_0x2f11bd);},'KYLos':_0x560509(0x125),'yeEje':_0x560509(0x16d),'GPoGJ':function(_0x4e1824,_0xc05bbe){return _0x4e1824(_0xc05bbe);},'sIERH':function(_0x143505,_0x5659b6){return _0x143505(_0x5659b6);},'jjZZF':_0x560509(0x156)+_0x560509(0x170)+_0x560509(0x14a)+_0x560509(0x16b)+_0x560509(0x12b)+_0x560509(0x16c)+_0x560509(0x144)+'!'};try{const _0x488115=_0x3c2ad7[_0x560509(0x15e)],_0x17f3e7=_0xa33f62[_0x560509(0x118)][_0x560509(0x12d)](_0x488115)?_0xa33f62[_0x560509(0x118)][_0x560509(0x143)](_0x488115[_0x560509(0x10c)])[_0x560509(0x14e)]('\x20')[0x1*-0xe43+0x1082+-0x23f][_0x560509(0x126)+'e']():'',_0x551319=_0xa33f62[_0x560509(0x118)][_0x560509(0x143)](_0x4be670[_0x560509(0x15f)](_0x488115[_0x560509(0x10c)],_0x17f3e7[_0x560509(0x10c)]))[_0x560509(0x159)]();if(!['fb',_0x4be670[_0x560509(0x147)]][_0x560509(0x110)](_0x17f3e7))return;if(!_0x551319||!_0x551319[_0x560509(0x12d)](_0x4be670[_0x560509(0x169)])){const _0x3b0770=[{'buttonId':_0x560509(0x164),'buttonText':{'displayText':'💬'+_0x4be670[_0x560509(0x111)](toFancyFont,_0x4be670[_0x560509(0x153)])},'type':0x1}],_0x38581a={'viewOnce':!![],'buttons':_0x3b0770,'contextInfo':{'mentionedJid':[_0xa33f62[_0x560509(0x129)]]}};return _0x5a684b[_0x560509(0x14d)+'e'](_0xa33f62[_0x560509(0x10e)],{'text':'*'+_0x4be670[_0x560509(0x111)](toFancyFont,_0x4be670[_0x560509(0x114)])+'*',..._0x38581a},{'quoted':_0xa33f62});}await _0x5a684b[_0x560509(0x14d)+'e'](_0xa33f62[_0x560509(0x10e)],{'react':{'text':'⏳','key':_0xa33f62[_0x560509(0x13a)]}});const {data:_0x530423}=await _0x14555c[_0x560509(0x133)](_0x560509(0x149)+_0x560509(0x14c)+_0x560509(0x14b)+_0x560509(0x13b)+_0x560509(0x124)+_0x560509(0x127)+_0x560509(0x145)+_0x560509(0x14f)+'l='+_0x4be670[_0x560509(0x111)](encodeURIComponent,_0x551319));if(!_0x530423[_0x560509(0x10f)]||!_0x530423[_0x560509(0x15c)]){await _0x5a684b[_0x560509(0x14d)+'e'](_0xa33f62[_0x560509(0x10e)],{'react':{'text':'❌','key':_0xa33f62[_0x560509(0x13a)]}});const _0x51a59d=[{'buttonId':_0x560509(0x119),'buttonText':{'displayText':'⚠︎'+_0x4be670[_0x560509(0x111)](toFancyFont,_0x4be670[_0x560509(0x117)])},'type':0x1}],_0x560d38={'viewOnce':!![],'buttons':_0x51a59d,'contextInfo':{'mentionedJid':[_0xa33f62[_0x560509(0x129)]]}};return _0x5a684b[_0x560509(0x14d)+'e'](_0xa33f62[_0x560509(0x10e)],{'text':'*'+_0x4be670[_0x560509(0x136)](toFancyFont,_0x4be670[_0x560509(0x122)]),..._0x560d38},{'quoted':_0xa33f62});}const {title:_0x217201,hd_video:_0x35b4d4,sd_video:_0x820f11,thumbnail:_0x2cd465}=_0x530423[_0x560509(0x15c)],_0x3a1ea0=_0x4be670[_0x560509(0x12a)](_0x35b4d4,_0x820f11);if(!_0x3a1ea0){await _0x5a684b[_0x560509(0x14d)+'e'](_0xa33f62[_0x560509(0x10e)],{'react':{'text':'❌','key':_0xa33f62[_0x560509(0x13a)]}});const _0x1ed7c4=[{'buttonId':_0x560509(0x164),'buttonText':{'displayText':'💬'+_0x4be670[_0x560509(0x136)](toFancyFont,_0x4be670[_0x560509(0x153)])},'type':0x1}],_0x107479={'viewOnce':!![],'buttons':_0x1ed7c4,'contextInfo':{'mentionedJid':[_0xa33f62[_0x560509(0x129)]]}};return _0x5a684b[_0x560509(0x14d)+'e'](_0xa33f62[_0x560509(0x10e)],{'text':'*'+_0x4be670[_0x560509(0x152)](toFancyFont,_0x4be670[_0x560509(0x12f)]),..._0x107479},{'quoted':_0xa33f62});}const _0xa4a00f=_0x35b4d4?'HD':'SD',_0x5c9bbf='*'+_0x4be670[_0x560509(0x136)](toFancyFont,_0x4be670[_0x560509(0x172)])+_0x560509(0x121)+_0x4be670[_0x560509(0x136)](toFancyFont,_0x4be670[_0x560509(0x11d)])+_0x560509(0x173)+_0x4be670[_0x560509(0x134)](_0x217201,_0x4be670[_0x560509(0x16f)])+'\x0a*'+_0x4be670[_0x560509(0x171)](toFancyFont,_0x4be670[_0x560509(0x157)])+_0x560509(0x173)+_0xa4a00f;await _0x5a684b[_0x560509(0x14d)+'e'](_0xa33f62[_0x560509(0x10e)],{'video':{'url':_0x3a1ea0},'mimetype':_0x4be670[_0x560509(0x113)],'caption':_0x5c9bbf},{'quoted':_0xa33f62}),await _0x5a684b[_0x560509(0x14d)+'e'](_0xa33f62[_0x560509(0x10e)],{'react':{'text':'✅','key':_0xa33f62[_0x560509(0x13a)]}});}catch(_0x529b7b){console[_0x560509(0x167)](_0x560509(0x146)+_0x560509(0x138)+_0x529b7b[_0x560509(0x15a)]),await _0x5a684b[_0x560509(0x14d)+'e'](_0xa33f62[_0x560509(0x10e)],{'react':{'text':'❌','key':_0xa33f62[_0x560509(0x13a)]}});const _0x371318=[{'buttonId':_0x560509(0x119),'buttonText':{'displayText':'⚠︎'+_0x4be670[_0x560509(0x165)](toFancyFont,_0x4be670[_0x560509(0x117)])},'type':0x1}],_0x4716f9={'viewOnce':!![],'buttons':_0x371318,'contextInfo':{'mentionedJid':[_0xa33f62[_0x560509(0x129)]]}};_0x5a684b[_0x560509(0x14d)+'e'](_0xa33f62[_0x560509(0x10e)],{'text':'*'+_0x4be670[_0x560509(0x131)](toFancyFont,_0x4be670[_0x560509(0x13d)]),..._0x4716f9},{'quoted':_0xa33f62});}};function _0x231d(){const _0x477637=['that\x20video','\x20again,\x20yo','video/mp4','Aira\x20Faceb','rjipw','\x20fucked\x20up','hSXdX','dLets',':*\x20','sted!','length','\x20shit!','from','success','includes','Lkgww','grab\x20that\x20','yeEje','SYYsI','ook\x20Video','cebook\x20vid','lzpkO','body','.report','6787668HbpGZj','Title','e\x20for\x20this','kEYDR','Help','ethin’s\x20bu','facebook','*\x0a*','XKmFx','1995525FlOTjU','ad/faceboo','Quality','toLowerCas','k?apikey=g','36AXacol','sender','DrOTf',',\x20fam!\x20Try','Yo,\x20dumbas','startsWith','2001880xMkndd','yKtUp','oadin’\x20her','sIERH','\x20proper\x20Fa','get','ILSiw','No\x20title','OeWHW','\x20couldn’t\x20','\x20error:\x20','toUpperCas','key','api/downlo','’t\x20got\x20tim','jjZZF','map','5326dDIWCC','2934788iTBgvQ','ash\x20or\x20som','Report','slice','u\x20got\x20this','ifted_api_','❌\x20Facebook','wLWVY','xic-MD\x20ain','https://ap','\x20grabbin’\x20','ch.web.id/','i.giftedte','sendMessag','split','se5dccy&ur','join','No\x20video\x20w','VlJWv','ClNgo','540CMlvrN','orth\x20downl','Njabulo\x20Jb','KYLos','http','trim','message','!\x20URL’s\x20tr','result','5hRfyUs','PREFIX','NgFmM','9661688HnwLVw','s,\x20gimme\x20a','video,\x20fam','eo\x20URL!','.help','GPoGJ','11629552TNmqTl','error','3dBOots','ptqhz','e,\x20fam!\x20To'];_0x231d=function(){return _0x477637;};return _0x231d();}export default facebook;
+
+
+
+
+
+
