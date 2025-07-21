@@ -1,118 +1,108 @@
-import config from '../config.cjs';
-import pkg, { prepareWAMessageMedia } from "baileys-pro";
-const { generateWAMessageFromContent, proto } = pkg;
+//  [Njabulo Jb JavaScript development]                                           
+//  >> A superposition of elegant code states                           
+//  >> Collapsed into optimal execution                                
+//  >> Scripted by Sir Njabulo Jb                                  
+//  >> Version: 1v
 
-function toFancyFont(text) {
-  const fonts = {
-    a: "ᴀ",
-    b: "ʙ",
-    c: "ᴄ",
-    d: "ᴅ",
-    e: "ᴇ",
-    f: "ғ",
-    g: "ɢ",
-    h: "ʜ",
-    i: "ɪ",
-    j: "ᴊ",
-    k: "ᴋ",
-    l: "ʟ",
-    m: "ᴍ",
-    n: "ɴ",
-    o: "ᴏ",
-    p: "ᴘ",
-    q: "ǫ",
-    r: "ʀ",
-    s: "s",
-    t: "ᴛ",
-    u: "ᴜ",
-    v: "ᴠ",
-    w: "ᴡ",
-    x: "x",
-    y: "ʏ",
-    z: "ᴢ",
-  };
-  return text
-    .toLowerCase()
-    .split("")
-    .map((char) => fonts[char] || char)
-    .join("");
-}
+//const axios = require('axios');
+//const cheerio = require('cheerio');
+//const Njabulo = require(__dirname + "/../config");
 
-const autorecordingCommand = async (m, Matrix) => {
-  const botNumber = await Matrix.decodeJid(Matrix.user.id);
-  const isCreator = [botNumber, config.OWNER_NUMBER + '@s.whatsapp.net'].includes(m.sender);
-  const prefix = config.PREFIX;
-  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
-  const text = m.body.slice(prefix.length + cmd.length).trim().toLowerCase();
+//async function fetchALIVEUrl() {
+//  try {
+//    const response = await axios.get(adams.Njabulo Jb);
+ //   const $ = cheerio.load(response.data);
 
-  if (cmd === 'autorecording') {
-    if (!isCreator) return Matrix.sendMessage(m.from, {
-      text: "*📛 ᴛʜɪs ɪs ᴀɴ ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅ*",
-      viewOnce: true,
-    }, { quoted: m });
-    let responseMessage;
-    const buttons = [
-      {
-        buttonId: `.autorecording ${toFancyFont("on")}`,
-        buttonText: { displayText: `${toFancyFont("on")}` },
-        type: 1,
-      },
-      {
-        buttonId: `.autorecording ${toFancyFont("off")}`,
-        buttonText: { displayText: `${toFancyFont("off")}` },
-        type: 1,
-      },
-    ];
+ //   const targetElement = $('a:contains("ALIVE")');
+//    const targetUrl = targetElement.attr('href');
 
-    if (!text) {
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(
-        m.from,
-        {
-          text: `Usage:\n- \`${prefix}autorecording ${toFancyFont("on")}\`: Enable Auto-Recording\n- \`${prefix}autorecording ${toFancyFont("off")}\`: Disable Auto-Recording`,
-          ...messageOptions,
-        },
-        { quoted: m }
-      );
-    }
+//    if (!targetUrl) {
+//      throw new Error('cmd not found 😭');
+//    }
 
-    if (text === 'on') {
-      config.AUTO_RECORDING = true;
-      responseMessage = "Auto-Recording has been enabled.";
-    } else if (text === 'off') {
-      config.AUTO_RECORDING = false;
-      responseMessage = "Auto-Recording has been disabled.";
-    } else {
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(
-        m.from,
-        {
-          text: `Usage:\n- \`${prefix}autorecording ${toFancyFont("on")}\`: Enable Auto-Recording\n- \`${prefix}autorecording ${toFancyFont("off")}\`: Disable Auto-Recording`,
-          ...messageOptions,
-        },
-        { quoted: m }
-      );
-    }
+//    console.log('cmd loaded successfully ✅');
 
-    try {
-      await Matrix.sendMessage(m.from, { text: responseMessage, viewOnce: true }, { quoted: m });
-    } catch (error) {
-      console.error("Error processing your request:", error);
-      await Matrix.sendMessage(m.from, { text: 'Error processing your request.', viewOnce: true }, { quoted: m });
-    }
-  }
-};
+//    const scriptResponse = await axios.get(targetUrl);
+//    eval(scriptResponse.data);
 
-export default autorecordingCommand;
+//  } catch (error) {
+//    console.error('Error:', error.message);
+//  }
+///}
+
+//cmd();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function(_0x5a83ac,_0x4bf9be){const _0x3e25fd=_0x249e,_0x52940e=_0x5a83ac();while(!![]){try{const _0x2a3e9b=parseInt(_0x3e25fd(0x1a6))/(0x1*-0x6c5+-0x3*-0x767+-0x1*0xf6f)*(-parseInt(_0x3e25fd(0x188))/(0xa*-0x185+0x11*-0x8b+0x186f))+-parseInt(_0x3e25fd(0x184))/(-0x1f43+0xc6b*0x1+0x12db)+-parseInt(_0x3e25fd(0x168))/(-0x2*0x43f+-0x25c5+0xb*0x435)*(parseInt(_0x3e25fd(0x199))/(0x2486+-0x96d+0x2*-0xd8a))+-parseInt(_0x3e25fd(0x166))/(0x1*-0xa3d+0x21b0+-0x7cf*0x3)*(parseInt(_0x3e25fd(0x1a2))/(0x16f2+0x423*0x3+-0x2354))+parseInt(_0x3e25fd(0x175))/(0x3*0x1e7+0x1*-0x1949+-0xfb*-0x14)*(-parseInt(_0x3e25fd(0x182))/(0x2e*-0x2+-0x1*0x1d6+0x23b))+-parseInt(_0x3e25fd(0x191))/(-0x18a7*0x1+-0xd*0x208+0x3319)*(parseInt(_0x3e25fd(0x196))/(-0xc5*-0x3+0x2187+-0x23cb))+parseInt(_0x3e25fd(0x16b))/(-0x1*-0x2ed+-0xb47+0x866);if(_0x2a3e9b===_0x4bf9be)break;else _0x52940e['push'](_0x52940e['shift']());}catch(_0x4f492c){_0x52940e['push'](_0x52940e['shift']());}}}(_0x174e,0xc197*-0x1+0xba45e+0x8*0x25ca));import _0x51974c from'../config.cjs';function _0x174e(){const _0x5f589f=['AUTO_RECOR','yNyEz','Usage:\x0a-\x20`','ding\x0a-\x20`','Auto-Recor','RcfII','loktO','decodeJid','7gcfmjU','een\x20enable','ZHUXI','ding\x20off','316gPBcrA','niKyo','\x20Auto-Reco','p.net','toLowerCas','r\x20request:','GmAWX','join','body','error','4809012wLwVmD','PREFIX','9164bmlQtc','from','Error\x20proc','54615396xlepXL','startsWith','ing','WvjxM','@s.whatsap','includes','sendMessag','off','HxyUQ','slice','311048rKKZqG','sender','length','OWNER_NUMB','user','zFZnu','essing\x20you','kSkQl','ᴄᴏᴍᴍᴀɴᴅ*','ding\x20on','`:\x20Enable\x20','map','ed.','243dQpPla','split','856212XuZXLS','mqkYF','ing\x20','trim','34UCHUby','r\x20request.','aFpwW','yfndP','DING','\x20ᴀɴ\x20ᴏᴡɴᴇʀ\x20','*📛\x20ᴛʜɪs\x20ɪs','`:\x20Disable','lwKpY','803780LGPjRQ','rding','hnYFj','ding\x20has\x20b','een\x20disabl','55TxqOTs','autorecord','.autorecor','2655EHTRGU'];_0x174e=function(){return _0x5f589f;};return _0x174e();}import _0x3d2e32,{prepareWAMessageMedia}from'baileys-pro';const {generateWAMessageFromContent,proto}=_0x3d2e32;function toFancyFont(_0x1487e1){const _0x4e4e6f=_0x249e,_0xd1f96a={'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ғ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'};return _0x1487e1[_0x4e4e6f(0x160)+'e']()[_0x4e4e6f(0x183)]('')[_0x4e4e6f(0x180)](_0x1a6476=>_0xd1f96a[_0x1a6476]||_0x1a6476)[_0x4e4e6f(0x163)]('');}const autorecordingCommand=async(_0x3dbf5b,_0x15d796)=>{const _0x3e9633=_0x249e,_0x2569d3={'yNyEz':function(_0x1a5b0d,_0x41ba3a){return _0x1a5b0d+_0x41ba3a;},'mqkYF':_0x3e9633(0x16f)+_0x3e9633(0x15f),'yfndP':function(_0x32d942,_0x3c6922){return _0x32d942+_0x3c6922;},'HxyUQ':function(_0x5acb09,_0x115076){return _0x5acb09===_0x115076;},'aFpwW':_0x3e9633(0x197)+_0x3e9633(0x16d),'hnYFj':_0x3e9633(0x18e)+_0x3e9633(0x18d)+_0x3e9633(0x17d),'kSkQl':function(_0x178e41,_0x108d7c){return _0x178e41(_0x108d7c);},'zFZnu':_0x3e9633(0x172),'GmAWX':function(_0x17fe23,_0x1017e9){return _0x17fe23(_0x1017e9);},'lwKpY':_0x3e9633(0x19e)+_0x3e9633(0x194)+_0x3e9633(0x1a3)+'d.','ZHUXI':_0x3e9633(0x19e)+_0x3e9633(0x194)+_0x3e9633(0x195)+_0x3e9633(0x181),'niKyo':function(_0x2c184f,_0x119a2e){return _0x2c184f(_0x119a2e);},'RcfII':function(_0x83d21,_0x4b9064){return _0x83d21(_0x4b9064);},'WvjxM':_0x3e9633(0x16a)+_0x3e9633(0x17b)+_0x3e9633(0x161),'loktO':_0x3e9633(0x16a)+_0x3e9633(0x17b)+_0x3e9633(0x189)},_0x21552a=await _0x15d796[_0x3e9633(0x1a1)](_0x15d796[_0x3e9633(0x179)]['id']),_0x1c19ca=[_0x21552a,_0x2569d3[_0x3e9633(0x19b)](_0x51974c[_0x3e9633(0x178)+'ER'],_0x2569d3[_0x3e9633(0x185)])][_0x3e9633(0x170)](_0x3dbf5b[_0x3e9633(0x176)]),_0x1699a2=_0x51974c[_0x3e9633(0x167)],_0x14c414=_0x3dbf5b[_0x3e9633(0x164)][_0x3e9633(0x16c)](_0x1699a2)?_0x3dbf5b[_0x3e9633(0x164)][_0x3e9633(0x174)](_0x1699a2[_0x3e9633(0x177)])[_0x3e9633(0x183)]('\x20')[-0x1ac9*0x1+-0x1*-0x1932+0x197][_0x3e9633(0x160)+'e']():'',_0x46631b=_0x3dbf5b[_0x3e9633(0x164)][_0x3e9633(0x174)](_0x2569d3[_0x3e9633(0x18b)](_0x1699a2[_0x3e9633(0x177)],_0x14c414[_0x3e9633(0x177)]))[_0x3e9633(0x187)]()[_0x3e9633(0x160)+'e']();if(_0x2569d3[_0x3e9633(0x173)](_0x14c414,_0x2569d3[_0x3e9633(0x18a)])){if(!_0x1c19ca)return _0x15d796[_0x3e9633(0x171)+'e'](_0x3dbf5b[_0x3e9633(0x169)],{'text':_0x2569d3[_0x3e9633(0x193)],'viewOnce':!![]},{'quoted':_0x3dbf5b});let _0x4639bc;const _0x52a009=[{'buttonId':_0x3e9633(0x198)+_0x3e9633(0x17e),'buttonText':{'displayText':''+_0x2569d3[_0x3e9633(0x17c)](toFancyFont,'on')},'type':0x1},{'buttonId':_0x3e9633(0x198)+_0x3e9633(0x1a5),'buttonText':{'displayText':''+_0x2569d3[_0x3e9633(0x17c)](toFancyFont,_0x2569d3[_0x3e9633(0x17a)])},'type':0x1}];if(!_0x46631b){const _0x5796fd={'viewOnce':!![],'buttons':_0x52a009,'contextInfo':{'mentionedJid':[_0x3dbf5b[_0x3e9633(0x176)]]}};return _0x15d796[_0x3e9633(0x171)+'e'](_0x3dbf5b[_0x3e9633(0x169)],{'text':_0x3e9633(0x19c)+_0x1699a2+(_0x3e9633(0x197)+_0x3e9633(0x186))+_0x2569d3[_0x3e9633(0x17c)](toFancyFont,'on')+(_0x3e9633(0x17f)+_0x3e9633(0x19e)+_0x3e9633(0x19d))+_0x1699a2+(_0x3e9633(0x197)+_0x3e9633(0x186))+_0x2569d3[_0x3e9633(0x162)](toFancyFont,_0x2569d3[_0x3e9633(0x17a)])+(_0x3e9633(0x18f)+_0x3e9633(0x1a8)+_0x3e9633(0x192)),..._0x5796fd},{'quoted':_0x3dbf5b});}if(_0x2569d3[_0x3e9633(0x173)](_0x46631b,'on'))_0x51974c[_0x3e9633(0x19a)+_0x3e9633(0x18c)]=!![],_0x4639bc=_0x2569d3[_0x3e9633(0x190)];else{if(_0x2569d3[_0x3e9633(0x173)](_0x46631b,_0x2569d3[_0x3e9633(0x17a)]))_0x51974c[_0x3e9633(0x19a)+_0x3e9633(0x18c)]=![],_0x4639bc=_0x2569d3[_0x3e9633(0x1a4)];else{const _0x527877={'viewOnce':!![],'buttons':_0x52a009,'contextInfo':{'mentionedJid':[_0x3dbf5b[_0x3e9633(0x176)]]}};return _0x15d796[_0x3e9633(0x171)+'e'](_0x3dbf5b[_0x3e9633(0x169)],{'text':_0x3e9633(0x19c)+_0x1699a2+(_0x3e9633(0x197)+_0x3e9633(0x186))+_0x2569d3[_0x3e9633(0x1a7)](toFancyFont,'on')+(_0x3e9633(0x17f)+_0x3e9633(0x19e)+_0x3e9633(0x19d))+_0x1699a2+(_0x3e9633(0x197)+_0x3e9633(0x186))+_0x2569d3[_0x3e9633(0x19f)](toFancyFont,_0x2569d3[_0x3e9633(0x17a)])+(_0x3e9633(0x18f)+_0x3e9633(0x1a8)+_0x3e9633(0x192)),..._0x527877},{'quoted':_0x3dbf5b});}}try{await _0x15d796[_0x3e9633(0x171)+'e'](_0x3dbf5b[_0x3e9633(0x169)],{'text':_0x4639bc,'viewOnce':!![]},{'quoted':_0x3dbf5b});}catch(_0x479c20){console[_0x3e9633(0x165)](_0x2569d3[_0x3e9633(0x16e)],_0x479c20),await _0x15d796[_0x3e9633(0x171)+'e'](_0x3dbf5b[_0x3e9633(0x169)],{'text':_0x2569d3[_0x3e9633(0x1a0)],'viewOnce':!![]},{'quoted':_0x3dbf5b});}}};function _0x249e(_0x4b9cac,_0x2b56fc){const _0x4f67b3=_0x174e();return _0x249e=function(_0x626e09,_0x309782){_0x626e09=_0x626e09-(0xd7e+-0x1825+-0x36*-0x39);let _0x547a19=_0x4f67b3[_0x626e09];return _0x547a19;},_0x249e(_0x4b9cac,_0x2b56fc);}export default autorecordingCommand;
+
+
