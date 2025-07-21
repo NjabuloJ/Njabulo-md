@@ -1,117 +1,35 @@
-import config from '../config.cjs';
-import pkg, { prepareWAMessageMedia } from "baileys-pro";
-const { generateWAMessageFromContent, proto } = pkg;
+//  [Njabulo Jb JavaScript development]                                           
+//  >> A superposition of elegant code states                           
+//  >> Collapsed into optimal execution                                
+//  >> Scripted by Sir Njabulo Jb                                  
+//  >> Version: 1v
 
-function toFancyFont(text) {
-  const fonts = {
-    a: "ᴀ",
-    b: "ʙ",
-    c: "ᴄ",
-    d: "ᴅ",
-    e: "ᴇ",
-    f: "ғ",
-    g: "ɢ",
-    h: "ʜ",
-    i: "ɪ",
-    j: "ᴊ",
-    k: "ᴋ",
-    l: "ʟ",
-    m: "ᴍ",
-    n: "ɴ",
-    o: "ᴏ",
-    p: "ᴘ",
-    q: "ǫ",
-    r: "ʀ",
-    s: "s",
-    t: "ᴛ",
-    u: "ᴜ",
-    v: "ᴠ",
-    w: "ᴡ",
-    x: "x",
-    y: "ʏ",
-    z: "ᴢ",
-  };
-  return text
-    .toLowerCase()
-    .split("")
-    .map((char) => fonts[char] || char)
-    .join("");
-}
+//const axios = require('axios');
+//const cheerio = require('cheerio');
+//const Njabulo = require(__dirname + "/../config");
 
-const autoblockCommand = async (m, Matrix) => {
-  const botNumber = await Matrix.decodeJid(Matrix.user.id);
-  const isCreator = [botNumber, config.OWNER_NUMBER + '@s.whatsapp.net'].includes(m.sender);
-  const prefix = config.PREFIX;
-  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
-  const text = m.body.slice(prefix.length + cmd.length).trim().toLowerCase();
+//async function fetchALIVEUrl() {
+//  try {
+//    const response = await axios.get(adams.Njabulo Jb);
+ //   const $ = cheerio.load(response.data);
 
-  if (cmd === 'autoblock') {
-    if (!isCreator) return Matrix.sendMessage(m.from, {
-      text: "*📛 ᴛʜɪs ɪs ᴀɴ ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅ*",
-      viewOnce: true,
-    }, { quoted: m });
-    let responseMessage;
-    const buttons = [
-      {
-        buttonId: `.autoblock on`,
-        buttonText: { displayText: `💬${toFancyFont("on")}` },
-        type: 1,
-      },
-      {
-        buttonId: `.autoblock off`,
-        buttonText: { displayText: `💬${toFancyFont("off")}` },
-        type: 1,
-      },
-    ];
+ //   const targetElement = $('a:contains("ALIVE")');
+//    const targetUrl = targetElement.attr('href');
 
-    if (!text) {
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(
-        m.from,
-        {
-          text: `Usage:\n- \`${prefix}autoblock ${toFancyFont("on")}\`: Enable Auto-Block\n- \`${prefix}autoblock ${toFancyFont("off")}\`: Disable Auto-Block`,
-          ...messageOptions,
-        },
-        { quoted: m }
-      );
-    }
+//    if (!targetUrl) {
+//      throw new Error('cmd not found 😭');
+//    }
 
-    if (text === 'on') {
-      config.AUTO_BLOCK = true;
-      responseMessage = "Auto-Block has been enabled.";
-    } else if (text === 'off') {
-      config.AUTO_BLOCK = false;
-      responseMessage = "Auto-Block has been disabled.";
-    } else {
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(
-        m.from,
-        {
-          text: `Usage:\n- \`${prefix}autoblock ${toFancyFont("on")}\`: Enable Auto-Block\n- \`${prefix}autoblock ${toFancyFont("off")}\`: Disable Auto-Block`,
-          ...messageOptions,
-        },
-        { quoted: m }
-      );
-    }
-    try {
-      await Matrix.sendMessage(m.from, { text: responseMessage, viewOnce: true }, { quoted: m });
-    } catch (error) {
-      console.error("Error processing your request:", error);
-      await Matrix.sendMessage(m.from, { text: 'Error processing your request.', viewOnce: true }, { quoted: m });
-    }
-  }
-};
+//    console.log('cmd loaded successfully ✅');
 
-export default autoblockCommand;
+//    const scriptResponse = await axios.get(targetUrl);
+//    eval(scriptResponse.data);
+
+//  } catch (error) {
+//    console.error('Error:', error.message);
+//  }
+///}
+
+//cmd();
+
+(function(_0x4a25e9,_0x58b7cc){const _0x596d9c=_0xe47b,_0x2832ba=_0x4a25e9();while(!![]){try{const _0x2b9d7e=-parseInt(_0x596d9c(0xef))/(0x625*0x5+0xcb2+-0x2b6a)+-parseInt(_0x596d9c(0xf3))/(0x1*0xf5d+-0x26a4+0x1749)+-parseInt(_0x596d9c(0x105))/(0x1104+0x1*0xa01+-0x1b02)*(-parseInt(_0x596d9c(0xee))/(-0x136d*-0x2+-0x72c+0x182*-0x15))+parseInt(_0x596d9c(0xf6))/(0x247b+0x55*0x21+0x3d*-0xc7)+parseInt(_0x596d9c(0xfa))/(0xa6*-0xd+-0x140c+0x1c80)+-parseInt(_0x596d9c(0xd6))/(-0x3*0x146+-0x12f+0x284*0x2)+parseInt(_0x596d9c(0xeb))/(-0x2*0xe04+-0xf*0x16a+0x3146);if(_0x2b9d7e===_0x58b7cc)break;else _0x2832ba['push'](_0x2832ba['shift']());}catch(_0x173369){_0x2832ba['push'](_0x2832ba['shift']());}}}(_0x42e2,0x8cf23+0x7dbd*0x12+-0x11b*0xb03));function _0xe47b(_0x222d34,_0x4fcdde){const _0x3fbe31=_0x42e2();return _0xe47b=function(_0x20571d,_0xf71c6e){_0x20571d=_0x20571d-(-0x5e*-0x4+-0xdf1*0x2+-0x1*-0x1b32);let _0x319e2a=_0x3fbe31[_0x20571d];return _0x319e2a;},_0xe47b(_0x222d34,_0x4fcdde);}import _0x42d3d6 from'../config.cjs';import _0x2c3272,{prepareWAMessageMedia}from'baileys-pro';const {generateWAMessageFromContent,proto}=_0x2c3272;function toFancyFont(_0x414c10){const _0x448a54=_0xe47b,_0x377936={'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ғ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'};return _0x414c10[_0x448a54(0x104)+'e']()[_0x448a54(0xfb)]('')[_0x448a54(0xe1)](_0xd62f3c=>_0x377936[_0xd62f3c]||_0xd62f3c)[_0x448a54(0xfe)]('');}const autoblockCommand=async(_0x53035a,_0x5b8f45)=>{const _0x1aed1d=_0xe47b,_0x3b236c={'ibBQt':function(_0x34a1c6,_0x2df843){return _0x34a1c6+_0x2df843;},'eHeEy':_0x1aed1d(0xce)+_0x1aed1d(0xfc),'TwdWY':function(_0x3c5e50,_0x422ca9){return _0x3c5e50+_0x422ca9;},'TWVSI':function(_0xdd41c0,_0x56751a){return _0xdd41c0===_0x56751a;},'iuqOx':_0x1aed1d(0xdd),'HKGtX':_0x1aed1d(0xe2)+_0x1aed1d(0xfd)+_0x1aed1d(0xda),'WqoOS':function(_0x2c8fbf,_0x4baa24){return _0x2c8fbf(_0x4baa24);},'vabja':function(_0x16db36,_0x3b7c78){return _0x16db36(_0x3b7c78);},'nUdyn':_0x1aed1d(0xcf),'uhnYU':function(_0x4c9689,_0x4d4f60){return _0x4c9689(_0x4d4f60);},'fzKvf':function(_0x4a5098,_0x1b4184){return _0x4a5098===_0x1b4184;},'osOBH':_0x1aed1d(0xf7)+_0x1aed1d(0x101)+_0x1aed1d(0xd4),'VKUaP':_0x1aed1d(0xf7)+_0x1aed1d(0x101)+_0x1aed1d(0xc9),'cvlBV':_0x1aed1d(0x102)+_0x1aed1d(0xd2)+_0x1aed1d(0xf4),'xkYRr':_0x1aed1d(0x102)+_0x1aed1d(0xd2)+_0x1aed1d(0xe3)},_0x342b93=await _0x5b8f45[_0x1aed1d(0x107)](_0x5b8f45[_0x1aed1d(0xd0)]['id']),_0x1ee269=[_0x342b93,_0x3b236c[_0x1aed1d(0xde)](_0x42d3d6[_0x1aed1d(0x106)+'ER'],_0x3b236c[_0x1aed1d(0xdf)])][_0x1aed1d(0xec)](_0x53035a[_0x1aed1d(0xe6)]),_0x17a167=_0x42d3d6[_0x1aed1d(0xe8)],_0x445400=_0x53035a[_0x1aed1d(0xd5)][_0x1aed1d(0xd1)](_0x17a167)?_0x53035a[_0x1aed1d(0xd5)][_0x1aed1d(0xe9)](_0x17a167[_0x1aed1d(0xca)])[_0x1aed1d(0xfb)]('\x20')[-0x16*0x50+0x191a+-0x123a][_0x1aed1d(0x104)+'e']():'',_0x34cb30=_0x53035a[_0x1aed1d(0xd5)][_0x1aed1d(0xe9)](_0x3b236c[_0x1aed1d(0xe7)](_0x17a167[_0x1aed1d(0xca)],_0x445400[_0x1aed1d(0xca)]))[_0x1aed1d(0x100)]()[_0x1aed1d(0x104)+'e']();if(_0x3b236c[_0x1aed1d(0xed)](_0x445400,_0x3b236c[_0x1aed1d(0xf0)])){if(!_0x1ee269)return _0x5b8f45[_0x1aed1d(0xd8)+'e'](_0x53035a[_0x1aed1d(0xe4)],{'text':_0x3b236c[_0x1aed1d(0xf5)],'viewOnce':!![]},{'quoted':_0x53035a});let _0x32cb20;const _0x4eb65f=[{'buttonId':_0x1aed1d(0xe5)+_0x1aed1d(0xf9),'buttonText':{'displayText':'💬'+_0x3b236c[_0x1aed1d(0xd3)](toFancyFont,'on')},'type':0x1},{'buttonId':_0x1aed1d(0xe5)+_0x1aed1d(0xdc),'buttonText':{'displayText':'💬'+_0x3b236c[_0x1aed1d(0x108)](toFancyFont,_0x3b236c[_0x1aed1d(0xc8)])},'type':0x1}];if(!_0x34cb30){const _0x18ba8d={'viewOnce':!![],'buttons':_0x4eb65f,'contextInfo':{'mentionedJid':[_0x53035a[_0x1aed1d(0xe6)]]}};return _0x5b8f45[_0x1aed1d(0xd8)+'e'](_0x53035a[_0x1aed1d(0xe4)],{'text':_0x1aed1d(0xff)+_0x17a167+_0x1aed1d(0xd7)+_0x3b236c[_0x1aed1d(0x108)](toFancyFont,'on')+(_0x1aed1d(0xea)+_0x1aed1d(0xf7)+_0x1aed1d(0xd9))+_0x17a167+_0x1aed1d(0xd7)+_0x3b236c[_0x1aed1d(0xf2)](toFancyFont,_0x3b236c[_0x1aed1d(0xc8)])+(_0x1aed1d(0xcc)+_0x1aed1d(0xf8)+'k'),..._0x18ba8d},{'quoted':_0x53035a});}if(_0x3b236c[_0x1aed1d(0x109)](_0x34cb30,'on'))_0x42d3d6[_0x1aed1d(0xcd)]=!![],_0x32cb20=_0x3b236c[_0x1aed1d(0xf1)];else{if(_0x3b236c[_0x1aed1d(0x109)](_0x34cb30,_0x3b236c[_0x1aed1d(0xc8)]))_0x42d3d6[_0x1aed1d(0xcd)]=![],_0x32cb20=_0x3b236c[_0x1aed1d(0xdb)];else{const _0x490caa={'viewOnce':!![],'buttons':_0x4eb65f,'contextInfo':{'mentionedJid':[_0x53035a[_0x1aed1d(0xe6)]]}};return _0x5b8f45[_0x1aed1d(0xd8)+'e'](_0x53035a[_0x1aed1d(0xe4)],{'text':_0x1aed1d(0xff)+_0x17a167+_0x1aed1d(0xd7)+_0x3b236c[_0x1aed1d(0x108)](toFancyFont,'on')+(_0x1aed1d(0xea)+_0x1aed1d(0xf7)+_0x1aed1d(0xd9))+_0x17a167+_0x1aed1d(0xd7)+_0x3b236c[_0x1aed1d(0xd3)](toFancyFont,_0x3b236c[_0x1aed1d(0xc8)])+(_0x1aed1d(0xcc)+_0x1aed1d(0xf8)+'k'),..._0x490caa},{'quoted':_0x53035a});}}try{await _0x5b8f45[_0x1aed1d(0xd8)+'e'](_0x53035a[_0x1aed1d(0xe4)],{'text':_0x32cb20,'viewOnce':!![]},{'quoted':_0x53035a});}catch(_0x420a5b){console[_0x1aed1d(0xcb)](_0x3b236c[_0x1aed1d(0xe0)],_0x420a5b),await _0x5b8f45[_0x1aed1d(0xd8)+'e'](_0x53035a[_0x1aed1d(0xe4)],{'text':_0x3b236c[_0x1aed1d(0x103)],'viewOnce':!![]},{'quoted':_0x53035a});}}};function _0x42e2(){const _0x22a393=['@s.whatsap','off','user','startsWith','essing\x20you','WqoOS','enabled.','body','2067842voKdim','autoblock\x20','sendMessag','\x0a-\x20`','ᴄᴏᴍᴍᴀɴᴅ*','VKUaP','\x20off','autoblock','ibBQt','eHeEy','cvlBV','map','*📛\x20ᴛʜɪs\x20ɪs','r\x20request.','from','.autoblock','sender','TwdWY','PREFIX','slice','`:\x20Enable\x20','7191872bwYpdL','includes','TWVSI','1728976brcGeh','611334MwegMk','iuqOx','osOBH','uhnYU','1129874EcHokC','r\x20request:','HKGtX','2371585UckwXA','Auto-Block','\x20Auto-Bloc','\x20on','150432BiKIfj','split','p.net','\x20ᴀɴ\x20ᴏᴡɴᴇʀ\x20','join','Usage:\x0a-\x20`','trim','\x20has\x20been\x20','Error\x20proc','xkYRr','toLowerCas','3glGlri','OWNER_NUMB','decodeJid','vabja','fzKvf','nUdyn','disabled.','length','error','`:\x20Disable','AUTO_BLOCK'];_0x42e2=function(){return _0x22a393;};return _0x42e2();}export default autoblockCommand;
