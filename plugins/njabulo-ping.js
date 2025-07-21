@@ -1,79 +1,103 @@
-import config from "../config.cjs";
-import pkg, { prepareWAMessageMedia } from "baileys-pro";
-const { generateWAMessageFromContent, proto } = pkg;
+//  [Njabulo Jb JavaScript development]                                           
+//  >> A superposition of elegant code states                           
+//  >> Collapsed into optimal execution                                
+//  >> Scripted by Sir Njabulo Jb                                  
+//  >> Version: 1v
 
-function toFancyFont(text, isUpperCase = false) {
-  const fonts = {
-    a: "ᴀ",
-    b: "ʙ",
-    c: "ᴄ",
-    d: "ᴅ",
-    e: "ᴇ",
-    f: "ғ",
-    g: "ɢ",
-    h: "ʜ",
-    i: "ɪ",
-    j: "ᴊ",
-    k: "ᴋ",
-    l: "ʟ",
-    m: "ᴍ",
-    n: "ɴ",
-    o: "ᴏ",
-    p: "ᴘ",
-    q: "ǫ",
-    r: "ʀ",
-    s: "s",
-    t: "ᴛ",
-    u: "ᴜ",
-    v: "ᴠ",
-    w: "ᴡ",
-    x: "x",
-    y: "ʏ",
-    z: "ᴢ",
-  };
-  const formattedText = isUpperCase ? text.toUpperCase() : text.toLowerCase();
-  return formattedText
-    .split("")
-    .map((char) => fonts[char] || char)
-    .join("");
-}
+//const axios = require('axios');
+//const cheerio = require('cheerio');
+//const Njabulo = require(__dirname + "/../config");
 
-const ping = async (m, Matrix) => {
-  const prefix = config.PREFIX || ".";
-  const cmd = m.body.startsWith(prefix)
-    ? m.body.slice(prefix.length).trim().split(" ")[0].toLowerCase()
-    : "";
-  if (cmd === "ping") {
-    const start = new Date().getTime();
-    await m.React("📡");
-    const end = new Date().getTime();
-    const responseTime = (end - start) / 1000;
-    const text = `*${toFancyFont("Njabulo Jb")}* : ${responseTime.toFixed(2)} s`;
-    const buttons = [
-      {
-        buttonId: `.alive`,
-        buttonText: { displayText: `📡${toFancyFont("Alive")}` },
-        type: 1,
-      },
-      {
-        buttonId: `.menu`,
-        buttonText: { displayText: `🧾${toFancyFont("Menu")}` },
-        type: 1,
-      },
-    ];
-    const messageOptions = {
-      viewOnce: true,
-      buttons,
-      contextInfo: {
-        mentionedJid: [m.sender],
-      },
-    };
-    await Matrix.sendMessage(
-      m.from,
-      { text, ...messageOptions },
-      { quoted: m }
-    );
-  }
-};
+//async function fetchALIVEUrl() {
+//  try {
+//    const response = await axios.get(adams.Njabulo Jb);
+ //   const $ = cheerio.load(response.data);
 
-export default ping;
+ //   const targetElement = $('a:contains("ALIVE")');
+//    const targetUrl = targetElement.attr('href');
+
+//    if (!targetUrl) {
+//      throw new Error('cmd not found 😭');
+//    }
+
+//    console.log('cmd loaded successfully ✅');
+
+//    const scriptResponse = await axios.get(targetUrl);
+//    eval(scriptResponse.data);
+
+//  } catch (error) {
+//    console.error('Error:', error.message);
+//  }
+///}
+
+//cmd();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function _0xb386(_0x38d593,_0x1216f9){const _0x53dc64=_0x3fd6();return _0xb386=function(_0xedd5d5,_0x25dc12){_0xedd5d5=_0xedd5d5-(-0x315*0x1+-0x822+0xce8);let _0x5486e1=_0x53dc64[_0xedd5d5];return _0x5486e1;},_0xb386(_0x38d593,_0x1216f9);}(function(_0x31bab6,_0x24f2e8){const _0x5ddf6d=_0xb386,_0x99477d=_0x31bab6();while(!![]){try{const _0x72b8ea=parseInt(_0x5ddf6d(0x1d6))/(0x1*0xe6b+-0x22cd+0x1463)+parseInt(_0x5ddf6d(0x1c8))/(-0x5*0x4c3+0x16a*0x4+0x1229)*(parseInt(_0x5ddf6d(0x1d2))/(-0x446*-0x2+-0x1e8d+0x1604))+-parseInt(_0x5ddf6d(0x1d7))/(-0x1dca+-0xd68+0x2b36)*(parseInt(_0x5ddf6d(0x1b9))/(0xb*0x1ef+-0xd83+-0x7bd))+-parseInt(_0x5ddf6d(0x1d0))/(0x1*0x1073+-0x1*-0x101f+-0x208c)*(parseInt(_0x5ddf6d(0x1d4))/(0x1*0x11ef+0x2378+0x7a0*-0x7))+parseInt(_0x5ddf6d(0x1c2))/(0x1d0e+-0x1*0x22a9+0x5a3)*(-parseInt(_0x5ddf6d(0x1c4))/(-0x8*0x26b+0x1*-0x2489+0x37ea))+-parseInt(_0x5ddf6d(0x1b7))/(-0xba5*0x2+0x1eae+0x75a*-0x1)+parseInt(_0x5ddf6d(0x1b1))/(-0x1*-0x2493+0x4a*0x27+-0x2fce)*(parseInt(_0x5ddf6d(0x1bd))/(-0x10ff+0x1695*-0x1+0x27a0));if(_0x72b8ea===_0x24f2e8)break;else _0x99477d['push'](_0x99477d['shift']());}catch(_0x550763){_0x99477d['push'](_0x99477d['shift']());}}}(_0x3fd6,-0x24f10*-0x3+-0x80448+0x58c7b));import _0x5ca57a from'../config.cjs';import _0x32b4e9,{prepareWAMessageMedia}from'baileys-pro';const {generateWAMessageFromContent,proto}=_0x32b4e9;function toFancyFont(_0x2eae22,_0x52ce74=![]){const _0x57a08c=_0xb386,_0x4e2e0c={'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ғ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'},_0x17eebb=_0x52ce74?_0x2eae22[_0x57a08c(0x1c7)+'e']():_0x2eae22[_0x57a08c(0x1cd)+'e']();return _0x17eebb[_0x57a08c(0x1d1)]('')[_0x57a08c(0x1ba)](_0x492941=>_0x4e2e0c[_0x492941]||_0x492941)[_0x57a08c(0x1bb)]('');}const ping=async(_0x2ca2a4,_0xfc395e)=>{const _0x1ab853=_0xb386,_0x30cd9c={'izLnn':function(_0x272d60,_0x436de9){return _0x272d60===_0x436de9;},'OMxuP':_0x1ab853(0x1db),'eRCFG':function(_0x9bbf53,_0x5529cb){return _0x9bbf53/_0x5529cb;},'fkMqD':function(_0x92a20b,_0x4e23ab){return _0x92a20b-_0x4e23ab;},'LNphz':function(_0x16e960,_0x343564){return _0x16e960(_0x343564);},'OOQLc':_0x1ab853(0x1ce),'hylrn':function(_0x267219,_0x5487eb){return _0x267219(_0x5487eb);},'qnisJ':_0x1ab853(0x1da),'VOKCn':function(_0xd97d2d,_0x2e977c){return _0xd97d2d(_0x2e977c);},'VBGvM':_0x1ab853(0x1c1)},_0x35f969=_0x5ca57a[_0x1ab853(0x1b8)]||'.',_0x2f6445=_0x2ca2a4[_0x1ab853(0x1cb)][_0x1ab853(0x1c5)](_0x35f969)?_0x2ca2a4[_0x1ab853(0x1cb)][_0x1ab853(0x1c0)](_0x35f969[_0x1ab853(0x1c3)])[_0x1ab853(0x1dc)]()[_0x1ab853(0x1d1)]('\x20')[0xc0c+0x1105+-0x1d11][_0x1ab853(0x1cd)+'e']():'';if(_0x30cd9c[_0x1ab853(0x1c9)](_0x2f6445,_0x30cd9c[_0x1ab853(0x1bf)])){const _0x20cb2a=new Date()[_0x1ab853(0x1ca)]();await _0x2ca2a4[_0x1ab853(0x1bc)]('📡');const _0x388713=new Date()[_0x1ab853(0x1ca)](),_0xe8046=_0x30cd9c[_0x1ab853(0x1b2)](_0x30cd9c[_0x1ab853(0x1b5)](_0x388713,_0x20cb2a),-0x106*-0x10+0x570+-0x11e8),_0x41b43d='*'+_0x30cd9c[_0x1ab853(0x1d9)](toFancyFont,_0x30cd9c[_0x1ab853(0x1d5)])+_0x1ab853(0x1cf)+_0xe8046[_0x1ab853(0x1b4)](0x16b4+-0x1*0x13cf+-0x2e3)+'\x20s',_0x1298c7=[{'buttonId':_0x1ab853(0x1de),'buttonText':{'displayText':'📡'+_0x30cd9c[_0x1ab853(0x1c6)](toFancyFont,_0x30cd9c[_0x1ab853(0x1cc)])},'type':0x1},{'buttonId':_0x1ab853(0x1b3),'buttonText':{'displayText':'🧾'+_0x30cd9c[_0x1ab853(0x1be)](toFancyFont,_0x30cd9c[_0x1ab853(0x1d3)])},'type':0x1}],_0x14e5d6={'viewOnce':!![],'buttons':_0x1298c7,'contextInfo':{'mentionedJid':[_0x2ca2a4[_0x1ab853(0x1dd)]]}};await _0xfc395e[_0x1ab853(0x1d8)+'e'](_0x2ca2a4[_0x1ab853(0x1b6)],{'text':_0x41b43d,..._0x14e5d6},{'quoted':_0x2ca2a4});}};function _0x3fd6(){const _0x469faa=['startsWith','hylrn','toUpperCas','19300sRiSZc','izLnn','getTime','body','qnisJ','toLowerCas','Njabulo\x20Jb','*\x20:\x20','73512FcqMBJ','split','57gjShUI','VBGvM','21ZxJwHy','OOQLc','237997OGDDaw','1913608HIqKTu','sendMessag','LNphz','Alive','ping','trim','sender','.alive','14179geylWl','eRCFG','.menu','toFixed','fkMqD','from','1604670eUoqVA','PREFIX','5RdGZYj','map','join','React','6672omosXD','VOKCn','OMxuP','slice','Menu','24NeABUf','length','510633KYQQrs'];_0x3fd6=function(){return _0x469faa;};return _0x3fd6();}export default ping;
