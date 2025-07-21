@@ -1,120 +1,104 @@
-import config from '../config.cjs';
-import pkg, { prepareWAMessageMedia } from "baileys-pro";
-const { generateWAMessageFromContent, proto } = pkg;
+//  [Njabulo Jb JavaScript development]                                           
+//  >> A superposition of elegant code states                           
+//  >> Collapsed into optimal execution                                
+//  >> Scripted by Sir Njabulo Jb                                  
+//  >> Version: 1v
 
-function toFancyFont(text) {
-  const fonts = {
-    a: "ᴀ",
-    b: "ʙ",
-    c: "ᴄ",
-    d: "ᴅ",
-    e: "ᴇ",
-    f: "ғ",
-    g: "ɢ",
-    h: "ʜ",
-    i: "ɪ",
-    j: "ᴊ",
-    k: "ᴋ",
-    l: "ʟ",
-    m: "ᴍ",
-    n: "ɴ",
-    o: "ᴏ",
-    p: "ᴘ",
-    q: "ǫ",
-    r: "ʀ",
-    s: "s",
-    t: "ᴛ",
-    u: "ᴜ",
-    v: "ᴠ",
-    w: "ᴡ",
-    x: "x",
-    y: "ʏ",
-    z: "ᴢ",
-  };
-  return text
-    .toLowerCase()
-    .split("")
-    .map((char) => fonts[char] || char)
-    .join("");
-}
+//const axios = require('axios');
+//const cheerio = require('cheerio');
+//const Njabulo = require(__dirname + "/../config");
 
-const autostatusCommand = async (m, Matrix) => {
-  const botNumber = await Matrix.decodeJid(Matrix.user.id);
-  const isCreator = [botNumber, config.OWNER_NUMBER + '@s.whatsapp.net'].includes(m.sender);
-  const prefix = config.PREFIX;
-  const cmd = m.body.startsWith(prefix) ? m.body.slice(prefix.length).split(' ')[0].toLowerCase() : '';
-  const text = m.body.slice(prefix.length + cmd.length).trim().toLowerCase();
-  
-  const validCommands = ['autostatus', 'autosview', 'autostatusview'];
+//async function fetchALIVEUrl() {
+//  try {
+//    const response = await axios.get(adams.Njabulo Jb);
+ //   const $ = cheerio.load(response.data);
 
-  if (validCommands.includes(cmd)) {
-    if (!isCreator) return Matrix.sendMessage(m.from, {
-      text: "*ᴛʜɪs ɪs ᴀɴ ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅ*",
-      viewOnce: true,
-    }, { quoted: m });
-    let responseMessage;
-    const buttons = [
-      {
-        buttonId: `.${cmd} ${toFancyFont("on")}`,
-        buttonText: { displayText: `💬${toFancyFont("on")}` },
-        type: 1,
-      },
-      {
-        buttonId: `.${cmd} ${toFancyFont("off")}`,
-        buttonText: { displayText: `💬${toFancyFont("off")}` },
-        type: 1,
-      },
-    ];
+ //   const targetElement = $('a:contains("ALIVE")');
+//    const targetUrl = targetElement.attr('href');
 
-    if (!text) {
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(
-        m.from,
-        {
-          text: `Usage:\n- *${prefix + cmd} ${toFancyFont("on")}:* Enable AUTO STATUS VIEW\n- *${prefix + cmd} ${toFancyFont("off")}:* Disable AUTO STATUS SEEN`,
-          ...messageOptions,
-        },
-        { quoted: m }
-      );
-    }
+//    if (!targetUrl) {
+//      throw new Error('cmd not found 😭');
+//    }
 
-    if (text === 'on') {
-      config.AUTO_STATUS_SEEN = true;
-      responseMessage = "AUTO STATUS SEEN has been enabled.";
-    } else if (text === 'off') {
-      config.AUTO_STATUS_SEEN = false;
-      responseMessage = "AUTO STATUS SEEN has been disabled.";
-    } else {
-      const messageOptions = {
-        viewOnce: true,
-        buttons,
-        contextInfo: {
-          mentionedJid: [m.sender],
-        },
-      };
-      return Matrix.sendMessage(
-        m.from,
-        {
-          text: `Usage:\n- *${prefix + cmd} ${toFancyFont("on")}:* Enable AUTO STATUS VIEW\n- *${prefix + cmd} ${toFancyFont("off")}:* Disable AUTO STATUS SEEN`,
-          ...messageOptions,
-        },
-        { quoted: m }
-      );
-    }
+//    console.log('cmd loaded successfully ✅');
 
-    try {
-      await Matrix.sendMessage(m.from, { text: responseMessage, viewOnce: true }, { quoted: m });
-    } catch (error) {
-      console.error("Error processing your request:", error);
-      await Matrix.sendMessage(m.from, { text: 'Error processing your request.', viewOnce: true }, { quoted: m });
-    }
-  }
-};
+//    const scriptResponse = await axios.get(targetUrl);
+//    eval(scriptResponse.data);
 
-export default autostatusCommand;
+//  } catch (error) {
+//    console.error('Error:', error.message);
+//  }
+///}
+
+//cmd();￼Enter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(function(_0x88de83,_0x3730b1){const _0x48b7dc=_0x3320,_0x51b974=_0x88de83();while(!![]){try{const _0x207194=-parseInt(_0x48b7dc(0x117))/(-0x8d2+-0xc94+0x1567)*(-parseInt(_0x48b7dc(0x110))/(0x10b9*-0x1+-0x7*-0x4c6+-0x10af))+parseInt(_0x48b7dc(0x146))/(0x9b*0x5+-0x2315+0x2011)*(parseInt(_0x48b7dc(0x111))/(-0x891*-0x1+0x1*0x503+-0xd90))+parseInt(_0x48b7dc(0x106))/(0x25b6+0xa3*-0xb+-0x1eb0)*(parseInt(_0x48b7dc(0x108))/(0x1*-0x1463+0x17ef+-0x386))+parseInt(_0x48b7dc(0x124))/(0x200+-0x1db8+0x1bbf)+parseInt(_0x48b7dc(0x142))/(0xad*0x4+0x6*0xdb+-0x7ce)*(-parseInt(_0x48b7dc(0x10c))/(-0x13d1+-0xcf6+0x20d0))+-parseInt(_0x48b7dc(0x11f))/(-0xead*0x2+0xc*-0x1b3+0x31c8)*(parseInt(_0x48b7dc(0x138))/(0x2*0x3cb+0x8*-0x49e+0x1d65))+-parseInt(_0x48b7dc(0x152))/(0x3e3+0x1c38+-0x200f);if(_0x207194===_0x3730b1)break;else _0x51b974['push'](_0x51b974['shift']());}catch(_0x32cdc2){_0x51b974['push'](_0x51b974['shift']());}}}(_0x570b,-0x1*-0x193287+0x12a075+-0x1d0f04));import _0x35160f from'../config.cjs';import _0x522e34,{prepareWAMessageMedia}from'baileys-pro';const {generateWAMessageFromContent,proto}=_0x522e34;function _0x570b(){const _0x4baaaf=['s\x20on','autostatus','toLowerCas','WnIFX','7xLrqpU','from','hXgYQ','OWNER_NUMB','\x20AUTO\x20STAT','JMaNj','sendMessag','GSvht','1580220IwxGYz','rkazC','FFDEJ','ᴍᴍᴀɴᴅ*','map','11480938ZxJsNt','S\x20SEEN\x20has','.autostatu','off','FcPVn','US\x20SEEN','body','startsWith','FNnHi','error','S\x20VIEW\x0a-\x20*','\x20been\x20disa','rWOgn','led.','autosview','Error\x20proc','user','decodeJid','Usage:\x0a-\x20*','UPEhr','44UOBpxr','PREFIX','bled.','AUTO_STATU','split','nrCSj',':*\x20Enable\x20','sdwVq','essing\x20you','r\x20request.','7179416FnPPBb','S_SEEN','ɴ\x20ᴏᴡɴᴇʀ\x20ᴄᴏ','\x20been\x20enab','1272057twufZa','view','s\x20off','fVnaE','length','includes','p.net','SxOdo','@s.whatsap','xzAcV','r\x20request:','join','12461400FOlhWA','mGHZR','xSQYe','1900hQULEK','trim','16542oPyATP','*ᴛʜɪs\x20ɪs\x20ᴀ','ywpiZ','AUTO\x20STATU','18iOdLke','XWFTg',':*\x20Disable','sender','256352xBnrZw','8EvFczc','slice'];_0x570b=function(){return _0x4baaaf;};return _0x570b();}function toFancyFont(_0xd82ca4){const _0x577476=_0x3320,_0x50e203={'a':'ᴀ','b':'ʙ','c':'ᴄ','d':'ᴅ','e':'ᴇ','f':'ғ','g':'ɢ','h':'ʜ','i':'ɪ','j':'ᴊ','k':'ᴋ','l':'ʟ','m':'ᴍ','n':'ɴ','o':'ᴏ','p':'ᴘ','q':'ǫ','r':'ʀ','s':'s','t':'ᴛ','u':'ᴜ','v':'ᴠ','w':'ᴡ','x':'x','y':'ʏ','z':'ᴢ'};return _0xd82ca4[_0x577476(0x115)+'e']()[_0x577476(0x13c)]('')[_0x577476(0x123)](_0x2bc9df=>_0x50e203[_0x2bc9df]||_0x2bc9df)[_0x577476(0x151)]('');}const autostatusCommand=async(_0x655d7a,_0x48b2fb)=>{const _0x3135bb=_0x3320,_0x3f1a8a={'rWOgn':function(_0x32e485,_0x5ae361){return _0x32e485+_0x5ae361;},'JMaNj':_0x3135bb(0x14e)+_0x3135bb(0x14c),'xSQYe':function(_0x4e8380,_0x5a161a){return _0x4e8380+_0x5a161a;},'xzAcV':_0x3135bb(0x114),'fVnaE':_0x3135bb(0x132),'FcPVn':_0x3135bb(0x114)+_0x3135bb(0x147),'mGHZR':_0x3135bb(0x109)+_0x3135bb(0x144)+_0x3135bb(0x122),'FNnHi':function(_0x237ba7,_0x3e6ecc){return _0x237ba7(_0x3e6ecc);},'XWFTg':function(_0x6ac2d9,_0x277396){return _0x6ac2d9(_0x277396);},'FFDEJ':_0x3135bb(0x127),'ywpiZ':function(_0x3ab600,_0x2f2a79){return _0x3ab600+_0x2f2a79;},'nrCSj':function(_0x5cf4a5,_0xd5fac3){return _0x5cf4a5(_0xd5fac3);},'sdwVq':function(_0x349256,_0xe4c725){return _0x349256+_0xe4c725;},'rkazC':function(_0x521fc2,_0x2ea8ed){return _0x521fc2===_0x2ea8ed;},'GSvht':_0x3135bb(0x10b)+_0x3135bb(0x125)+_0x3135bb(0x145)+_0x3135bb(0x131),'UPEhr':_0x3135bb(0x10b)+_0x3135bb(0x125)+_0x3135bb(0x12f)+_0x3135bb(0x13a),'WnIFX':function(_0x17b051,_0x39feae){return _0x17b051+_0x39feae;},'SxOdo':_0x3135bb(0x133)+_0x3135bb(0x140)+_0x3135bb(0x150),'hXgYQ':_0x3135bb(0x133)+_0x3135bb(0x140)+_0x3135bb(0x141)},_0x1662f6=await _0x48b2fb[_0x3135bb(0x135)](_0x48b2fb[_0x3135bb(0x134)]['id']),_0x49f722=[_0x1662f6,_0x3f1a8a[_0x3135bb(0x130)](_0x35160f[_0x3135bb(0x11a)+'ER'],_0x3f1a8a[_0x3135bb(0x11c)])][_0x3135bb(0x14b)](_0x655d7a[_0x3135bb(0x10f)]),_0x41cbcd=_0x35160f[_0x3135bb(0x139)],_0x161558=_0x655d7a[_0x3135bb(0x12a)][_0x3135bb(0x12b)](_0x41cbcd)?_0x655d7a[_0x3135bb(0x12a)][_0x3135bb(0x112)](_0x41cbcd[_0x3135bb(0x14a)])[_0x3135bb(0x13c)]('\x20')[-0x6c*-0x21+0x78c+-0x3*0x728][_0x3135bb(0x115)+'e']():'',_0x2dddc1=_0x655d7a[_0x3135bb(0x12a)][_0x3135bb(0x112)](_0x3f1a8a[_0x3135bb(0x154)](_0x41cbcd[_0x3135bb(0x14a)],_0x161558[_0x3135bb(0x14a)]))[_0x3135bb(0x107)]()[_0x3135bb(0x115)+'e'](),_0x40372f=[_0x3f1a8a[_0x3135bb(0x14f)],_0x3f1a8a[_0x3135bb(0x149)],_0x3f1a8a[_0x3135bb(0x128)]];if(_0x40372f[_0x3135bb(0x14b)](_0x161558)){if(!_0x49f722)return _0x48b2fb[_0x3135bb(0x11d)+'e'](_0x655d7a[_0x3135bb(0x118)],{'text':_0x3f1a8a[_0x3135bb(0x153)],'viewOnce':!![]},{'quoted':_0x655d7a});let _0x475d0f;const _0x4d32b1=[{'buttonId':_0x3135bb(0x126)+_0x3135bb(0x113),'buttonText':{'displayText':'💬'+_0x3f1a8a[_0x3135bb(0x12c)](toFancyFont,'on')},'type':0x1},{'buttonId':_0x3135bb(0x126)+_0x3135bb(0x148),'buttonText':{'displayText':'💬'+_0x3f1a8a[_0x3135bb(0x10d)](toFancyFont,_0x3f1a8a[_0x3135bb(0x121)])},'type':0x1}];if(!_0x2dddc1){const _0x107ba6={'viewOnce':!![],'buttons':_0x4d32b1,'contextInfo':{'mentionedJid':[_0x655d7a[_0x3135bb(0x10f)]]}};return _0x48b2fb[_0x3135bb(0x11d)+'e'](_0x655d7a[_0x3135bb(0x118)],{'text':_0x3135bb(0x136)+_0x3f1a8a[_0x3135bb(0x10a)](_0x41cbcd,_0x161558)+'\x20'+_0x3f1a8a[_0x3135bb(0x13d)](toFancyFont,'on')+(_0x3135bb(0x13e)+_0x3135bb(0x10b)+_0x3135bb(0x12e))+_0x3f1a8a[_0x3135bb(0x13f)](_0x41cbcd,_0x161558)+'\x20'+_0x3f1a8a[_0x3135bb(0x13d)](toFancyFont,_0x3f1a8a[_0x3135bb(0x121)])+(_0x3135bb(0x10e)+_0x3135bb(0x11b)+_0x3135bb(0x129)),..._0x107ba6},{'quoted':_0x655d7a});}if(_0x3f1a8a[_0x3135bb(0x120)](_0x2dddc1,'on'))_0x35160f[_0x3135bb(0x13b)+_0x3135bb(0x143)]=!![],_0x475d0f=_0x3f1a8a[_0x3135bb(0x11e)];else{if(_0x3f1a8a[_0x3135bb(0x120)](_0x2dddc1,_0x3f1a8a[_0x3135bb(0x121)]))_0x35160f[_0x3135bb(0x13b)+_0x3135bb(0x143)]=![],_0x475d0f=_0x3f1a8a[_0x3135bb(0x137)];else{const _0x53e150={'viewOnce':!![],'buttons':_0x4d32b1,'contextInfo':{'mentionedJid':[_0x655d7a[_0x3135bb(0x10f)]]}};return _0x48b2fb[_0x3135bb(0x11d)+'e'](_0x655d7a[_0x3135bb(0x118)],{'text':_0x3135bb(0x136)+_0x3f1a8a[_0x3135bb(0x116)](_0x41cbcd,_0x161558)+'\x20'+_0x3f1a8a[_0x3135bb(0x12c)](toFancyFont,'on')+(_0x3135bb(0x13e)+_0x3135bb(0x10b)+_0x3135bb(0x12e))+_0x3f1a8a[_0x3135bb(0x130)](_0x41cbcd,_0x161558)+'\x20'+_0x3f1a8a[_0x3135bb(0x10d)](toFancyFont,_0x3f1a8a[_0x3135bb(0x121)])+(_0x3135bb(0x10e)+_0x3135bb(0x11b)+_0x3135bb(0x129)),..._0x53e150},{'quoted':_0x655d7a});}}try{await _0x48b2fb[_0x3135bb(0x11d)+'e'](_0x655d7a[_0x3135bb(0x118)],{'text':_0x475d0f,'viewOnce':!![]},{'quoted':_0x655d7a});}catch(_0x311bcc){console[_0x3135bb(0x12d)](_0x3f1a8a[_0x3135bb(0x14d)],_0x311bcc),await _0x48b2fb[_0x3135bb(0x11d)+'e'](_0x655d7a[_0x3135bb(0x118)],{'text':_0x3f1a8a[_0x3135bb(0x119)],'viewOnce':!![]},{'quoted':_0x655d7a});}}};function _0x3320(_0x102ebc,_0x3063d1){const _0x3b7c2d=_0x570b();return _0x3320=function(_0x4d326f,_0x56207b){_0x4d326f=_0x4d326f-(0x1*-0x200f+-0x4f9+-0x260e*-0x1);let _0x35b483=_0x3b7c2d[_0x4d326f];return _0x35b483;},_0x3320(_0x102ebc,_0x3063d1);}export default autostatusCommand;
