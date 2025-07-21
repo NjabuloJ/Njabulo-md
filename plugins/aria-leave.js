@@ -51,7 +51,7 @@ const leaveGroup = async (m, Matrix) => {
       const buttons = [
         {
           buttonId: `.menu`,
-          buttonText: { displayText: `${toFancyFont("Menu")}` },
+          buttonText: { displayText: `📃${toFancyFont("Menu")}` },
           type: 1,
         },
       ];
@@ -63,7 +63,7 @@ const leaveGroup = async (m, Matrix) => {
         },
       };
       return Matrix.sendMessage(m.from, {
-        text: `◈━━━━━━━━━━━━━━━━◈\n│❒ ${toFancyFont("yo")}, ${toFancyFont("dumbass")}, *Toxic-MD* ${toFancyFont("only")} ${toFancyFont("ditches")} ${toFancyFont("groups")}! ${toFancyFont("this")} ${toFancyFont("ain’t")} ${toFancyFont("one")}! 😤🏠\n◈━━━━━━━━━━━━━━━━◈`,
+        text: ` ${toFancyFont("yo")}, ${toFancyFont("dumbass")}, *NJABULO JB* ${toFancyFont("only")} ${toFancyFont("ditches")} ${toFancyFont("groups")}! ${toFancyFont("this")} ${toFancyFont("ain’t")} ${toFancyFont("one")}! 😤🏠`,
         ...messageOptions,
       }, { quoted: m });
     }
@@ -72,7 +72,7 @@ const leaveGroup = async (m, Matrix) => {
       const buttons = [
         {
           buttonId: `.owner`,
-          buttonText: { displayText: `${toFancyFont("Owner")}` },
+          buttonText: { displayText: `👤${toFancyFont("Owner")}` },
           type: 1,
         },
       ];
@@ -84,13 +84,13 @@ const leaveGroup = async (m, Matrix) => {
         },
       };
       return Matrix.sendMessage(m.from, {
-        text: `◈━━━━━━━━━━━━━━━━◈\n│❒ ${toFancyFont("fuck")} ${toFancyFont("off")}, ${toFancyFont("poser")}! ${toFancyFont("only")} *Toxic-MD*’s ${toFancyFont("boss")} ${toFancyFont("can")} ${toFancyFont("tell")} ${toFancyFont("me")} ${toFancyFont("to")} ${toFancyFont("bounce")}! 😎🔪\n◈━━━━━━━━━━━━━━━━◈`,
+        text: `${toFancyFont("fuck")} ${toFancyFont("off")}, ${toFancyFont("poser")}! ${toFancyFont("only")} *Njabulo Jb*’s ${toFancyFont("boss")} ${toFancyFont("can")} ${toFancyFont("tell")} ${toFancyFont("me")} ${toFancyFont("to")} ${toFancyFont("bounce")}!`,
         ...messageOptions,
       }, { quoted: m });
     }
 
     await Matrix.sendMessage(m.from, {
-      text: `◈━━━━━━━━━━━━━━━━◈\n│❒ *Toxic-MD*’s ${toFancyFont("out")} ${toFancyFont("this")} ${toFancyFont("bitch")}! ${toFancyFont("peace")}, ${toFancyFont("losers")}! ✌️💥\n◈━━━━━━━━━━━━━━━━◈`,
+      text: ` *Njabulo Jb*’s ${toFancyFont("out")} ${toFancyFont("this")} ${toFancyFont("bitch")}! ${toFancyFont("peace")}, ${toFancyFont("losers")}!`,
       viewOnce: true,
     }, { quoted: m });
 
@@ -112,7 +112,7 @@ const leaveGroup = async (m, Matrix) => {
       },
     };
     await Matrix.sendMessage(m.from, {
-      text: `◈━━━━━━━━━━━━━━━━◈\n│❒ *Toxic-MD* ${toFancyFont("fucked")} ${toFancyFont("up")} ${toFancyFont("tryin’")} ${toFancyFont("to")} ${toFancyFont("ditch")}, ${toFancyFont("fam")}! ${toFancyFont("somethin’")} ${toFancyFont("busted")}! 😈\n◈━━━━━━━━━━━━━━━━◈`,
+      text: `*Njabulo Jb* ${toFancyFont("fucked")} ${toFancyFont("up")} ${toFancyFont("tryin’")} ${toFancyFont("to")} ${toFancyFont("ditch")}, ${toFancyFont("fam")}! ${toFancyFont("somethin’")} ${toFancyFont("busted")}!`,
       ...messageOptions,
     }, { quoted: m });
   }
