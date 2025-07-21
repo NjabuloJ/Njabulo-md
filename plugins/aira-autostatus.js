@@ -49,19 +49,19 @@ const autostatusCommand = async (m, Matrix) => {
 
   if (validCommands.includes(cmd)) {
     if (!isCreator) return Matrix.sendMessage(m.from, {
-      text: "*📛 ᴛʜɪs ɪs ᴀɴ ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅ*",
+      text: "*ᴛʜɪs ɪs ᴀɴ ᴏᴡɴᴇʀ ᴄᴏᴍᴍᴀɴᴅ*",
       viewOnce: true,
     }, { quoted: m });
     let responseMessage;
     const buttons = [
       {
         buttonId: `.${cmd} ${toFancyFont("on")}`,
-        buttonText: { displayText: `${toFancyFont("on")}` },
+        buttonText: { displayText: `💬${toFancyFont("on")}` },
         type: 1,
       },
       {
         buttonId: `.${cmd} ${toFancyFont("off")}`,
-        buttonText: { displayText: `${toFancyFont("off")}` },
+        buttonText: { displayText: `💬${toFancyFont("off")}` },
         type: 1,
       },
     ];
