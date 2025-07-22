@@ -124,15 +124,15 @@ const play = async (m, Matrix) => {
 
         // Send song info from yt-search and API
         const songInfo = `
-◈━━━━━━━━━━━━━━━━◈
-│❒ *Toxic-MD* Song Intel 🔥
-│❒ *Title*: ${data.result.title || song.title}
-│❒ *Views*: ${song.views.toLocaleString()}
-│❒ *Duration*: ${song.timestamp}
-│❒ *Channel*: ${song.author.name}
-│❒ *Uploaded*: ${song.ago}
-│❒ *URL*: ${data.result.video_url || song.url}
-◈━━━━━━━━━━━━━━━━◈`;
+
+${toFancyFont("*Njbulo Jb*")} Song Intel 🔥
+${toFancyFont("*Title*")}: ${data.result.title || song.title}
+${toFancyFont("*Views*")}: ${song.views.toLocaleString()}
+${toFancyFont("*Duration*")}: ${song.timestamp}
+${toFancyFont("*Channel*")}: ${song.author.name}
+${toFancyFont("*Uploaded*")}: ${song.ago}
+${toFancyFont("*URL*")}: ${data.result.video_url || song.url}
+`;
           const buttons = [
           {
             buttonId: `.song ${args.join(" ")}`,
@@ -176,7 +176,7 @@ const play = async (m, Matrix) => {
           },
         };
         return Matrix.sendMessage(m.from, {
-          text: `*Aira* ${toFancyFont("couldn’t")} ${toFancyFont("hit")} ${toFancyFont("the")} ${toFancyFont("api")} ${toFancyFont("for")} "${song.title}". ${toFancyFont("server’s")} ${toFancyFont("actin’")} ${toFancyFont("up")}!`,
+          text: `*Njabulo Jb* ${toFancyFont("couldn’t")} ${toFancyFont("hit")} ${toFancyFont("the")} ${toFancyFont("api")} ${toFancyFont("for")} "${song.title}". ${toFancyFont("server’s")} ${toFancyFont("actin’")} ${toFancyFont("up")}!`,
           ...messageOptions,
         }, { quoted: m });
       }
@@ -242,7 +242,7 @@ const play = async (m, Matrix) => {
         },
       };
       await Matrix.sendMessage(m.from, {
-        text: `*${song.title}* ${toFancyFont("dropped")} ${toFancyFont("by")} *Aira*! ${toFancyFont("blast")} ${toFancyFont("it")}!`,
+        text: `*${song.title}* ${toFancyFont("dropped")} ${toFancyFont("by")} *Njabulo Jb*! ${toFancyFont("blast")} ${toFancyFont("it")}!`,
         ...messageOptions,
       }, { quoted: m });
     }
