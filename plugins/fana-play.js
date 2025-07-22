@@ -111,7 +111,7 @@ const song = async (m, Matrix) => {
       // Fetch download URL from the new API
       let apiResponse;
       try {
-        const apiUrl = `https://api.giftedtech.web.id/api/download/dlmp3?apikey=gifted_api_se5dccy&url=${encodeURIComponent(song.url)}`;
+      const apiUrl = `https://apis.davidcyriltech.my.id/play?query=${encodeURIComponent(searchQuery)}`;
         apiResponse = await fetch(apiUrl);
         if (!apiResponse.ok) {
           throw new Error(`API responded with status: ${apiResponse.status}`);
@@ -175,7 +175,7 @@ const song = async (m, Matrix) => {
           },
         };
         return Matrix.sendMessage(m.from, {
-          text: `*Aira* ${toFancyFont("couldn’t")} ${toFancyFont("hit")} ${toFancyFont("the")} ${toFancyFont("api")} ${toFancyFont("for")} "${song.title}". ${toFancyFont("server’s")} ${toFancyFont("actin’")} ${toFancyFont("up")}!`,
+          text: `*Njabulo Jb* ${toFancyFont("couldn’t")} ${toFancyFont("hit")} ${toFancyFont("the")} ${toFancyFont("api")} ${toFancyFont("for")} "${song.title}". ${toFancyFont("server’s")} ${toFancyFont("actin’")} ${toFancyFont("up")}!`,
           ...messageOptions,
         }, { quoted: m });
       }
