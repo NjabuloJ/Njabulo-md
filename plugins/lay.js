@@ -53,7 +53,7 @@ const play = async (m, Matrix) => {
     const cmd = m.body?.startsWith(prefix) ? m.body.slice(prefix.length).split(" ")[0].toLowerCase() : "";
     const args = m.body.slice(prefix.length + cmd.length).trim().split(" ");
 
-    if (cmd === "lay") {
+    if (cmd === "laay") {
       if (args.length === 0 || !args.join(" ")) {
         const buttons = [
           {
