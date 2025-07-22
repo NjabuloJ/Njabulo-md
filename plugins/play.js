@@ -53,7 +53,7 @@ const play = async (m, Matrix) => {
     const cmd = m.body?.startsWith(prefix) ? m.body.slice(prefix.length).split(" ")[0].toLowerCase() : "";
     const args = m.body.slice(prefix.length + cmd.length).trim().split(" ");
 
-     if (cmd === "lay") {
+     if (cmd === "play") {
       if (args.length === 0 || !args.join(" ")) {
         const buttons = [
           {
@@ -135,12 +135,33 @@ ${toFancyFont("*URL*")}: ${data.result.video_url || song.url}
 `;
           const buttons = [
           {
+            buttonId: `.img ${args.join(" ")}`,
+            buttonText: { displayText: `🖼️ ${toFancyFont("img")}` },
+            type: 1,
+          },
+          {
+            buttonId: `.lyrics ${args.join(" ")}`,
+            buttonText: { displayText: `📃 ${toFancyFont("Lyrics")}` },
+            type: 1,
+          },
+          {
+            buttonId: `.yts ${args.join(" ")}`,
+            buttonText: { displayText: `📃 ${toFancyFont("Yts")}` },
+            type: 1,
+          },
+          {
+            buttonId: `.video ${args.join(" ")}`,
+            buttonText: { displayText: `🎥 ${toFancyFont("video")}` },
+            type: 1,
+          },
+            {
             buttonId: `.song ${args.join(" ")}`,
             buttonText: { displayText: `🎧${toFancyFont("get")} ${toFancyFont("song")}` },
             type: 1,
           },
         ];
         const messageOptions = {
+          image: { url: song.title },
           viewOnce: true,
           buttons,
           contextInfo: {
