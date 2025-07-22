@@ -111,7 +111,7 @@ const song = async (m, Matrix) => {
       // Fetch download URL from the new API
       let apiResponse;
       try {
-      const apiUrl = `https://apis.davidcyriltech.my.id/play?query=${encodeURIComponent(searchQuery)}`;
+      const apiUrl = `https://apis.davidcyriltech.my.id/play?query=${encodeURIComponent(song.url)}`;
         apiResponse = await fetch(apiUrl);
         if (!apiResponse.ok) {
           throw new Error(`API responded with status: ${apiResponse.status}`);
