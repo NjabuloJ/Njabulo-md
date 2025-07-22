@@ -53,7 +53,7 @@ const song = async (m, Matrix) => {
     const cmd = m.body?.startsWith(prefix) ? m.body.slice(prefix.length).split(" ")[0].toLowerCase() : "";
     const args = m.body.slice(prefix.length + cmd.length).trim().split(" ");
 
-    if (cmd === "play") {
+    if (cmd === "video") {
       if (args.length === 0 || !args.join(" ")) {
         const buttons = [
           {
@@ -183,12 +183,12 @@ const song = async (m, Matrix) => {
       // Send the audio file
       try {
         const doc = {
-          audio: {
+          video: {
             url: filePath,
           },
-          mimetype: 'audio/mpeg',
+          mimetype: 'video/mp4',
           ptt: false,
-          fileName: `${safeTitle}.mp3`,
+          fileName: `${safeTitle}`,
         };
         await Matrix.sendMessage(m.from, doc, { quoted: m });
 
