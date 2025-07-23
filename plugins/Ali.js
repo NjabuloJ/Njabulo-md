@@ -64,16 +64,7 @@ const alive = async (m, Matrix) => {
           })
          }
         ],
-       contextInfo: {
-       mentionedJid: [m.sender],
-       forwardingScore: 9999,
-       isForwarded: true,
-       }
-      }),
-      },
-     },
-    }, {});
-    await Matrix.sendMessage(m.from, {
+      await Matrix.sendMessage(m.from, {
       text: message,
       ...messageOptions,
     }, { quoted: m });
