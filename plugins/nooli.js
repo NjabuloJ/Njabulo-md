@@ -72,7 +72,7 @@ const alive = async (m, Matrix) => {
 
     const msg = generateWAMessageFromContent(m.from, {
       viewOnceMessage: {
-        viewOnce: true,
+       viewOnce: true,
         message: {
           messageContextInfo: {
             deviceListMetadata: {},
@@ -86,6 +86,7 @@ const alive = async (m, Matrix) => {
               text: toFancyFont("Powered by Njabulo Jb")
             }),
             header: proto.Message.InteractiveMessage.Header.create({
+              viewOnce: true,
               title: "",
               gifPlayback: true,
               subtitle: "",
@@ -98,8 +99,7 @@ const alive = async (m, Matrix) => {
         },
       },
     }, {});
-
-    Matrix.relayMessage(msg.key.remoteJid, msg.message, {
+     Matrix.relayMessage(msg.key.remoteJid, msg.message, {
       messageId: msg.key.id
     });
   } catch (error) {
