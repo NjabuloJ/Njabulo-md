@@ -69,10 +69,11 @@ const deleteMessage = async (m, gss) => {
 
       if (!m.quoted) {
         const buttons = [
-          {
-            buttonId: `.help`,
-            buttonText: { displayText: `🤲${toFancyFont("Help")}` },
-            type: 1,
+          {       
+           name: `cta_url`,
+           display_text:  `Help`,
+           url: `https://whatsapp.com/channel/0029VaAkETLLY6d8qhLmZt2v`,
+           type: 1,
           },
         ];
         const messageOptions = {
