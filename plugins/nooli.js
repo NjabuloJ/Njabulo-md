@@ -38,8 +38,22 @@ const alive = async (m, Matrix) => {
 
     await m.React(textEmoji);
 
-    const message = ` • .This it bot have program multi\n • .Njabulo Jb alive - *${timeString}!*\n • .Tap button see more`;
+    const message = ` • .${toFancyFont("This it bot have program multi")}\n • .${toFancyFont("Njabulo Jb alive")} - *${timeString}!*\n • .${toFancyFont("Tap button see more")}`;
     const buttons = [
+      {
+        name: "quick_reply",
+        buttonParamsJson: JSON.stringify({
+          display_text: toFancyFont("message me"),
+          id: "+26777821911"
+        })
+      },
+      {
+        name: "cta_url",
+        buttonParamsJson: JSON.stringify({
+          display_text: toFancyFont("Click Here To Fork"),
+          url: `https://github.com/SilvaTechB/Ethix-MD/fork`
+        })
+      },
       {
         "name": "quick_reply",
         "buttonParamsJson": JSON.stringify({
@@ -48,16 +62,17 @@ const alive = async (m, Matrix) => {
         })
       },
       {
-       name: "cta_url",
-       buttonParamsJson: JSON.stringify({
-        display_text: "Join Our Community",
-        url: `https://whatsapp.com/channel/0029VaAkETLLY6d8qhLmZt2v`
+        name: "cta_url",
+        buttonParamsJson: JSON.stringify({
+          display_text: toFancyFont("Join Our Community"),
+          url: `https://whatsapp.com/channel/0029VaAkETLLY6d8qhLmZt2v`
         })
       }
     ];
 
     const msg = generateWAMessageFromContent(m.from, {
       viewOnceMessage: {
+        viewOnce: true,
         message: {
           messageContextInfo: {
             deviceListMetadata: {},
@@ -90,7 +105,7 @@ const alive = async (m, Matrix) => {
   } catch (error) {
     console.error(`❌ Alive error: ${error.message}`);
     await Matrix.sendMessage(m.from, {
-      text: ` *Njabulo Jb* hit a snag! Error: ${error.message || "Failed to check status"}`,
+      text: ` *${toFancyFont("Njabulo Jb")}* hit a snag! Error: ${error.message || "Failed to check status"}`,
     }, {
       quoted: m
     });
