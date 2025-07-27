@@ -1,22 +1,14 @@
 {
-  "name": "Njabulo-Jb",
-  "description": "welcome to WhatsApp bot made by Njabulo Jb ",
-  "logo": "https://files.catbox.moe/neni8p.jpg",
-  "keywords": ["Njabulo_Jb_max"],
-  "success_url": "/",
-
-    "stack": "container",
+  "name": "Njabulo-md",
+  "description": "⚡ A savage WhatsApp bot built to dominate chats with toxic style! Powered by Node.js for max chaos.",
+  "keywords": ["Njabulo-md", "WhatsApp Bot", "Multi-Device", "Savage"],
+  "repository": "https://github.com/NjabuloJ/Njabulo-md",
+  "stack": "container",
   "env": {
     "SESSION_ID": {
       "description": "Put the session-id here.",
       "required": true,
       "value": ""
-    },  
-    
-    "STICKER_NAME": {
-      "description": "type your sticker pack name.",
-      "required": false,
-      "value": "𝖒𝖆𝖗𝖎𝖘𝖊𝖑"
     }, 
       
     "PREFIX": {
