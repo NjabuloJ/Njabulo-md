@@ -1,19 +1,11 @@
 FROM node:lts-buster
 
-RUN apt-get update && \
-  apt-get install -y \
-  ffmpeg \
-  imagemagick \
-  webp && \
-  apt-get upgrade -y && \
-  rm -rf /var/lib/apt/lists/*
-
-COPY package.json .
-
-RUN npm install && npm install -g qrcode-terminal pm2
-
-COPY . .
-
-EXPOSE 3000
-
-CMD ["npm", "start"]
+RUN sed -i 's/deb.debian.org/archive.debian.org/g' /etc/apt/sources.list && \
+    sed -i 's|security.debian.org|archive.debian.org/debian-security|g' /etc/apt/sources.list && \
+    echo "deb http://archive.debian.org/debian buster contrib main non-free" > /etc/apt/sources.list.d/archive.list && \
+    apt-get update && \
+    apt-get install -y \
+    ffmpeg \
+    imagemagick \
+    webp && \
+    rm -rf /var/lib/apt/lists/*
