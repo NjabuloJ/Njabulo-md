@@ -1,13 +1,13 @@
 {
-  "name": "Njabulo-md",
+  "name": "Demon-slayer",
   "version": "10.8.1",
   "description": "ok 3 devs made it",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name Njabulo-md",
-    "stop": "pm2 stop Njabulo-md",
-    "restart": "pm2 restart Njabulo-md"
+    "start": "pm2 start index.js --deep-monitoring --attach --name Demon-Slayer",
+    "stop": "pm2 stop Demon-Slayer",
+    "restart": "pm2 restart Demon-Slayer"
   },
   "keywords": ["demom-slayer", "whatsapp-bot", "whatsapp md bot"],
   "author": "Marisel",
