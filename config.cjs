@@ -5,7 +5,7 @@ const config = {
   SESSION_ID: process.env.SESSION_ID || "Demon-Slayer~WZj0KrAR",
   PREFIX: process.env.PREFIX || '.',
   //let's add menu captions by lord joel
-  BOT_NAME: process.env.BOT_NAME || "Demon Slayer",
+  BOT_NAME: process.env.BOT_NAME || "Njabulo-md",
   CAPTION: process.env.CAPTION || "> *ᴍᴀᴅᴇ ʙʏ ᴄʀᴇᴡ sʟᴀʏᴇʀ*",
   // don't use my codes without a permission 🙏
   AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN !== undefined ? process.env.AUTO_STATUS_SEEN === 'true' : true,
