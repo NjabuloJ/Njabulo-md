@@ -5,18 +5,18 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "pm2-start": "pm2 start index.js --attach",
-    "stop": "pm2 stop index.js --attach",
-    "restart": "pm2 restart index.js --attach"
+    "start": "pm2 start index.js --deep-monitoring --attach --name Njabulo-md",
+    "stop": "pm2 stop Njabulo-md",
+    "restart": "pm2 restart Njabulo-md"
   },
   "keywords": ["Njabulo-md", "whatsapp-bot", "whatsapp md bot"],
-  "author": "xhclinton",
+  "author": "NjabuloJ",
   "license": "ISC",
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@google/generative-ai": "^0.9.0",
     "@hapi/boom": "^10.0.1",
-    "@whiskeysockets/baileys": "npm:@fizzxydev/baileys-pro@8.5.12",
+    "baileys-pro": "github:nstar-y/bail",
     "@xaviabot/fb-downloader": "^1.0.14",
     "acrcloud": "^1.4.0",
     "api-dylux": "^1.8.3",
