@@ -9,7 +9,6 @@
   "env": {
     "SESSION": {
       "description": "🔑 *Required* – Your WhatsApp session ID (generated after linking the bot).",
-    "value": "NjabuloJ Jb",
    "required": true
     },
     "CODE": {
