@@ -85,8 +85,8 @@ module.exports = {
                   title: 'VIEW OPTIONS',
                   sections: [
                     {
-                      title: '📡ɢᴇɴᴇʀᴀʟ ᴍᴇɴᴜ ᴄᴍᴅ',
-                      highlight_label: 'NנɐႦυℓσ נႦ',
+                      title: '📡 general menu',
+                      highlight_label: 'Njabulo Jb',
                            rows: [
         { title: 'ᴀᴅᴠɪᴄᴇ', description: 'Get advice', id: `${effectivePrefix}advice` },
         { title: 'ᴀʟɪᴠᴇ', description: 'Check if bot is alive', id: `${effectivePrefix}alive` },
@@ -115,8 +115,8 @@ module.exports = {
                       ],
                     },
                     {
-                      title: '⚙️sᴇᴛᴛɪɴɢs',
-                      highlight_label: 'NנɐႦυℓσ נႦ',
+                      title: '⚙️ settings menu',
+                      highlight_label: 'Njabulo Jb',
                       rows: [
         { title: 'ᴀᴅᴅsᴜᴅᴏ', description: 'Add sudo', id: `${effectivePrefix}addsudo` },
         { title: 'ᴀɴᴛɪᴄᴀʟʟ', description: 'Anti call', id: `${effectivePrefix}anticall` },
@@ -143,8 +143,8 @@ module.exports = {
         { title: 'ᴘʀᴇsᴇɴᴄᴇ', description: 'Presence', id: `${effectivePrefix}presence` },
         { title: 'ʀᴇᴀᴄᴛɪᴏɴ', description: 'Reaction', id: `${effectivePrefix}reaction` },
         { title: 'sᴇᴛᴛɪɴɢs', description: 'Settings', id: `${effectivePrefix}settings` },
-        { title: 'sᴛɪᴄᴋᴇʀᴡᴍ', description, 'Sticker WM', id: `${effectivePrefix}stickerwm` },
-        { title: 'ᴜɴʙᴀɴ', description: 'Unban', id: `${effectivePrefix}unban`},
+        { title: 'sᴛɪᴄᴋᴇʀᴡᴍ', description: 'Sticker WM', id: `${effectivePrefix}stickerwm` },
+        { title: 'ᴜɴʙᴀɴ', description: 'Unban', id: `${effectivePrefix}unban` },
                       ],
                     },
                   ],
