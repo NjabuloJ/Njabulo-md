@@ -39,11 +39,11 @@ module.exports = {
     };
 
     // Menu text with Toxic-MD flair
-    const menuText = `_______________________\n*Welcome to ${botname}, B*tches!* 😈\n\n` +
+    const menuText = `◈━━━━━━━━━━━━━━━━◈\n│❒ *Welcome to ${botname}, B*tches!* 😈\n\n` +
       `🤖 *Bσƚ*: ${botname} (bow down)\n` +
       `🔣 *Pɾҽϝιx*: ${effectivePrefix} (learn it, dumbass)\n` +
       `🌐 *Mσԃҽ*: ${mode} (deal with it)\n` +
-      `\n_______________________\n\n` +
+      `\n◈━━━━━━━━━━━━━━━━◈\n\n` +
       `*Select an option Below, Loser.* 😈`;
 
     // Interactive message with buttons using dynamic prefix
@@ -59,7 +59,7 @@ module.exports = {
               fileLength: '1435',
               pageCount: 0,
               mediaKey: 'MWO6fI223TY8T0i9onNcwNBBPldWfwp1j1FPKCiJFzw=',
-              fileName: 'NjabuloJb',
+              fileName: 'Toxic-MD',
               fileEncSha256: 'ZS8v9tio2un1yWVOOG3lwBxiP+mNgaKPY9+wl5pEoi8=',
               directPath: '/v/t62.7119-24/539012045_745537058346694_1512031191239726227_n.enc?ccb=11-4&oh=01_Q5Aa2QGGiJj--6eHxoTTTTzuWtBgCrkcXBz9hN_y2s_Z1lrABA&oe=68D7901C&_nc_sid=5e03e0',
               mediaKeyTimestamp: '1756370084',
@@ -68,7 +68,7 @@ module.exports = {
             hasMediaAttachment: true,
           },
           body: { text: menuText },
-          footer: { text: `> ✆︎Pσɯҽɾҽԃ Ⴆყ NנɐႦυℓσ נႦ` },
+          footer: { text: `Pσɯҽɾҽԃ Ⴆყ ${botname}` },
           nativeFlowMessage: {
             buttons: [
               {
@@ -85,67 +85,20 @@ module.exports = {
                   title: 'VIEW OPTIONS',
                   sections: [
                     {
-                      title: 'General',
-                      highlight_label: 'General',
-                           rows: [
-        { title: 'ᴀᴅᴠɪᴄᴇ', description: 'Get advice', id: `${effectivePrefix}advice` },
-        { title: 'ᴀʟɪᴠᴇ', description: 'Check if bot is alive', id: `${effectivePrefix}alive` },
-        { title: 'ʙᴏᴛ', description: 'Bot info', id: `${effectivePrefix}bot` },
-        { title: 'ʙᴜᴛᴛᴏɴ', description: 'Button info', id: `${effectivePrefix}button` },
-        { title: 'ᴄʀᴇᴅɪᴛs', description: 'Bot credits', id: `${effectivePrefix}credits` },
-        { title: 'ᴅᴇʟ', description: 'Delete message', id: `${effectivePrefix}del` },
-        { title: 'ᴅᴇᴠ', description: "Send developer's contact", id: `${effectivePrefix}dev` },
-        { title: 'ғᴜʟʟᴍᴇɴᴜ', description: 'Show all commands', id: `${effectivePrefix}fullmenu` },
-        { title: 'ɢᴀʏᴄʜᴇᴄᴋ', description: 'Gaycheck', id: `${effectivePrefix}gaycheck` },
-        { title: 'ᴍᴇɴᴜ', description: 'Show menu', id: `${effectivePrefix}menu` },
-        { title: 'ᴘᴀɪʀ', description: 'Pair info', id: `${effectivePrefix}pair` },
-        { title: 'ᴘɪɴɢ', description: 'Check bot speed', id: `${effectivePrefix}ping` },
-        { title: 'ᴘʀᴏғɪʟᴇ', description: 'View profile', id: `${effectivePrefix}profile` },
-        { title: 'ᴘʀᴏғɪʟᴇɢᴄ', description: 'View profile GC', id: `${effectivePrefix}profilegc` },
-        { title: 'ʀᴀɴᴅᴏᴍ-ᴀɴɪᴍᴇ', description: 'Get random anime', id: `${effectivePrefix}random-anime` },
-        { title: 'ʀᴇᴛʀɪᴇᴠᴇ', description: 'Retrieve info', id: `${effectivePrefix}retrieve` },
-        { title: 'sᴄʀɪᴘᴛ', description: 'Get script', id: `${effectivePrefix}script` },
-        { title: 'ᴛᴇᴄʜɴᴇᴡs', description: 'Get tech news', id: `${effectivePrefix}technews` },
-        { title: 'ᴛᴇᴍᴘᴘɪɴʙᴏx', description: 'Temp pinbox', id: `${effectivePrefix}temppinbox` },
-        { title: 'ᴛᴇᴍᴘᴍᴀɪʟ', description: 'Temp mail', id: `${effectivePrefix}tempmail` },
-        { title: 'ᴛᴇsᴛ', description: 'Test command', id: `${effectivePrefix}test` },
-        { title: 'ᴜᴘᴛɪᴍᴇ', description: 'Check uptime', id: `${effectivePrefix}uptime` },
-        { title: 'ᴠᴄғ', description: 'VCF info', id: `${effectivePrefix}vcf` },
-        { title: 'ᴡᴇᴀᴛʜᴇʀ', description: 'Get weather', id: `${effectivePrefix}weather` }, 
+                      title: '🔥 CORE COMMANDS',
+                      highlight_label: '© Toxic-MD',
+                      rows: [
+                        { title: '📜 FULL MENU', description: 'Show all commands', id: `${effectivePrefix}fullmenu` },
+                        { title: '⚠️ DEV', description: "Send developer's contact", id: `${effectivePrefix}dev` },
                       ],
                     },
                     {
-                    title: 'sᴇᴛᴛɪɴɢs',
-                   highlight_label: 'Settings',
-                   rows: [
-        { title: 'ᴀᴅᴅsᴜᴅᴏ', description: 'Add sudo', id: `${effectivePrefix}addsudo` },
-        { title: 'ᴀɴᴛɪᴄᴀʟʟ', description: 'Anti call', id: `${effectivePrefix}anticall` },
-        { title: 'ᴀɴᴛɪᴅᴇʟᴇᴛᴇ', description: 'Anti delete', id: `${effectivePrefix}antidelete` },
-        { title: 'ᴀɴᴛɪᴅᴇᴍᴏᴛᴇ', description: 'Anti demote', id: `${effectivePrefix}antidemote` },
-        { title: 'ᴀɴᴛɪғᴏʀᴇɪɢɴ', description: 'Anti foreign', id: `${effectivePrefix}antiforeign` },
-        { title: 'ᴀɴᴛɪʟɪɴᴋ', description: 'Anti link', id: `${effectivePrefix}antilink` },
-        { title: 'ᴀɴᴛɪᴘʀᴏᴍᴏᴛᴇ', description: 'Anti promote', id: `${effectivePrefix}antipromote` },
-        { title: 'ᴀɴᴛɪᴛᴀɢ', description: 'Anti tag', id: `${effectivePrefix}antitag` },
-        { title: 'ᴀᴜᴛᴏʙɪᴏ', description: 'Auto bio', id: `${effectivePrefix}autobio` },
-        { title: 'ᴀᴜᴛᴏʟɪᴋᴇ', description: 'Auto like', id: `${effectivePrefix}autolike` },
-        { title: 'ᴀᴜᴛᴏʀᴇᴀᴅ', description: 'Auto read', id: `${effectivePrefix}autoread` },
-        { title: 'ᴀᴜᴛᴏᴠɪᴇᴡ', description: 'Auto view', id: `${effectivePrefix}autoview` },
-        { title: 'ʙᴀɴ', description: 'Ban', id: `${effectivePrefix}ban` },
-        { title: 'ʙᴀɴʟɪsᴛ', description: 'Ban list', id: `${effectivePrefix}banlist` },
-        { title: 'ᴄʜᴀᴛʙᴏᴛᴘᴍ', description: 'Chatbot PM', id: `${effectivePrefix}chatbotpm` },
-        { title: 'ᴄʜᴇᴄᴋsᴜᴅᴏ', description: 'Check sudo', id: `${effectivePrefix}checksudo` },
-        { title: 'ᴅᴇʟsᴜᴅᴏ', description: 'Delete sudo', id: `${effectivePrefix}delsudo` },
-        { title: 'ᴇᴠᴇɴᴛs', description: 'Events', id: `${effectivePrefix}events` },
-        { title: 'ɢᴄᴘʀᴇsᴇɴᴄᴇ', description: 'GC presence', id: `${effectivePrefix}gcpresence` },
-        { title: 'ɢᴄsᴇᴛᴛɪɴɢs', description: 'GC settings', id: `${effectivePrefix}gcsettings` },
-        { title: 'ᴍᴏᴅᴇ', description: 'Mode', id: `${effectivePrefix}mode` },
-        { title: 'ᴘʀᴇғɪx', description: 'Prefix', id: `${effectivePrefix}prefix` },
-        { title: 'ᴘʀᴇsᴇɴᴄᴇ', description: 'Presence', id: `${effectivePrefix}presence` },
-        { title: 'ʀᴇᴀᴄᴛɪᴏɴ', description: 'Reaction', id: `${effectivePrefix}reaction` },
-        { title: 'sᴇᴛᴛɪɴɢs', description: 'Settings', id: `${effectivePrefix}settings` },
-        { title: 'sᴛɪᴄᴋᴇʀᴡᴍ', description: 'Sticker WM', id: `${effectivePrefix}stickerwm` },
-        { title: 'ᴜɴʙᴀɴ', description: 'Unban', id: `${effectivePrefix}unban` },
-                   ],
+                      title: 'ℹ BOT INFO',
+                      highlight_label: '© Toxic-MD',
+                      rows: [
+                        { title: '🔥 PING', description: 'Check bot speed', id: `${effectivePrefix}ping` },
+                        { title: '💯 REPO', description: 'Get bot repository', id: `${effectivePrefix}repo` },
+                      ],
                     },
                   ],
                 }),
@@ -153,9 +106,9 @@ module.exports = {
             ],
             messageParamsJson: JSON.stringify({
               limited_time_offer: {
-                text: 'NjabuloJn',
+                text: 'Toxic-MD',
                 url: 'https://github.com/xhclintohn/Toxic-MD',
-                copy_code: 'Njabulo boy king',
+                copy_code: 'TOXIC',
                 expiration_time: Date.now() * 1000,
               },
               bottom_sheet: {
