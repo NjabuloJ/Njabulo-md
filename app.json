@@ -9,11 +9,12 @@
   "env": {
     "SESSION": {
       "description": "🔑 *Required* – Your WhatsApp session ID (generated after linking the bot).",
-      "required": true
+    "value": "NjabuloJ Jb",
+   "required": true
     },
     "CODE": {
-      "description": "🌍 *Required* – Default country code (e.g., 254 for Kenya).",
-      "value": "254",
+      "description": "🌍 *Required* – Default country code (e.g., 26777821911 bw).",
+      "value": "26772592531",
       "required": true
     }
   },

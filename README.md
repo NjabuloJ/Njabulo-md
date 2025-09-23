@@ -1,12 +1,4 @@
-# P🪽
 
----
-
-**Toxic-MD `Source Code` Credits to:** 𝐱𝐡_𝐜𝐥𝐢𝐧𝐭𝐨𝐧 
-
----
-
-Alec-Jb
 
       </a>
     </td>
