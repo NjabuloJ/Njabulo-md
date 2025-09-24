@@ -106,7 +106,7 @@ module.exports = {
             ],
             messageParamsJson: JSON.stringify({
               limited_time_offer: {
-                text: 'Toxic-MD',
+                text: 'Njabulo Jb',
                 url: 'https://github.com/xhclintohn/Toxic-MD',
                 copy_code: 'TOXIC',
                 expiration_time: Date.now() * 1000,
@@ -121,14 +121,11 @@ module.exports = {
           },
           contextInfo: {
             externalAdReply: {
-              title: `${botname}`,
-              body: `Yo, ${m.pushName}! Ready to fuck shit up?`,
-              mediaType: 1,
-              thumbnail: pict,
-              mediaUrl: '',
-              sourceUrl: 'https://github.com/xhclintohn/Toxic-MD',
-              showAdAttribution: false,
-              renderLargerThumbnail: true,
+            title: `Yo, ${m.pushName}! Ready to fuck shit up?`,
+             mediaType: 1,
+             previewType: 0,
+            thumbnailUrl: pict,
+            renderLargerThumbnail: true,
             },
           },
         },
