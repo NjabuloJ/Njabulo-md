@@ -161,7 +161,8 @@ module.exports = {
           ptt: true,
           mimetype: 'audio/mpeg',
           fileName: 'menu.mp3',
-        } 
+        }
+        }
         ,{ quoted: m }
       );
     }
