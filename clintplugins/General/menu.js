@@ -106,7 +106,7 @@ module.exports = {
             ],
             messageParamsJson: JSON.stringify({
               limited_time_offer: {
-                text: 'Njabulo Jb',
+                text: 'Toxic-MD',
                 url: 'https://github.com/xhclintohn/Toxic-MD',
                 copy_code: 'TOXIC',
                 expiration_time: Date.now() * 1000,
@@ -120,8 +120,8 @@ module.exports = {
             }),
           },
           contextInfo: {
-             externalAdReply: {
-              title: "Njabulo Jb",
+            externalAdReply: {
+              title: `${botname}`,
               body: `Yo, ${m.pushName}! Ready to fuck shit up?`,
               mediaType: 1,
               thumbnail: pict,
@@ -161,8 +161,8 @@ module.exports = {
           ptt: true,
           mimetype: 'audio/mpeg',
           fileName: 'menu.mp3',
-        }
-        ,{ quoted: m }
+        },
+        { quoted: m }
       );
     }
   },
