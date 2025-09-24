@@ -161,18 +161,8 @@ module.exports = {
           ptt: true,
           mimetype: 'audio/mpeg',
           fileName: 'menu.mp3',
-            externalAdReply: {
-              title: `${botname}`,
-              body: `Yo, ${m.pushName}! Ready to fuck shit up?`,
-              mediaType: 1,
-              thumbnail: pict,
-              mediaUrl: '',
-              sourceUrl: 'https://github.com/xhclintohn/Toxic-MD',
-              showAdAttribution: false,
-              renderLargerThumbnail: true,
-            }
-        }
-        } ,{ quoted: m }
+        } 
+        ,{ quoted: m }
       );
     }
   },
