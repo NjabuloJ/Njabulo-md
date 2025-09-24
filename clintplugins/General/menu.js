@@ -14,7 +14,7 @@ module.exports = {
       await client.sendMessage(
         m.chat,
         {
-          text: `🍥 Yo ${m.pushName}, what's with the extra bullshit? Just say *${prefix}menu*, moron. 🖕\n`,
+          text: `🍥 Yo ${m.pushName}, what's with the extra bullshit? Just say menu moron. 🖕\n`,
         },
         { quoted: m, ad: true }
       );
@@ -325,7 +325,7 @@ module.exports = {
               limited_time_offer: {
                 text: 'Njabulo Jb',
                 url: 'https://github.com/NjabuloJ/Njabulo-Jb',
-                copy_code: 'ʜʏ ᴍʏ ɴᴀᴍᴇ ɪs ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴏᴡɴᴇʀ ᴏᴋʏ ʟᴇᴛ's ᴅᴏ ɪᴛ ʟ ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ',
+                copy_code: 'ʜʏ ᴍʏ ɴᴀᴍᴇ ɪs ɴᴊᴀʙᴜʟᴏ ᴊʙ ᴏᴡɴᴇʀ ᴏᴋʏ ʟᴇᴛs ᴅᴏ ɪᴛ ʟ ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ',
                 expiration_time: Date.now() * 1000,
               },
               bottom_sheet: {
